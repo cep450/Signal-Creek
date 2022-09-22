@@ -35,7 +35,7 @@ scene_naming=1
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/paulloz.ink/plugin.cfg" )
 
 [importer_defaults]
 
@@ -60,10 +60,13 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+ink={
+"compress": false
+}
 
 [ink]
 
-inklecate_path="res://inklecate_win.exe"
+inklecate_path="C:\\Program Files (x86)\\Inky-win32-x64\\resources\\app.asar.unpacked\\main-process\\ink\\inklecate_win.exe"
 
 [input]
 
