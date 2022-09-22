@@ -5,9 +5,9 @@ onready var scroll = $Panel/MarginContainer/ScrollContainer
 onready var vbox = $Panel/MarginContainer/ScrollContainer/VBoxContainer
 onready var player = $InkPlayer
 
-var textEntry = preload("res://assets/premade/pre_ui_dialoguebox_entry.tscn")
-var choiceBox = preload("res://assets/premade/pre_ui_dialoguebox_choicebox.tscn")
-var choice = preload("res://assets/premade/pre_ui_dialoguebox_choice.tscn")
+var textEntry = preload("res://assets/prefabs/pre_ui_dialoguebox_entry.tscn")
+var choiceBox = preload("res://assets/prefabs/pre_ui_dialoguebox_choicebox.tscn")
+var choice = preload("res://assets/prefabs/pre_ui_dialoguebox_choice.tscn")
 
 export var talk : bool #for isolated testing purposes; default to false for full game
 
