@@ -2,13 +2,11 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/charchange2_proto.ink-28c6336c39a68fe30339ea9ce3a8756c.res"
+valid=false
 
 [deps]
 
 source_file="res://assets/ink/charchange2_proto.ink"
-dest_files=[ "res://.import/charchange2_proto.ink-28c6336c39a68fe30339ea9ce3a8756c.res" ]
-
 [params]
 
 is_master_file=true
