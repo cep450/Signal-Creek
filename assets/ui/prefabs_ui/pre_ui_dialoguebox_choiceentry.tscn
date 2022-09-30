@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entryparagraph.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_choiceentryChoice.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_choiceentry.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 12.0
@@ -11,15 +12,15 @@ border_color = Color( 1, 0.87451, 0.556863, 1 )
 [node name="DialogueEntryChoices" type="MarginContainer"]
 margin_right = 276.0
 margin_bottom = 56.0
-theme = null
+script = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 276.0
-margin_bottom = 104.0
+margin_bottom = 72.0
 
 [node name="Name" type="RichTextLabel" parent="VBoxContainer"]
 margin_right = 276.0
-margin_bottom = 16.0
+margin_bottom = 15.0
 custom_colors/default_color = Color( 1, 0.87451, 0.556863, 1 )
 bbcode_enabled = true
 bbcode_text = "[b]MS. SUWAN[/b]"
@@ -27,34 +28,28 @@ text = "MS. SUWAN"
 fit_content_height = true
 
 [node name="DialogueTextContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 19.0
 margin_right = 276.0
-margin_bottom = 104.0
+margin_bottom = 72.0
 custom_constants/margin_left = 16
 
 [node name="Background" type="PanelContainer" parent="VBoxContainer/DialogueTextContainer"]
 margin_left = 16.0
 margin_right = 276.0
-margin_bottom = 80.0
+margin_bottom = 53.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/DialogueTextContainer/Background"]
 margin_left = 12.0
 margin_right = 260.0
-margin_bottom = 80.0
+margin_bottom = 53.0
 
-[node name="Dialogue" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 1 )]
-margin_right = 248.0
-text = "1. [Scowl.]"
+[node name="Choice" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 2 )]
 
-[node name="Dialogue2" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 24.0
-margin_right = 248.0
-margin_bottom = 40.0
-text = "2. [Hit him with your briefcase.]"
+[node name="Choice2" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 19.0
+margin_bottom = 34.0
 
-[node name="Dialogue3" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 48.0
-margin_right = 248.0
-margin_bottom = 80.0
-text = "3. \"I'm not interested in laughing at bad jokes right now.\""
+[node name="Choice3" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 38.0
+margin_bottom = 53.0

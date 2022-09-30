@@ -40,7 +40,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
 margin_right = 276.0
-margin_bottom = 484.0
+margin_bottom = 528.0
 size_flags_horizontal = 3
 
 [node name="RichTextLabel" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
@@ -54,9 +54,9 @@ margin_bottom = 244.0
 
 [node name="DialogueEntryChoices" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 264.0
-margin_bottom = 368.0
+margin_bottom = 388.0
 
 [node name="DialogueEntry" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 388.0
+margin_top = 408.0
 margin_right = 276.0
-margin_bottom = 484.0
+margin_bottom = 528.0
