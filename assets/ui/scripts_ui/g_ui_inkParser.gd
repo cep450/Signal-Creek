@@ -18,7 +18,7 @@ export var talk : bool #for isolated testing purposes; default to false for full
 
 #DIALOGUE ENTRY VARS
 var currentName = "THE PARTY" #stores the current name to put into entry nametags
-var currentDialogueEntry
+#var currentDialogueEntry
 
 #CHOICE ENTRY VARS
 var choiceArray #array of strings representing current diverts
@@ -67,26 +67,34 @@ func _proceed():
 		player.Continue() #progress ink player to next text
 		var currentLine = player.get_CurrentText() #get current text from ink player
 		
-		if currentLine[0] == ":": #this is a name for the choice entry nametag; not an entry to put in
+		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
+			print("checked")
+			
 			currentName = currentLine
-			player.Continue()
+			print(currentName)
+			displayChoices()
 		
 		elif ":" in currentLine: #if line contains a name, parse name and dialogue after
-			create_dialogueEntry(currentLine.split(":", false)[0], currentLine.split(":", false)[1])
+			currentName = currentLine.split(":", false)[0]
+			create_dialogueEntry(currentLine.split(":", false)[1])
 		
 		else: #if line doesn't contain name, it's a normal text entry
 			create_entry(currentLine)
 		
 	elif !displayingChoices: #create entry with choices
-		choiceArray = player.get_CurrentChoices()
-		create_choiceEntry(currentName, choiceArray)
-		displayingChoices = true
-		currentDivert = -1
+		displayChoices()
 		
 	#scroll to bottom when new message appears (make this tween later)
 	yield(get_tree(), "idle_frame")
 	scroll.set_v_scroll(scroll.get_v_scrollbar().max_value)
 
+func displayChoices():
+	choiceArray = player.get_CurrentChoices()
+	create_choiceEntry(choiceArray)
+	displayingChoices = true
+	currentDivert = 0
+	currentChoiceEntryDiverts[currentDivert].set_highlighted(true)
+	
 #create normal text entry
 func create_entry(text):
 	var newEntry = textEntry.instance()
@@ -94,24 +102,31 @@ func create_entry(text):
 	newEntry.text = text
 	displayingChoices = false
 	
-func create_dialogueEntry(newname, text):
+func create_dialogueEntry(newtext):
 	var newDialogueEntry = dialogueEntry.instance()
 	vbox.add_child(newDialogueEntry)
-	currentDialogueEntry = newDialogueEntry
-	newDialogueEntry.set_nametag(newname)
+	#currentDialogueEntry = newDialogueEntry
+	newDialogueEntry.set_nametag(currentName)
+	newDialogueEntry.remove_placeholders()
+	var newParagraph = textEntry.instance()
+	newParagraph.text = newtext
+	newDialogueEntry.set_dialogue(newParagraph)
+	displayingChoices = false
 	
 
 #create entry with choices
-func create_choiceEntry(newname, choices):
+func create_choiceEntry(choices):
 	var newchoiceEntry = choiceEntry.instance()
+	vbox.add_child(newchoiceEntry)
+	
 	newchoiceEntry.remove_placeholders()
-	newchoiceEntry.set_nametag(newname)
+	newchoiceEntry.set_nametag(currentName)
 	for option in choices:
 		var newDivert = divert.instance()
 		newDivert.set_choice_text(option)
 		newchoiceEntry.add_choice_child(newDivert)
 		
-	vbox.add_child(newchoiceEntry)
+	
 	currentDivertEntry = newchoiceEntry
 	currentChoiceEntryDiverts = newchoiceEntry.get_choices()
 
