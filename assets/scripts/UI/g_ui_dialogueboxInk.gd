@@ -5,9 +5,9 @@ onready var scroll = $Panel/MarginContainer/ScrollContainer
 onready var vbox = $Panel/MarginContainer/ScrollContainer/VBoxContainer
 onready var player = $InkPlayer
 
-var textEntry = preload("res://assets/prefabs/pre_ui_dialoguebox_entry.tscn")
-var choiceBox = preload("res://assets/prefabs/pre_ui_dialoguebox_choicebox.tscn")
-var choice = preload("res://assets/prefabs/pre_ui_dialoguebox_choice.tscn")
+var textEntry = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry.tscn")
+var choiceBox = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_choiceentry.tscn")
+var choice = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_choiceentryChoice.tscn")
 
 export var talk : bool #for isolated testing purposes; default to false for full game
 
@@ -76,16 +76,15 @@ func create_entry(text):
 #create entry with choices
 func create_choicebox(choices):
 	var newChoiceBox = choiceBox.instance()
-	delete_children(newChoiceBox)
-	
+	newChoiceBox.remove_placeholders()
 	for option in choices:
 		var newChoice = choice.instance()
 		newChoice.set_choice_text(option)
-		newChoiceBox.add_child(newChoice)
+		newChoiceBox.add_choice_child(newChoice)
 		
 	vbox.add_child(newChoiceBox)
 	currentChoicebox = newChoiceBox
-	currentChoiceboxEntries = newChoiceBox.get_children()
+	currentChoiceboxEntries = newChoiceBox.get_choices()
 
 static func delete_children(node):
 	for n in node.get_children():
