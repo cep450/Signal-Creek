@@ -18,7 +18,6 @@ export var talk : bool #for isolated testing purposes; default to false for full
 
 #DIALOGUE ENTRY VARS
 var currentName = "THE PARTY" #stores the current name to put into entry nametags
-#var currentDialogueEntry
 
 #CHOICE ENTRY VARS
 var choiceArray #array of strings representing current diverts
@@ -48,12 +47,10 @@ func _process(_delta):
 			
 			if Input.is_action_just_pressed("interact"): #divert is submitted
 				vbox.remove_child(currentDivertEntry)
-				#create_entry(choiceArray[currentDivert])
 				
 				if currentDivert < 0:
 					currentDivert = 0
 				player.ChooseChoiceIndex(currentDivert)
-				
 				_proceed()
 		
 		elif Input.is_action_just_pressed("interact"):
@@ -69,9 +66,7 @@ func _proceed():
 		
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
 			print("checked")
-			
-			currentName = currentLine
-			print(currentName)
+			currentName = currentLine.substr(1)
 			displayChoices()
 		
 		elif ":" in currentLine: #if line contains a name, parse name and dialogue after
@@ -102,10 +97,11 @@ func create_entry(text):
 	newEntry.text = text
 	displayingChoices = false
 	
+#create dialogue text entry w/ character name	
 func create_dialogueEntry(newtext):
 	var newDialogueEntry = dialogueEntry.instance()
 	vbox.add_child(newDialogueEntry)
-	#currentDialogueEntry = newDialogueEntry
+
 	newDialogueEntry.set_nametag(currentName)
 	newDialogueEntry.remove_placeholders()
 	var newParagraph = textEntry.instance()
@@ -126,7 +122,6 @@ func create_choiceEntry(choices):
 		newDivert.set_choice_text(option)
 		newchoiceEntry.add_choice_child(newDivert)
 		
-	
 	currentDivertEntry = newchoiceEntry
 	currentChoiceEntryDiverts = newchoiceEntry.get_choices()
 

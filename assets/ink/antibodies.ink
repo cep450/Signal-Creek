@@ -3,9 +3,9 @@
 KID AMOGUS: Hey. Getting the vaccine made me realize how I want another shot with you. Choosing between Pfizer and Moderna was easy but I don’t think I could pick anyone over you.
 
 :NOUR:
-* [She rolls her eyes.] Nour rolls her eyes, sexily.
+* [She rolls her eyes.]Nour rolls her eyes, sexily.
 	-> antibodies
-* [She growls.] Noir growls, sexily.
+* [She growls.]Nour growls, sexily.
 	-> antibodies
 
 ==antibodies==
