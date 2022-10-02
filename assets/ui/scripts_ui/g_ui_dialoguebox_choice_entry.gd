@@ -19,6 +19,9 @@ func add_choice_child(newNode):
 
 func get_choices():
 	return $VBoxContainer/DialogueTextContainer/Background/VBoxContainer.get_children()
+	
+func set_nametag(newname):
+	$VBoxContainer/Name.text = newname
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
