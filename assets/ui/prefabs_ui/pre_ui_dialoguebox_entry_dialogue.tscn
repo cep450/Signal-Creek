@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entryparagraph.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/scripts_ui/gd_ui_dialoguebox_entry_dialogue.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 12.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_color = Color( 1, 0.556863, 0.556863, 1 )
+
+[node name="DialogueEntry" type="MarginContainer"]
+margin_right = 282.0
+margin_bottom = 56.0
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 282.0
+margin_bottom = 83.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 282.0
+margin_bottom = 15.0
+custom_colors/default_color = Color( 1, 0.556863, 0.556863, 1 )
+text = "Sugma Deek"
+fit_content_height = true
+
+[node name="DialogueTextContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 19.0
+margin_right = 282.0
+margin_bottom = 83.0
+custom_constants/margin_left = 16
+
+[node name="Background" type="PanelContainer" parent="VBoxContainer/DialogueTextContainer"]
+margin_left = 16.0
+margin_right = 282.0
+margin_bottom = 64.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/DialogueTextContainer/Background"]
+margin_left = 12.0
+margin_right = 266.0
+margin_bottom = 64.0
+
+[node name="Dialogue" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 1 )]
+margin_bottom = 15.0
+
+[node name="Dialogue2" parent="VBoxContainer/DialogueTextContainer/Background/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 19.0
+margin_bottom = 64.0
+text = "“So how about that airplane food? Huh? Hahahahaha! Why aren’t you laughing? Didn’t you think that was funny?”"
