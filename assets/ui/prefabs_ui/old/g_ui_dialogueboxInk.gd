@@ -1,7 +1,9 @@
 extends Control
 
-onready var panel = $Panel
-onready var scroll = $Panel/MarginContainer/ScrollContainer
+#
+
+onready var panel = $Panel #background panel that conains all dialoguebox nodes
+onready var scroll = $Panel/MarginContainer/ScrollContainer #scrollbox containing all entries
 onready var vbox = $Panel/MarginContainer/ScrollContainer/VBoxContainer
 onready var player = $InkPlayer
 

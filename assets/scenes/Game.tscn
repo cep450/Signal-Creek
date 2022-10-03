@@ -42,3 +42,4 @@ position = Vector2( -2, -2 )
 
 [node name="UserInterface" parent="." instance=ExtResource( 3 )]
 light_mask = 32
+rect_scale = Vector2( 1, 1 )
