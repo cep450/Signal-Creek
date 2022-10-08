@@ -74,12 +74,12 @@ func _proceed():
 		
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
 			print("checked")
-			currentName = currentLine.substr(1)
+			currentName = currentLine.substr(1).strip_escapes()
 			displayChoices()
 		
 		elif ":" in currentLine: #if line contains a name, parse name and dialogue after
 			currentName = currentLine.split(":", false)[0]
-			create_dialogueEntry(currentLine.split(":", false)[1])
+			create_dialogueEntry(currentLine.split(":", false)[1].strip_escapes())
 			
 		
 		else: #if line doesn't contain name, it's a normal text entry
