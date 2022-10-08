@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_choice_divert.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/ui/scripts_ui/g_ui_dialoguebox_choice_entry.gd" type="Script" id=3]
+[ext_resource path="res://assets/scripts/ui scripts/g_ui_dialoguebox_choice_entry.gd" type="Script" id=3]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 12.0
