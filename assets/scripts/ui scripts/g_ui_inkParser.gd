@@ -20,10 +20,14 @@ export var choiceSelectSound : AudioStreamSample
 export var choiceEntrySound : AudioStreamSample
 export var newEntrySound : AudioStreamSample
 
+#character colors
+
+
 export var talk : bool #for isolated testing purposes; default to false for full game
 
 #DIALOGUE ENTRY VARS
 var currentName = "THE PARTY" #stores the current name to put into entry nametags
+var currentColor = Color(1, 1, 1)
 
 #CHOICE ENTRY VARS
 var choiceArray #array of strings representing current diverts
@@ -74,11 +78,11 @@ func _proceed():
 		
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
 			print("checked")
-			currentName = currentLine.substr(1).strip_escapes()
+			set_current_name(currentLine.substr(1).strip_escapes())
 			displayChoices()
 		
 		elif ":" in currentLine: #if line contains a name, parse name and dialogue after
-			currentName = currentLine.split(":", false)[0]
+			set_current_name(currentLine.split(":", false)[0])
 			create_dialogueEntry(currentLine.split(":", false)[1].strip_escapes())
 			
 		
@@ -113,7 +117,7 @@ func create_dialogueEntry(newtext):
 	var newDialogueEntry = dialogueEntry.instance()
 	vbox.add_child(newDialogueEntry)
 
-	newDialogueEntry.set_nametag(currentName, Color(1, 0, 0))
+	newDialogueEntry.set_nametag(currentName, currentColor)
 	newDialogueEntry.remove_placeholders()
 	var newParagraph = textEntry.instance()
 	newParagraph.text = newtext
@@ -129,7 +133,7 @@ func create_choiceEntry(choices):
 	vbox.add_child(newchoiceEntry)
 	
 	newchoiceEntry.remove_placeholders()
-	newchoiceEntry.set_nametag(currentName, Color(1, 0, 0))
+	newchoiceEntry.set_nametag(currentName, currentColor)
 	for option in choices:
 		var newDivert = divert.instance()
 		newDivert.set_choice_text(option)
@@ -155,3 +159,10 @@ func clear_and_reset(): #for when the conversation has ended; reset everything
 func play_sound(soundName):
 	audioPlayer.stream = soundName
 	audioPlayer.play()
+
+func set_current_name(source):
+	currentName = source.trim_suffix(":")
+	currentColor = $ColorManager.characterColors.get(currentName.to_lower())
+	print(currentColor)
+	print(currentName)
+	pass
