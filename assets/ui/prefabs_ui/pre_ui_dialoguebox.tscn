@@ -11,7 +11,6 @@
 [ext_resource path="res://assets/sounds/uisounds/choiceselect.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sounds/uisounds/newchoiceentry.wav" type="AudioStream" id=10]
 
-
 [node name="DialogueBox" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

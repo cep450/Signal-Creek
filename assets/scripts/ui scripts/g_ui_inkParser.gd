@@ -113,7 +113,7 @@ func create_dialogueEntry(newtext):
 	var newDialogueEntry = dialogueEntry.instance()
 	vbox.add_child(newDialogueEntry)
 
-	newDialogueEntry.set_nametag(currentName)
+	newDialogueEntry.set_nametag(currentName, Color(1, 0, 0))
 	newDialogueEntry.remove_placeholders()
 	var newParagraph = textEntry.instance()
 	newParagraph.text = newtext
@@ -129,7 +129,7 @@ func create_choiceEntry(choices):
 	vbox.add_child(newchoiceEntry)
 	
 	newchoiceEntry.remove_placeholders()
-	newchoiceEntry.set_nametag(currentName)
+	newchoiceEntry.set_nametag(currentName, Color(1, 0, 0))
 	for option in choices:
 		var newDivert = divert.instance()
 		newDivert.set_choice_text(option)

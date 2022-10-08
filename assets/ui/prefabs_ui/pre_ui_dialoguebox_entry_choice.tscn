@@ -3,12 +3,11 @@
 [ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_choice_divert.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/ui scripts/g_ui_dialoguebox_choice_entry.gd" type="Script" id=3]
 
-
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 12.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
-border_color = Color( 1, 0.87451, 0.556863, 1 )
+border_color = Color( 0.87451, 0.811765, 0.568627, 1 )
 
 [node name="ChoiceEntry" type="MarginContainer"]
 margin_right = 276.0
@@ -23,6 +22,8 @@ margin_bottom = 72.0
 margin_right = 276.0
 margin_bottom = 15.0
 custom_colors/default_color = Color( 1, 0.87451, 0.556863, 1 )
+bbcode_enabled = true
+bbcode_text = "[b]Sugma Deek[/b]"
 text = "Sugma Deek"
 fit_content_height = true
 

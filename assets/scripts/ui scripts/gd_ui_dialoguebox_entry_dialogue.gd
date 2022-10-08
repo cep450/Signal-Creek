@@ -5,8 +5,10 @@ func remove_placeholders():
 	for placeholder in placeholders:
 		$VBoxContainer/DialogueTextContainer/Background/VBoxContainer.remove_child(placeholder)
 
-func set_nametag(newname):
-	$VBoxContainer/Name.text = newname
+func set_nametag(newname, color):
+	$VBoxContainer/Name.bbcode_text = '[b]' + newname + ':[/b]'
+	$VBoxContainer/Name.set("custom_colors/default_color", color)
+	$VBoxContainer/DialogueTextContainer/Background.add_color_override("custom_styles/panel/border_color", color)
 
 func set_dialogue(dialoguetext):
 	$VBoxContainer/DialogueTextContainer/Background/VBoxContainer.add_child(dialoguetext)
