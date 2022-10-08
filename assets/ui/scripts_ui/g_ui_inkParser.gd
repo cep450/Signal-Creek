@@ -7,12 +7,18 @@ onready var panel = $Panel #background panel that conains all dialoguebox nodes
 onready var scroll = $Panel/MarginContainer/ScrollContainer #scrollbox containing vertical layout box
 onready var vbox = $Panel/MarginContainer/ScrollContainer/VBoxContainer #vertical layout containing entries
 onready var player = $InkPlayer #ink player; interfaces with ink runtime
+onready var audioPlayer = $AudioStreamPlayer
 
 #preload prefab resources
 var textEntry = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry.tscn")
 var dialogueEntry = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_dialogue.tscn")
 var choiceEntry = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_choice.tscn")
 var divert = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_choice_divert.tscn")
+
+#sounds
+export var choiceSelectSound : AudioStreamSample
+export var choiceEntrySound : AudioStreamSample
+export var newEntrySound : AudioStreamSample
 
 export var talk : bool #for isolated testing purposes; default to false for full game
 
@@ -44,6 +50,8 @@ func _process(_delta):
 				if currentDivert >= choiceArray.size():
 					currentDivert = 0
 				currentChoiceEntryDiverts[currentDivert].set_highlighted(true)
+				
+				play_sound(choiceSelectSound)
 			
 			if Input.is_action_just_pressed("interact"): #divert is submitted
 				vbox.remove_child(currentDivertEntry)
@@ -72,6 +80,7 @@ func _proceed():
 		elif ":" in currentLine: #if line contains a name, parse name and dialogue after
 			currentName = currentLine.split(":", false)[0]
 			create_dialogueEntry(currentLine.split(":", false)[1])
+			
 		
 		else: #if line doesn't contain name, it's a normal text entry
 			create_entry(currentLine)
@@ -97,6 +106,8 @@ func create_entry(text):
 	newEntry.text = text
 	displayingChoices = false
 	
+	play_sound(newEntrySound)
+	
 #create dialogue text entry w/ character name	
 func create_dialogueEntry(newtext):
 	var newDialogueEntry = dialogueEntry.instance()
@@ -108,6 +119,8 @@ func create_dialogueEntry(newtext):
 	newParagraph.text = newtext
 	newDialogueEntry.set_dialogue(newParagraph)
 	displayingChoices = false
+	
+	play_sound(newEntrySound)
 	
 
 #create entry with choices
@@ -124,6 +137,8 @@ func create_choiceEntry(choices):
 		
 	currentDivertEntry = newchoiceEntry
 	currentChoiceEntryDiverts = newchoiceEntry.get_choices()
+	
+	play_sound(choiceEntrySound)
 
 static func delete_children(node):
 	for n in node.get_children():
@@ -136,3 +151,7 @@ func clear_and_reset(): #for when the conversation has ended; reset everything
 	player.LoadStory()
 	delete_children(vbox)
 	Gamevars.mode = "walk"
+	
+func play_sound(soundName):
+	audioPlayer.stream = soundName
+	audioPlayer.play()
