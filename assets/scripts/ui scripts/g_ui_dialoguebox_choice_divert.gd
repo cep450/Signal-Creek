@@ -3,7 +3,7 @@ export var normalColor : Color
 export var selectedColor : Color
 
 func set_choice_text(buttontxt):
-	self.text = buttontxt
+	self.bbcode_text = buttontxt
 	self.set("custom_colors/default_color", normalColor)
 
 func set_highlighted(status):
