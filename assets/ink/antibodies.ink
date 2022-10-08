@@ -1,11 +1,11 @@
-//This placeholder ink is for designing the Ink interpreter script in godot. :EXAMPLE: will be used for parsing names. ?EXAMPLE: Will be used for parsing choicebox labels.
+//This placeholder ink is for designing the Ink interpreter script in godot. :EXAMPLE: will be used for parsing choice labels
 
 KID AMOGUS: Hey. Getting the vaccine made me realize how I want another shot with you. Choosing between Pfizer and Moderna was easy but I don’t think I could pick anyone over you.
 
 :NOUR:
-* [She rolls her eyes.]Nour rolls her eyes, sexily.
+* [Rolls eyes.]Nour rolls her eyes, sexily.
 	-> antibodies
-* [She growls.]Nour growls, sexily.
+* [Growls.]Nour growls, sexily.
 	-> antibodies
 
 ==antibodies==
@@ -20,7 +20,7 @@ KID AMOGUS: You don’t have to reply.
 * MS SUWAN: "What the hell are you talking about?" 
 	-> explanation
 * NICK: "Is that you, kid amogus?"
-	Nicks eyes light up.
+	Nick's eyes light up.
 	-> reunion
 
 ==plan==

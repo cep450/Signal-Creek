@@ -88,12 +88,11 @@ func _proceed():
 			displayChoices()
 		
 		elif ":" in currentLine: #if line contains a name, parse name and dialogue after
-			set_current_name(currentLine.split(":", false)[0])
-			create_dialogueEntry(currentLine.split(":", false)[1].strip_escapes())
-			
+			set_current_name(currentLine.split(":", false)[0] + ":")
+			create_dialogueEntry(currentLine.split(":", false)[1].strip_escapes().trim_prefix(' '))
 		
 		else: #if line doesn't contain name, it's a normal text entry
-			create_entry(currentLine)
+			create_entry(currentLine.strip_escapes())
 		
 	elif !displayingChoices: #create entry with choices
 		displayChoices()
@@ -147,7 +146,21 @@ func create_choiceEntry(choices):
 	
 	for option in choices: #iterate through choices, add nodes as children
 		var newDivert = divert.instance()
-		newDivert.set_choice_text(option)
+		
+		var newText
+		
+		if ":" in option:
+			var nameSubstring = option.split(":", false)[0].strip_escapes()
+			var colorCode = $ColorManager.characterColors.get(nameSubstring.to_lower().trim_suffix(":"))
+			#[color=<code/name>]
+			#$ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
+			var textSubstring = option.split(":", false)[1].strip_escapes()
+			
+			newText = '[color=#' + colorCode.to_html() + '][b]' + nameSubstring + ':[/b][/color]' + textSubstring 
+		else:
+			newText = '[' + option + ']'
+		
+		newDivert.set_choice_text(newText)
 		newchoiceEntry.add_choice_child(newDivert)
 		
 	currentDivertEntry = newchoiceEntry

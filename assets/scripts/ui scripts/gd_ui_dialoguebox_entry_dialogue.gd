@@ -6,7 +6,7 @@ func remove_placeholders():
 		$VBoxContainer/DialogueTextContainer/Background/VBoxContainer.remove_child(placeholder)
 
 func set_nametag(newname, color):
-	$VBoxContainer/Name.bbcode_text = '[b]' + newname + ':[/b]'
+	$VBoxContainer/Name.bbcode_text = '[b]' + newname + '[/b]'
 	$VBoxContainer/Name.set("custom_colors/default_color", color)
 
 	var newboxstyle = $VBoxContainer/DialogueTextContainer/Background.get_stylebox("panel").duplicate()
