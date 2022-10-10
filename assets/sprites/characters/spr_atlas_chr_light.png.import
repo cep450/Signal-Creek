@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tx_glow_128.png-6eb37c0e33536bf8c41618f988bbf246.stex"
+path="res://.import/spr_atlas_chr_light.png-bccd5c884300f3e388e23484668922df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tx_glow_128.png"
-dest_files=[ "res://.import/tx_glow_128.png-6eb37c0e33536bf8c41618f988bbf246.stex" ]
+source_file="res://assets/sprites/characters/spr_atlas_chr_light.png"
+dest_files=[ "res://.import/spr_atlas_chr_light.png-bccd5c884300f3e388e23484668922df.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

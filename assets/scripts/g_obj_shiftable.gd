@@ -2,21 +2,21 @@ tool
 extends Node2D
 
 export(StreamTexture) var dreamsheet
-export(StreamTexture) var decaysheet
+export(StreamTexture) var realsheet
 
 onready var dreampos = self.get_global_position()
-onready var decaypos
-export var decayX: int
-export var decayY: int
+onready var realpos
+export var realX: int
+export var realY: int
 
 export var inDream : bool = true
-export var inDecay : bool = true
+export var inReal : bool = true
 
 func _ready():
-	if !inDecay:
-		decaypos = Vector2(-100, -100)
+	if !inReal:
+		realpos = Vector2(-100, -100)
 	else:
-		decaypos = dreampos + Vector2(decayX, decayY)
+		realpos = dreampos + Vector2(realX, realY)
 	if !inDream:
 		dreampos = Vector2(-100, -100)
 	if !Engine.editor_hint:
@@ -25,8 +25,8 @@ func _ready():
 func _process(_delta):
 	if Engine.editor_hint:
 		$Hint.visible = true
-		$Hint.set_position(Vector2(decayX, decayY))
-		$Hint.set_texture(decaysheet)
+		$Hint.set_position(Vector2(realX, realY))
+		$Hint.set_texture(realsheet)
 
 func set_sheet(sheetId):
 	$Sprite.set_texture(sheetId)
