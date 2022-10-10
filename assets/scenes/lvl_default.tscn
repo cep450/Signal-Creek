@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/ts_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/prefabs/pre_player_default.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/prefabs/objects/pre_obj_chair.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/prefabs/objects/pre_obj_shelf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/prefabs/objects/pre_obj_boxes.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/prefabs/pre_itm_flashlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/lights/tx_glow_128.png" type="Texture" id=10]
 [ext_resource path="res://assets/prefabs/objects/pre_obj_shelfside.tscn" type="PackedScene" id=11]
 
@@ -101,9 +100,6 @@ __meta__ = {
 
 [node name="Player" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
 position = Vector2( 421, 368 )
-
-[node name="Flashlight" parent="PlaneManager/Overworld/Player" instance=ExtResource( 9 )]
-visible = false
 
 [node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
 position = Vector2( 224, 160 )
