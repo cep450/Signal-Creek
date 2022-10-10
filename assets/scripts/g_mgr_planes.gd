@@ -7,7 +7,7 @@ onready var walls = $Overworld/Walls
 onready var objects = []
 
 export (TileSet) var dreamset 
-export (TileSet) var decayset
+export (TileSet) var realset
 
 #add enum
 
@@ -24,7 +24,7 @@ func _physics_process(_delta):
 func shiftPlane():
 	if Gamevars.dream:
 		Gamevars.dream = false
-		set_tilesets(decayset)
+		set_tilesets(realset)
 	else:
 		Gamevars.dream = true
 		set_tilesets(dreamset)
@@ -42,7 +42,7 @@ func set_obj_sprites():
 			node.set_sheet(node.dreamsheet)
 	else:
 		for node in objects:
-			node.set_sheet(node.decaysheet)
+			node.set_sheet(node.realsheet)
 	pass
 
 func move_objs():
@@ -51,4 +51,4 @@ func move_objs():
 			node.set_pos(node.dreampos)
 	else:
 		for node in objects:
-			node.set_pos(node.decaypos)
+			node.set_pos(node.realpos)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_atlas_tl_dy_room.png-383d95627600789c7ec866bb02ce1c7e.stex"
+path="res://.import/tx_glow_128.png-06c3a627e8de9b5f85d0d5d0b619954b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spr_atlas_tl_dy_room.png"
-dest_files=[ "res://.import/spr_atlas_tl_dy_room.png-383d95627600789c7ec866bb02ce1c7e.stex" ]
+source_file="res://assets/textures/lights/tx_glow_128.png"
+dest_files=[ "res://.import/tx_glow_128.png-06c3a627e8de9b5f85d0d5d0b619954b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

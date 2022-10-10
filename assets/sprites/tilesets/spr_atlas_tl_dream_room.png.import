@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_atlas_tl_dr_room.png-f94cee5f23ebfbd8f50ffaf26ebd2fb5.stex"
+path="res://.import/spr_atlas_tl_dream_room.png-e3fd8bded94f057a667f2208215e6423.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spr_atlas_tl_dr_room.png"
-dest_files=[ "res://.import/spr_atlas_tl_dr_room.png-f94cee5f23ebfbd8f50ffaf26ebd2fb5.stex" ]
+source_file="res://assets/sprites/tilesets/spr_atlas_tl_dream_room.png"
+dest_files=[ "res://.import/spr_atlas_tl_dream_room.png-e3fd8bded94f057a667f2208215e6423.stex" ]
 
 [params]
 
