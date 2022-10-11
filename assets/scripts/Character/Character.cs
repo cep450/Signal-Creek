@@ -8,7 +8,8 @@ public class Character : Node2D
 		Can be moved by input or pathfinding and animates and updates sprites accordingly.
 	*/
 	
-	final int moraleMax = 3;
+	
+	static readonly int moraleMax = 3;
 	int morale = moraleMax;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -63,3 +64,4 @@ public class Character : Node2D
 	private void MoraleDepleted() {
 		//TODO: what happens when morale runs out?
 	}
+}
