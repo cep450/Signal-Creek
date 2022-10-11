@@ -10,18 +10,16 @@ public class Party : Node2D
 	*/
 	
 	//Use for readability. 
-	public enum CharacterIndex {
-		NICK = 0,
-		NOIR = 1,
-		SUWAN = 2,
-	}
+	static int indexNICK = 0;
+	static int indexNOIR = 1;
+	static int indexSUWAN = 2;
 	
-	Character NICK, NOIR, SUWAN;
-	Character [] Characters = {NICK, NOIR, SUWAN};
-	int currentCharIndex = CharacterIndex.NICK;
+	static Character NICK, NOIR, SUWAN;
+	static Character [] Characters = {NICK, NOIR, SUWAN};
+	static int currentCharIndex = indexSUWAN;
 	
 	//if we ever want the character being controlled to move on their own or not be able to move- just remember to turn it back on afterwards
-	public bool acceptMovementInput = true; 
+	public static bool acceptMovementInput = true; 
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -40,15 +38,15 @@ public class Party : Node2D
 		//TODO
 	}
 	public void SwitchCharNick() {
-		currentCharIndex = CharacterIndex.NICK;
+		currentCharIndex = indexNICK;
 		//TODO
 	}
 	public void SwitchCharNoir() {
-		currentCharIndex = CharacterIndex.NOIR;
+		currentCharIndex = indexNOIR;
 		//TODO
 	}
 	public void SwitchCharSuwan() {
-		currentCharIndex = CharacterIndex.SUWAN;
+		currentCharIndex = indexSUWAN;
 		//TODO
 	}
 	
