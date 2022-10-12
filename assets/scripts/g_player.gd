@@ -22,26 +22,30 @@ func read_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= speed
 		direction = Vector2(0, -1)
-		animPlayer.play("Up")
-		idle = "UpIdle"
+		if animated:
+			animPlayer.play("Up")
+			idle = "UpIdle"
 		
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y += speed
 		direction = Vector2(0, 1)
-		animPlayer.play("Down")
-		idle = "DownIdle"
+		if animated:
+			animPlayer.play("Down")
+			idle = "DownIdle"
 	
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x -= speed
 		direction = Vector2(-1, 0)
-		animPlayer.play("Left")
-		idle = "LeftIdle"
+		if animated:
+			animPlayer.play("Left")
+			idle = "LeftIdle"
 		
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x += speed
 		direction = Vector2(1, 0)
-		animPlayer.play("Right")
-		idle = "RightIdle"
+		if animated:
+			animPlayer.play("Right")
+			idle = "RightIdle"
 	elif animated:
 		animPlayer.play(idle);
 		pass
