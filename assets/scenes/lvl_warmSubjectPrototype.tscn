@@ -29,9 +29,6 @@ z_index = 16
 current = true
 editor_draw_screen = false
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 following = NodePath("../PlaneManager/Overworld/PARTY/NOUR")
 lerpSpeed = 8
 camera_bounds_max = Vector2( 384, 320 )
@@ -73,8 +70,8 @@ __meta__ = {
 }
 
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 200, 168 )
-scale = Vector2( 3.125, 2.625 )
+position = Vector2( 192, 160 )
+scale = Vector2( 3, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
@@ -104,3 +101,5 @@ position = Vector2( 112, 88 )
 
 [node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
 position = Vector2( 120, 128 )
+
+[editable path="PlaneManager/Overworld/PARTY"]
