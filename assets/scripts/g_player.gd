@@ -5,6 +5,7 @@ extends KinematicBody2D
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2()
 export var speed : float
+export var animated : bool
 
 onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
@@ -12,7 +13,7 @@ var idle : String = "DownIdle"
 func _physics_process(_delta):
 	if Gamevars.mode == "walk":
 		read_input()
-	else:
+	elif animated:
 		animPlayer.play(idle)
 
 func read_input():
@@ -41,7 +42,7 @@ func read_input():
 		direction = Vector2(1, 0)
 		animPlayer.play("Right")
 		idle = "RightIdle"
-	else:
+	elif animated:
 		animPlayer.play(idle);
 		pass
 		
