@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/TShirt Conversation.ink-fdcada36a6534ef4fec7f82e56498c33.res"
+
+[deps]
+
+source_file="res://assets/ink/TShirt Conversation.ink"
+dest_files=[ "res://.import/TShirt Conversation.ink-fdcada36a6534ef4fec7f82e56498c33.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
