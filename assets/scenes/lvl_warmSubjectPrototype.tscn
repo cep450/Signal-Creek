@@ -1,17 +1,16 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/ts_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/prefabs/characters/party/pre_char_party.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/g_mgr_planes.gd" type="Script" id=3]
 [ext_resource path="res://assets/scripts/g_mgr_cam.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/tilesets/ts_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=6]
-[ext_resource path="res://assets/scripts/g_obj_shiftable.gd" type="Script" id=7]
-[ext_resource path="res://assets/sprites/objects/sprsheet_obj_proposal_dream.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/objects/sprsheet_obj_proposal_real.png" type="Texture" id=9]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_SHIRTS.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_TEETH.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_HALLOWEENDECOR.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefabs/warmsubject/Chair.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/lights/tx_glow_128.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/objects/sprsheet_obj_warmsubject_dream.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/objects/sprsheet_obj_warmsubject_real.png" type="Texture" id=12]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_SHELF.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -21,18 +20,6 @@ glow_levels/2 = true
 glow_bloom = 0.06
 glow_blend_mode = 0
 glow_hdr_luminance_cap = 20.0
-
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 6, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 24, 8 )
-
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 31, 12 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 8, 6 )
 
 [node name="Level" type="Node2D"]
 
@@ -109,205 +96,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair" type="RigidBody2D" parent="PlaneManager/Overworld" groups=["shiftable"]]
-position = Vector2( 72, 88 )
-mode = 1
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true,
-"_editor_description_": ""
-}
-dreamsheet = ExtResource( 11 )
-realsheet = ExtResource( 12 )
+[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
+position = Vector2( 81, 88 )
 
-[node name="Sprite" type="Sprite" parent="PlaneManager/Overworld/Chair"]
-light_mask = 4
-position = Vector2( 0, -8 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
+[node name="SHELF" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 305, 96 )
 
-[node name="Hint" type="Sprite" parent="PlaneManager/Overworld/Chair"]
-modulate = Color( 1, 1, 1, 0.313726 )
-light_mask = 4
-texture = ExtResource( 12 )
-offset = Vector2( 0, -8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
+[node name="SHIRTS" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 257, 80 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/Chair"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 21 )
+[node name="TEETH" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 281, 177 )
 
-[node name="SHELF" type="RigidBody2D" parent="PlaneManager/Overworld" groups=["shiftable"]]
-position = Vector2( 296, 104 )
-mode = 1
-script = ExtResource( 7 )
-__meta__ = {
-"_editor_description_": ""
-}
-dreamsheet = ExtResource( 11 )
-realsheet = ExtResource( 12 )
-
-[node name="Sprite" type="Sprite" parent="PlaneManager/Overworld/SHELF"]
-light_mask = 4
-position = Vector2( 0, -32 )
-texture = ExtResource( 11 )
-region_enabled = true
-region_rect = Rect2( 48, 15, 48, 65 )
-
-[node name="Hint" type="Sprite" parent="PlaneManager/Overworld/SHELF"]
-modulate = Color( 1, 1, 1, 0.313726 )
-show_behind_parent = true
-light_mask = 4
-texture = ExtResource( 12 )
-offset = Vector2( 0, -32 )
-region_enabled = true
-region_rect = Rect2( 80, 16, 48.0001, 64 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/SHELF"]
-position = Vector2( -1, -8 )
-shape = SubResource( 23 )
-
-[node name="ActiveArea" type="Area2D" parent="PlaneManager/Overworld/SHELF"]
-script = ExtResource( 6 )
-__meta__ = {
-"_editor_description_": "NOTES: change this to JUST be the activearea and add as a child to static objects
-"
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/SHELF/ActiveArea"]
-position = Vector2( 0, -4 )
-shape = SubResource( 22 )
-
-[node name="SHIRTS" type="Node2D" parent="PlaneManager/Overworld" groups=["shiftable"]]
-position = Vector2( 248, 56 )
-z_index = 1
-script = ExtResource( 7 )
-__meta__ = {
-"_editor_description_": ""
-}
-dreamsheet = ExtResource( 11 )
-realsheet = ExtResource( 12 )
-
-[node name="Sprite" type="Sprite" parent="PlaneManager/Overworld/SHIRTS"]
-light_mask = 4
-position = Vector2( 0, -8 )
-texture = ExtResource( 11 )
-region_enabled = true
-region_rect = Rect2( 112, 19, 31, 25 )
-
-[node name="Hint" type="Sprite" parent="PlaneManager/Overworld/SHIRTS"]
-modulate = Color( 1, 1, 1, 0.313726 )
-light_mask = 4
-texture = ExtResource( 12 )
-offset = Vector2( 0, -8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
-
-[node name="ActiveArea" type="Area2D" parent="PlaneManager/Overworld/SHIRTS"]
-script = ExtResource( 6 )
-__meta__ = {
-"_editor_description_": "NOTES: change this to JUST be the activearea and add as a child to static objects
-"
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/SHIRTS/ActiveArea"]
-position = Vector2( 0, -3 )
-shape = SubResource( 24 )
-
-[node name="TEETH" type="RigidBody2D" parent="PlaneManager/Overworld" groups=["shiftable"]]
-position = Vector2( 280, 176 )
-z_index = 1
-mode = 1
-script = ExtResource( 7 )
-__meta__ = {
-"_editor_description_": "Abstract for an interactive object with collisions and active area"
-}
-dreamsheet = ExtResource( 8 )
-realsheet = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PlaneManager/Overworld/TEETH"]
-light_mask = 4
-position = Vector2( 0, -8 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
-
-[node name="Hint" type="Sprite" parent="PlaneManager/Overworld/TEETH"]
-modulate = Color( 1, 1, 1, 0.313726 )
-light_mask = 4
-texture = ExtResource( 9 )
-offset = Vector2( 0, -8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/TEETH"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 21 )
-
-[node name="ActiveArea" type="Area2D" parent="PlaneManager/Overworld/TEETH"]
-script = ExtResource( 6 )
-__meta__ = {
-"_editor_description_": "NOTES: change this to JUST be the activearea and add as a child to static objects
-"
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/TEETH/ActiveArea"]
-position = Vector2( 0, -3 )
-shape = SubResource( 24 )
-
-[node name="HALLOWEENDECOR" type="RigidBody2D" parent="PlaneManager/Overworld" groups=["shiftable"]]
-position = Vector2( 240, 176 )
-z_index = 1
-mode = 1
-script = ExtResource( 7 )
-__meta__ = {
-"_editor_description_": "Abstract for an interactive object with collisions and active area"
-}
-dreamsheet = ExtResource( 8 )
-realsheet = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PlaneManager/Overworld/HALLOWEENDECOR"]
-light_mask = 4
-position = Vector2( 0, -8 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
-
-[node name="Hint" type="Sprite" parent="PlaneManager/Overworld/HALLOWEENDECOR"]
-modulate = Color( 1, 1, 1, 0.313726 )
-light_mask = 4
-texture = ExtResource( 9 )
-offset = Vector2( 0, -8 )
-region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/HALLOWEENDECOR"]
-position = Vector2( 0, -3.5 )
-shape = SubResource( 21 )
-
-[node name="ActiveArea" type="Area2D" parent="PlaneManager/Overworld/HALLOWEENDECOR"]
-script = ExtResource( 6 )
-__meta__ = {
-"_editor_description_": "NOTES: change this to JUST be the activearea and add as a child to static objects
-"
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaneManager/Overworld/HALLOWEENDECOR/ActiveArea"]
-position = Vector2( 0, -3 )
-shape = SubResource( 24 )
+[node name="HALLOWEENDECOR" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 236, 182 )
 
 [node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
-position = Vector2( 120, 128 )
-
-[connection signal="body_entered" from="PlaneManager/Overworld/SHELF/ActiveArea" to="PlaneManager/Overworld/SHELF/ActiveArea" method="_on_InteractArea_body_entered"]
-[connection signal="body_exited" from="PlaneManager/Overworld/SHELF/ActiveArea" to="PlaneManager/Overworld/SHELF/ActiveArea" method="_on_InteractArea_body_exited"]
-[connection signal="body_entered" from="PlaneManager/Overworld/SHIRTS/ActiveArea" to="PlaneManager/Overworld/SHIRTS/ActiveArea" method="_on_InteractArea_body_entered"]
-[connection signal="body_exited" from="PlaneManager/Overworld/SHIRTS/ActiveArea" to="PlaneManager/Overworld/SHIRTS/ActiveArea" method="_on_InteractArea_body_exited"]
-[connection signal="body_entered" from="PlaneManager/Overworld/TEETH/ActiveArea" to="PlaneManager/Overworld/TEETH/ActiveArea" method="_on_InteractArea_body_entered"]
-[connection signal="body_exited" from="PlaneManager/Overworld/TEETH/ActiveArea" to="PlaneManager/Overworld/TEETH/ActiveArea" method="_on_InteractArea_body_exited"]
-[connection signal="body_entered" from="PlaneManager/Overworld/HALLOWEENDECOR/ActiveArea" to="PlaneManager/Overworld/HALLOWEENDECOR/ActiveArea" method="_on_InteractArea_body_entered"]
-[connection signal="body_exited" from="PlaneManager/Overworld/HALLOWEENDECOR/ActiveArea" to="PlaneManager/Overworld/HALLOWEENDECOR/ActiveArea" method="_on_InteractArea_body_exited"]
-
-[editable path="PlaneManager/Overworld/PARTY"]
+position = Vector2( 190, 194 )
