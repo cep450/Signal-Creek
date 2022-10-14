@@ -5,7 +5,6 @@ extends KinematicBody2D
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2()
 export var speed : float
-export var animated : bool
 
 onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
@@ -13,7 +12,7 @@ var idle : String = "DownIdle"
 func _physics_process(_delta):
 	if Gamevars.mode == "walk":
 		read_input()
-	elif animated:
+		
 		animPlayer.play(idle)
 
 func read_input():
@@ -22,31 +21,29 @@ func read_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= speed
 		direction = Vector2(0, -1)
-		if animated:
-			animPlayer.play("Up")
-			idle = "UpIdle"
+		
+		animPlayer.play("Up")
+		idle = "UpIdle"
 		
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y += speed
 		direction = Vector2(0, 1)
-		if animated:
-			animPlayer.play("Down")
-			idle = "DownIdle"
+		animPlayer.play("Down")
+		idle = "DownIdle"
 	
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x -= speed
 		direction = Vector2(-1, 0)
-		if animated:
-			animPlayer.play("Left")
-			idle = "LeftIdle"
+		animPlayer.play("Left")
+		idle = "LeftIdle"
 		
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x += speed
 		direction = Vector2(1, 0)
-		if animated:
-			animPlayer.play("Right")
-			idle = "RightIdle"
-	elif animated:
+
+		animPlayer.play("Right")
+		idle = "RightIdle"
+	else:
 		animPlayer.play(idle);
 		pass
 		
