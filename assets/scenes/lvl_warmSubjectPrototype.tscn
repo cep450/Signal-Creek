@@ -56,6 +56,7 @@ __meta__ = {
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 dreamset = ExtResource( 1 )
+realset = ExtResource( 5 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
 tile_set = ExtResource( 1 )
@@ -112,4 +113,4 @@ position = Vector2( 281, 177 )
 position = Vector2( 236, 182 )
 
 [node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
-position = Vector2( 190, 194 )
+position = Vector2( 143, 101 )
