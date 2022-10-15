@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/scripts/g_player.gd" type="Script" id=2]
 [ext_resource path="res://assets/textures/lights/tx_glow_64.png" type="Texture" id=3]
 
-
 [sub_resource type="Animation" id=3]
 resource_name = "Down"
 length = 0.5
