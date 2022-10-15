@@ -84,6 +84,7 @@ func _proceed():
 		
 		if currentLine.substr(0, 1) == "&":
 			Gamevars.planeManager.shiftPlane()
+			currentLine = currentLine.trim_prefix('&')
 			
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
 			print("checked")
