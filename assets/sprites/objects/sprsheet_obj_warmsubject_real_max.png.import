@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_atlas_obj_dream.png-02d87e0bdf5d29df02074836b724fd12.stex"
+path="res://.import/sprsheet_obj_warmsubject_real_max.png-0ab22b4b2c6d6c0d936046605c45c2ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/spr_atlas_obj_dream.png"
-dest_files=[ "res://.import/spr_atlas_obj_dream.png-02d87e0bdf5d29df02074836b724fd12.stex" ]
+source_file="res://assets/sprites/objects/sprsheet_obj_warmsubject_real_max.png"
+dest_files=[ "res://.import/sprsheet_obj_warmsubject_real_max.png-0ab22b4b2c6d6c0d936046605c45c2ac.stex" ]
 
 [params]
 

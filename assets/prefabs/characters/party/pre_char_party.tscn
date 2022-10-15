@@ -4,13 +4,15 @@
 [ext_resource path="res://assets/prefabs/characters/party/pre_char_party_nour.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/prefabs/characters/party/pre_char_party_nick.tscn" type="PackedScene" id=3]
 
-[node name="PARTY" type="Node2D"]
+[node name="PARTY" type="YSort"]
 
-[node name="NOUR" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40, 32 )
+[node name="NOUR" parent="." groups=["Player"] instance=ExtResource( 2 )]
+z_as_relative = false
 
-[node name="NICK" parent="." instance=ExtResource( 3 )]
-position = Vector2( 16, 32 )
+[node name="NICK" parent="." groups=["Player"] instance=ExtResource( 3 )]
+position = Vector2( -24, 0 )
+z_as_relative = false
 
-[node name="SUWAN" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64, 32 )
+[node name="SUWAN" parent="." groups=["Player"] instance=ExtResource( 1 )]
+position = Vector2( 24, 0 )
+z_as_relative = false

@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/ts_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/prefabs/characters/party/pre_char_party.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/g_mgr_planes.gd" type="Script" id=3]
 [ext_resource path="res://assets/scripts/g_mgr_cam.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/tilesets/ts_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/prefabs/objects/pre_obj_chair.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/prefabs/objects/pre_obj_shelf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_SHIRTS.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_TEETH.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_HALLOWEENDECOR.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefabs/warmsubject/Chair.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/lights/tx_glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_SHELF.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -29,9 +32,6 @@ z_index = 16
 current = true
 editor_draw_screen = false
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 following = NodePath("../PlaneManager/Overworld/PARTY/NOUR")
 lerpSpeed = 8
 camera_bounds_max = Vector2( 384, 320 )
@@ -56,6 +56,7 @@ __meta__ = {
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 dreamset = ExtResource( 1 )
+realset = ExtResource( 5 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
 tile_set = ExtResource( 1 )
@@ -73,8 +74,8 @@ __meta__ = {
 }
 
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 200, 168 )
-scale = Vector2( 3.125, 2.625 )
+position = Vector2( 192, 160 )
+scale = Vector2( 3, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
@@ -96,11 +97,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
-position = Vector2( 296, 96 )
+[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
+position = Vector2( 81, 88 )
 
-[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
-position = Vector2( 112, 88 )
+[node name="SHELF" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 305, 96 )
+
+[node name="SHIRTS" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 257, 80 )
+
+[node name="TEETH" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 281, 177 )
+
+[node name="HALLOWEENDECOR" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 236, 182 )
 
 [node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
-position = Vector2( 120, 128 )
+position = Vector2( 143, 101 )

@@ -2,8 +2,8 @@
 
 [ext_resource path="res://assets/scripts/g_obj_shiftable.gd" type="Script" id=1]
 [ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/objects/spr_atlas_obj_dream.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/objects/spr_atlas_obj_real.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/objects/sprsheet_obj_proposal_dream.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/objects/sprsheet_obj_proposal_real.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 8, 16 )
