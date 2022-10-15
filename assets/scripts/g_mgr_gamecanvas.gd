@@ -8,6 +8,7 @@ onready var camera = $ViewportContainer/Viewport/Level/Camera2D
 
 func _ready():
 	Gamevars.dialoguebox = $UserInterface/DialogueBox
+	Gamevars.planeManager = $ViewportContainer/Viewport/Level/PlaneManager
 
 func _process(delta):
 	pixel_perfect(delta)

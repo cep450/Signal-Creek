@@ -6,3 +6,4 @@ onready var player = null
 onready var mode = "walk"
 onready var dream = true
 onready var dialoguebox = null
+onready var planeManager = null

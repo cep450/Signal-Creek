@@ -82,6 +82,9 @@ func _proceed():
 		
 		var currentLine = player.get_CurrentText() #get current text from ink player
 		
+		if currentLine.substr(0, 1) == "&":
+			Gamevars.planeManager.shiftPlane()
+			
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
 			print("checked")
 			set_current_name(currentLine.substr(1).strip_escapes())
@@ -194,3 +197,6 @@ func set_current_name(source):
 	currentName = source
 	currentColor = $ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
 	pass
+
+func load_story(inkFile):
+	player.LoadStory(inkFile)

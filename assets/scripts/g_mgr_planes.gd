@@ -28,7 +28,6 @@ func shiftPlane():
 	else:
 		Gamevars.dream = true
 		set_tilesets(dreamset)
-		
 
 func set_tilesets(setId):
 	ground.set_tileset(setId)

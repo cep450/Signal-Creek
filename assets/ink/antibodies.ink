@@ -25,7 +25,7 @@ KID AMOGUS: You don’t have to reply.
 
 ==plan==
 
-KID AMOGUS: "That's the plan!"
+&KID AMOGUS: "That's the plan!"
 
 	-> END
 
