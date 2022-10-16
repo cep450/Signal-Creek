@@ -27,6 +27,8 @@ func _process(_delta):
 		$Hint.visible = true
 		$Hint.set_position(Vector2(realX, realY))
 		$Hint.set_texture(realsheet)
+	else:
+		$Hint.visible = false
 
 func set_sheet(sheetId):
 	$Sprite.set_texture(sheetId)
