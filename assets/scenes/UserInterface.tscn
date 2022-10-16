@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/scenes/controlsreference.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/ui/themes/InteractBox.tres" type="Theme" id=2]
+[ext_resource path="res://assets/ui/prefabs_ui/Portraits.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/prefabs_ui/pre_ui_interact_indicator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/prefabs_ui/pre_ui_popupDialogue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox.tscn" type="PackedScene" id=6]
 
 [node name="UserInterface" type="Control"]
@@ -25,25 +27,10 @@ visible = false
 
 [node name="DialogueBox" parent="." instance=ExtResource( 6 )]
 
-[node name="Interact_Indicator" type="Control" parent="."]
-margin_left = 426.0
-margin_top = 209.0
-margin_right = 458.0
-margin_bottom = 241.0
+[node name="Interact_Indicator" parent="." instance=ExtResource( 3 )]
+visible = false
 
-[node name="Panel" type="Panel" parent="Interact_Indicator"]
-margin_right = 32.0
-margin_bottom = 32.0
-rect_scale = Vector2( 1, 1.0108 )
-theme = ExtResource( 2 )
+[node name="PopupDialogue" parent="." instance=ExtResource( 4 )]
+visible = false
 
-[node name="PopupDialogue" type="Control" parent="."]
-margin_left = 233.0
-margin_top = 187.0
-margin_right = 361.0
-margin_bottom = 255.0
-
-[node name="Panel" type="Panel" parent="PopupDialogue"]
-margin_right = 125.0
-margin_bottom = 60.0
-theme = ExtResource( 2 )
+[node name="Portraits" parent="." instance=ExtResource( 2 )]
