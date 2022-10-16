@@ -39,6 +39,8 @@ var currentChoiceEntryDiverts #current choice buttons
 func _ready():
 	delete_children(vbox) #delete placeholders
 	panel.set_visible(false) #hide for now
+	player.LoadStory()
+
 	
 	if talk:
 		Gamevars.mode = "talk"
@@ -105,6 +107,7 @@ func _proceed():
 	scroll.set_v_scroll(scroll.get_v_scrollbar().max_value)
 
 func displayChoices():
+	player.SetVariable("currentPartyChar", Gamevars.party.get_partymember())
 	choiceArray = player.get_CurrentChoices() #get current choices from ink
 	
 	create_choiceEntry(choiceArray)

@@ -12,6 +12,7 @@ func _process(_delta):
 				Gamevars.mode = "talk"
 				if inkFile:
 					Gamevars.dialoguebox.load_story(inkFile)
+					
 				Gamevars.dialoguebox.panel.set_visible(true)
 				print("interacting")
 			pass
