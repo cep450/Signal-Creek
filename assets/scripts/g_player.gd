@@ -12,7 +12,7 @@ var idle : String = "DownIdle"
 func _physics_process(_delta):
 	if Gamevars.mode == "walk":
 		read_input()
-	else:
+		
 		animPlayer.play(idle)
 
 func read_input():
@@ -21,6 +21,7 @@ func read_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= speed
 		direction = Vector2(0, -1)
+		
 		animPlayer.play("Up")
 		idle = "UpIdle"
 		
@@ -39,6 +40,7 @@ func read_input():
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x += speed
 		direction = Vector2(1, 0)
+
 		animPlayer.play("Right")
 		idle = "RightIdle"
 	else:

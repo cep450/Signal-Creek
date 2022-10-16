@@ -1,16 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/sprites/ts_dr.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/sprites/tilesets/ts_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/prefabs/pre_player_default.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/g_mgr_planes.gd" type="Script" id=3]
 [ext_resource path="res://assets/scripts/g_mgr_cam.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/ts_dy.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/prefabs/pre_obj_chair.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/prefabs/pre_obj_shelf.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/prefabs/pre_obj_boxes.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/prefabs/pre_itm_flashlight.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
-[ext_resource path="res://assets/prefabs/pre_obj_shelfside.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprites/tilesets/ts_real.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/prefabs/objects/pre_obj_chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/objects/pre_obj_shelf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/objects/pre_obj_boxes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/textures/lights/tx_glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/prefabs/objects/pre_obj_shelfside.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -59,7 +58,6 @@ __meta__ = {
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 dreamset = ExtResource( 1 )
-decayset = ExtResource( 5 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
 tile_set = ExtResource( 1 )
@@ -103,18 +101,11 @@ __meta__ = {
 [node name="Player" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
 position = Vector2( 421, 368 )
 
-[node name="Flashlight" parent="PlaneManager/Overworld/Player" instance=ExtResource( 9 )]
-visible = false
-
 [node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
 position = Vector2( 224, 160 )
-decayX = 55
-decayY = 13
 
 [node name="Shelf2" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
 position = Vector2( 280, 160 )
-decayX = 54
-decayY = 39
 
 [node name="Shelf3" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
 position = Vector2( 336, 160 )
@@ -135,19 +126,15 @@ position = Vector2( 200, 232 )
 
 [node name="Shelfside2" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
 position = Vector2( 408, 288 )
-decayY = -8
 
 [node name="Shelfside3" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
 position = Vector2( 408, 216 )
-decayX = -5
 
 [node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 280, 360 )
 
 [node name="Chair2" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 264, 360 )
-decayX = -51
-decayY = -12
 
 [node name="Chair3" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 304, 360 )
@@ -157,9 +144,6 @@ position = Vector2( 320, 360 )
 
 [node name="Chair5" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 344, 360 )
-decayY = 18
 
 [node name="Chair6" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 360, 360 )
-decayX = 1
-decayY = 11
