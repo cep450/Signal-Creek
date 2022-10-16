@@ -1,18 +1,13 @@
+VAR currentPartyChar = "THE PARTY"
 
-# VAR leadDivert = 1
-# (
-#lead divert
- -> suwanTeeth
- # nonLeadDivert
- -> nourAndNickTeeth
-
-== nourAndNickTeeth == 
 It's one of those chattering teeth that kids used to play with back in the day.
-->END
+{currentPartyChar == "MS SUWAN":
+    -> suwanTeeth
+}
+    -> END
+
 == suwanTeeth == 
-It's one of those chattering teeth that kids used to play with back in the day.
-
-Ms.Suwan gazes on them longingly, struck by their dated appearance.
+Ms. Suwan gazes on them longingly, struck by their dated appearance.
 
 ** [Pick up the Teeth] -> TakeTeeth
 ** [Pull Away] -> PullAway
@@ -23,9 +18,7 @@ They call out to her, longing for her to play with them.
 ** [Pick up the Teeth] -> TakeTeeth
 ** [Walk Away] -> WalkAway
 ==TakeTeeth==
-#bool tookTeeth = true;
-# plane switching occurs
-In a blink of an eye, the once yellowed children's toy is now vibrant and shiny as if it was recently made.
+&In a blink of an eye, the once yellowed children's toy is now vibrant and shiny as if it was recently made.
 
 Almost instinctually, she places her fingers on the handle attempting to wind it up, curious to see if it still works. 
 
@@ -40,8 +33,8 @@ As she gazes down upon the chattering toy, her muscles slowly relax and her stra
 
 ==PutBack==
 
-She slowly places the toy back onto the dusty shelf, exactly in the place she found it as if it was never touched. -> WalkAway
-#call plane shifting here 
+&She slowly places the toy back onto the dusty shelf, exactly in the place she found it as if it was never touched. -> WalkAway
+
 ==WalkAway==
 Taking a step back, she gazes at the rusted toy one final time before stepping away from the shelf she found it.
 -> END

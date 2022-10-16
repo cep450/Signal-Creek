@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/scripts/g_obj_shiftable.gd" type="Script" id=1]
 [ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/objects/sprsheet_obj_warmsubject_real.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/objects/sprsheet_obj_warmsubject_dream.png" type="Texture" id=4]
+[ext_resource path="res://assets/ink/Teeth.ink" type="Resource" id=5]
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 16, 6.5 )
+extents = Vector2( 6, 1.5 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 20, 14 )
+extents = Vector2( 10, 8 )
 
 [node name="TEETH" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
@@ -22,21 +23,21 @@ realsheet = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
-position = Vector2( 0, -8 )
+position = Vector2( 0, -7 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 48, 111, 32, 17 )
+region_rect = Rect2( 49, 97, 15, 15 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
 light_mask = 4
 texture = ExtResource( 3 )
-offset = Vector2( 0, -8 )
+offset = Vector2( 0, -7 )
 region_enabled = true
-region_rect = Rect2( 48, 111, 32, 17 )
+region_rect = Rect2( 49, 97, 15, 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -6.5 )
+position = Vector2( 1, -1.5 )
 shape = SubResource( 21 )
 
 [node name="ActiveArea" type="Area2D" parent="."]
@@ -45,9 +46,9 @@ __meta__ = {
 "_editor_description_": "NOTES: change this to JUST be the activearea and add as a child to static objects
 "
 }
+inkFile = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
-position = Vector2( 0, -5 )
 shape = SubResource( 24 )
 
 [connection signal="body_entered" from="ActiveArea" to="ActiveArea" method="_on_InteractArea_body_entered"]

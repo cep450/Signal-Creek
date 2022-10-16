@@ -104,7 +104,7 @@ position = Vector2( 81, 88 )
 position = Vector2( 305, 96 )
 
 [node name="SHIRTS" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
-position = Vector2( 257, 80 )
+position = Vector2( 134, 172 )
 
 [node name="TEETH" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
 position = Vector2( 281, 177 )
