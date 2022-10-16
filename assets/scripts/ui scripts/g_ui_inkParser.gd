@@ -39,14 +39,9 @@ var currentChoiceEntryDiverts #current choice buttons
 func _ready():
 	delete_children(vbox) #delete placeholders
 	panel.set_visible(false) #hide for now
-	player.LoadStory() #tell ink player to load story resource
-	
-	#TODO: Ask party function for current character! for now, it's just set here by me being silly
-	player.SetVariable("currentPartyChar", "NICK")
 	
 	if talk:
 		Gamevars.mode = "talk"
-
 
 func _process(_delta):
 	if Gamevars.mode == "talk":
@@ -205,3 +200,7 @@ func set_current_name(source):
 
 func load_story(inkFile):
 	player.LoadStory(inkFile)
+	print(Gamevars.party.get_partymember())
+	print("running")
+	player.SetVariable("currentPartyChar", Gamevars.party.get_partymember())
+
