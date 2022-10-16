@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/scenes/controlsreference.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Portraits.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/prefabs_ui/Portraits.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox.tscn" type="PackedScene" id=6]
 
 [node name="UserInterface" type="Control"]
