@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/ts_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/prefabs/characters/party/pre_char_party.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/prefabs/warmsubject/Chair.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/lights/tx_glow_128.png" type="Texture" id=10]
 [ext_resource path="res://assets/prefabs/warmsubject/obj_SHELF.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/prefabs/warmsubject/obj_KIDAMOGUS.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/prefabs/characters/pre_char_SALESASSOC.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -97,20 +99,32 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
-position = Vector2( 81, 88 )
+[node name="KID AMOGUS" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
+position = Vector2( 96, 232 )
+
+[node name="SALESASSOCIATE" parent="PlaneManager/Overworld" instance=ExtResource( 13 )]
+position = Vector2( 304, 128 )
 
 [node name="SHELF" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
-position = Vector2( 305, 96 )
+position = Vector2( 136, 96 )
+
+[node name="SHELF2" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 248, 96 )
+
+[node name="SHELF3" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 192, 96 )
+
+[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
+position = Vector2( 67, 92 )
 
 [node name="SHIRTS" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 134, 172 )
 
 [node name="TEETH" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
-position = Vector2( 281, 177 )
+position = Vector2( 200, 176 )
 
 [node name="HALLOWEENDECOR" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
-position = Vector2( 236, 182 )
+position = Vector2( 256, 176 )
 
 [node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
-position = Vector2( 143, 101 )
+position = Vector2( 143, 122 )

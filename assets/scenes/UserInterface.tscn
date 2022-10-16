@@ -21,6 +21,7 @@ __meta__ = {
 }
 
 [node name="controls" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="DialogueBox" parent="." instance=ExtResource( 6 )]
 

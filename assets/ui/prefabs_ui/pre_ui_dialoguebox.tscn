@@ -4,7 +4,7 @@
 [ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=2]
 [ext_resource path="res://assets/ui/themes/dialoguebox.tres" type="Theme" id=3]
 [ext_resource path="res://assets/scripts/ui scripts/g_ui_inkParser.gd" type="Script" id=4]
-[ext_resource path="res://assets/ink/antibodies.ink" type="Resource" id=5]
+[ext_resource path="res://assets/ink/prototype/antibodies.ink" type="Resource" id=5]
 [ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_dialogue.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_choice.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sounds/uisounds/newentry.wav" type="AudioStream" id=8]

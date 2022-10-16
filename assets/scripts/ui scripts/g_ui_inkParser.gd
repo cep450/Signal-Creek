@@ -48,7 +48,7 @@ func _ready():
 func _process(_delta):
 	if Gamevars.mode == "talk":
 		if displayingChoices:
-			if Input.is_action_just_released("choice_select_down"): #going through choices
+			if Input.is_action_just_released("ui_down"): #going through choices
 				
 				#this block is for highlighting the selected choice
 				currentChoiceEntryDiverts[currentDivert].set_highlighted(false)
@@ -56,6 +56,18 @@ func _process(_delta):
 				
 				if currentDivert >= choiceArray.size():
 					currentDivert = 0
+					
+				currentChoiceEntryDiverts[currentDivert].set_highlighted(true)
+				
+				play_sound(choiceSelectSound)
+			if Input.is_action_just_released("ui_up"): #going through choices
+				
+				#this block is for highlighting the selected choice
+				currentChoiceEntryDiverts[currentDivert].set_highlighted(false)
+				currentDivert -= 1
+				
+				if currentDivert < 0:
+					currentDivert = choiceArray.size() - 1
 					
 				currentChoiceEntryDiverts[currentDivert].set_highlighted(true)
 				
