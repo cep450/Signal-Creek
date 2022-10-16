@@ -27,17 +27,17 @@ scale = Vector2( 1, 1.04762 )
 texture = ExtResource( 4 )
 normal_map = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 103, 89, 27, 18 )
+region_rect = Rect2( 103, 83, 27, 24 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
 light_mask = 4
-scale = Vector2( 1.04167, 0.813348 )
+scale = Vector2( 1.0625, 0.813348 )
 texture = ExtResource( 3 )
 normal_map = ExtResource( 3 )
 offset = Vector2( 0, -10 )
 region_enabled = true
-region_rect = Rect2( 131, 82, 24, 21 )
+region_rect = Rect2( 104, 83, 24, 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, -6 )
