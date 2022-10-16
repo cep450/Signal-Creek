@@ -24,6 +24,10 @@ glow_blend_mode = 0
 glow_hdr_luminance_cap = 20.0
 
 [node name="Level" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -76,8 +80,8 @@ __meta__ = {
 }
 
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 192, 160 )
-scale = Vector2( 3, 2.5 )
+position = Vector2( 232, 160 )
+scale = Vector2( 3.625, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
@@ -140,7 +144,7 @@ realX = 38
 realY = -2
 
 [node name="HALLOWEEN" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
-position = Vector2( 264, 192 )
+position = Vector2( 220, 166 )
 
 [node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
 position = Vector2( 143, 122 )
