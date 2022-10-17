@@ -174,7 +174,7 @@ func create_choiceEntry(choices):
 			#$ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
 			var textSubstring = option.split(":", false)[1].strip_escapes()
 			
-			newText = '[color=#' + colorCode.to_html() + '][b]' + nameSubstring + ':[/b][/color]' + textSubstring 
+			newText =  '[color=#' + colorCode.to_html() + '][b]' + nameSubstring + ':[/b][/color]' + textSubstring 
 		else:
 			newText = '[' + option + ']'
 		
