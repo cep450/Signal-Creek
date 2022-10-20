@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tx_glow_128.png-06c3a627e8de9b5f85d0d5d0b619954b.stex"
+path="res://.import/hardglow_64.png-a3109b009bca5f2ec200456cfbc56ed6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/lights/tx_glow_128.png"
-dest_files=[ "res://.import/tx_glow_128.png-06c3a627e8de9b5f85d0d5d0b619954b.stex" ]
+source_file="res://assets/textures/lights/hardglow_64.png"
+dest_files=[ "res://.import/hardglow_64.png-a3109b009bca5f2ec200456cfbc56ed6.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

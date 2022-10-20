@@ -10,10 +10,10 @@ onready var player = $InkPlayer #ink player; interfaces with ink runtime
 onready var audioPlayer = $AudioStreamPlayer #audio player
 
 #preload prefab resources
-var textEntry = preload("res://assets/ui/prefabs_ui/dialoguebox_entry.tscn")
-var dialogueEntry = preload("res://assets/ui/prefabs_ui/dialoguebox_entry_dialogue.tscn")
-var choiceEntry = preload("res://assets/ui/prefabs_ui/dialoguebox_entry_choice.tscn")
-var divert = preload("res://assets/ui/prefabs_ui/dialoguebox_entry_choice_divert.tscn")
+var textEntry = preload("res://assets/ui/prefabs/dialoguebox_entry.tscn")
+var dialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entry_dialogue.tscn")
+var choiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entry_choice.tscn")
+var divert = preload("res://assets/ui/prefabs/dialoguebox_entry_choice_divert.tscn")
 
 #sounds
 export var choiceSelectSound : AudioStreamSample #scrolling through choices
@@ -38,7 +38,6 @@ func _ready():
 	panel.set_visible(false) #hide for now
 	player.LoadStory()
 
-	
 	if talk:
 		Gamevars.mode = "talk"
 
