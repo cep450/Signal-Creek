@@ -39,7 +39,8 @@ var currentChoiceEntryDiverts #current choice buttons
 func _ready():
 	delete_children(vbox) #delete placeholders
 	panel.set_visible(false) #hide for now
-	player.LoadStory() #tell ink player to load story resource
+	player.LoadStory()
+
 	
 	if talk:
 		Gamevars.mode = "talk"
@@ -47,7 +48,7 @@ func _ready():
 func _process(_delta):
 	if Gamevars.mode == "talk":
 		if displayingChoices:
-			if Input.is_action_just_released("choice_select_down"): #going through choices
+			if Input.is_action_just_released("ui_down"): #going through choices
 				
 				#this block is for highlighting the selected choice
 				currentChoiceEntryDiverts[currentDivert].set_highlighted(false)
@@ -55,6 +56,18 @@ func _process(_delta):
 				
 				if currentDivert >= choiceArray.size():
 					currentDivert = 0
+					
+				currentChoiceEntryDiverts[currentDivert].set_highlighted(true)
+				
+				play_sound(choiceSelectSound)
+			if Input.is_action_just_released("ui_up"): #going through choices
+				
+				#this block is for highlighting the selected choice
+				currentChoiceEntryDiverts[currentDivert].set_highlighted(false)
+				currentDivert -= 1
+				
+				if currentDivert < 0:
+					currentDivert = choiceArray.size() - 1
 					
 				currentChoiceEntryDiverts[currentDivert].set_highlighted(true)
 				
@@ -82,6 +95,10 @@ func _proceed():
 		
 		var currentLine = player.get_CurrentText() #get current text from ink player
 		
+		if currentLine.substr(0, 1) == "&":
+			Gamevars.planeManager.shiftPlane()
+			currentLine = currentLine.trim_prefix('&')
+			
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
 			print("checked")
 			set_current_name(currentLine.substr(1).strip_escapes())
@@ -102,6 +119,7 @@ func _proceed():
 	scroll.set_v_scroll(scroll.get_v_scrollbar().max_value)
 
 func displayChoices():
+	player.SetVariable("currentPartyChar", Gamevars.party.get_partymember())
 	choiceArray = player.get_CurrentChoices() #get current choices from ink
 	
 	create_choiceEntry(choiceArray)
@@ -156,7 +174,7 @@ func create_choiceEntry(choices):
 			#$ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
 			var textSubstring = option.split(":", false)[1].strip_escapes()
 			
-			newText = '[color=#' + colorCode.to_html() + '][b]' + nameSubstring + ':[/b][/color]' + textSubstring 
+			newText =  '[color=#' + colorCode.to_html() + '][b]' + nameSubstring + ':[/b][/color]' + textSubstring 
 		else:
 			newText = '[' + option + ']'
 		
@@ -194,3 +212,10 @@ func set_current_name(source):
 	currentName = source
 	currentColor = $ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
 	pass
+
+func load_story(inkFile):
+	player.LoadStory(inkFile)
+	print(Gamevars.party.get_partymember())
+	print("running")
+	player.SetVariable("currentPartyChar", Gamevars.party.get_partymember())
+

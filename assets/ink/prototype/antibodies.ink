@@ -1,8 +1,8 @@
 //This placeholder ink is for designing the Ink interpreter script in godot. :EXAMPLE: will be used for parsing choice labels
-
+VAR currentPartyChar = "PARTY"
 KID AMOGUS: Hey. Getting the vaccine made me realize how I want another shot with you. Choosing between Pfizer and Moderna was easy but I don’t think I could pick anyone over you.
 
-:NOUR:
+:{currentPartyChar}:
 * [Rolls eyes.]Nour rolls her eyes, sexily.
 	-> antibodies
 * [Growls.]Nour growls, sexily.
@@ -25,7 +25,7 @@ KID AMOGUS: You don’t have to reply.
 
 ==plan==
 
-KID AMOGUS: "That's the plan!"
+&KID AMOGUS: "That's the plan!"
 
 	-> END
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprsheet_obj_proposal_real.png-46e51488eb737587f5cbb9cf2f117fad.stex"
+path="res://.import/nickportrait.png-0dc3030cf4004700517dccfa978cfc9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/sprsheet_obj_proposal_real.png"
-dest_files=[ "res://.import/sprsheet_obj_proposal_real.png-46e51488eb737587f5cbb9cf2f117fad.stex" ]
+source_file="res://assets/sprites/characters/portraits/nickportrait.png"
+dest_files=[ "res://.import/nickportrait.png-0dc3030cf4004700517dccfa978cfc9d.stex" ]
 
 [params]
 

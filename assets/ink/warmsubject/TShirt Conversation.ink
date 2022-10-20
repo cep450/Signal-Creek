@@ -1,28 +1,32 @@
-// 1-34 PERTAIN TO REAL WORLD SHIRT RACK INTERACTION
-// if controlling Nick
--> NickTShirtRack
-// if controlling Noir and Ms. Suwan
--> NoirSuwanTShirtRack
+VAR currentPartyChar = "THE PARTY"
+VAR currentPlane = "REAL"
+VAR hasShirt = false
 
-=== NoirSuwanTShirtRack ===
-It's a clothing rack, full of bright, colorful t-shirts all pertaining to today's warmest trends. 
--> END
+//TODO: make hasshirt work
+
+// 1-34 PERTAIN TO REAL WORLD SHIRT RACK INTERACTION
+
+It's a clothing rack, full of bright, colorful t-shirts all pertaining to today's warmest trends.
+{currentPartyChar == "NICK":
+    -> NickTShirtRack
+}
+    -> END
 
 === NickTShirtRack ===
-It's a clothing rack, full of bright, colorful t-shirts. 
-
 They grab Nick's attention instantly, drawing him in, calling to some deep primal part of his heart.
-* [ Reach out for the shirt ] -> TakeShirt
-* [ Pull Away ] -> PullAwayNoShirt
+
+:NICK:
+* [Reach out for the shirt] -> TakeShirt
+* [Pull Away] -> PullAwayNoShirt
 
 === TakeShirt ===
-// boolean - has shirt is true
 Tantalizing colors, soft fabrics he could never have, designs that all seem to vie for his attention; his hand passes through them all, reaching deep into the mass of clothing, as if guided by some otherworldly force.
 
 He swears he can feel himself enveloped in the warm embrace.
+& //shift plane
 
-// call plane shift here, and once it is over allow player to -> PullAwayShirt
-* [Pull Away ] -> PullAwayShirt
+:NICK:
+* [Pull Away] -> PullAwayShirt
 
 === PullAwayNoShirt ===
 He cannot. It is calling for him. He won't ignore it's pitiful keen, will he? How cruel of him to.
@@ -34,21 +38,26 @@ The world feels different now, the shirt in his hands heavy, a comfortable weigh
 He steps away from the clothing rack, triumphant. 
 -> END 
 
-// 36-NUMBER HERE PERTAIN TO DREA WORLD RACK INTERACTION
-// if controlling Nick
--> NickTShirtDreamRack
-// if controlling Noir and Ms.Suwan
--> NoirSuwanTShirtDreamRack
+// EVERYTHING BELOW IS DREAM WORLD RACK INTERACTION
+
+=== DreamStart ===
+It's a clothing rack, full of bright, colorful t-shirts all pertaining to today's warmest trends.
+{currentPartyChar == "NICK":
+    -> NickTShirtDreamRack
+}
+    -> NoirSuwanTShirtDreamRack
 
 === NickTShirtDreamRack ===
-They still call to him, his vision swimming with the patterns of their designs. 
+They still call to Nick, his vision swimming with the patterns of their designs.
+
+:NICK:
 * [ Reach out for another shirt ] -> TakeShirtDream
 * [ Pull Away ] -> PullAwaySuccessful
 
 === TakeShirtDream ===
 // boolean - hasshirt is false
-He takes another shirt, grabbing for its incoporeal form, but his hand seems to pass through it. He can't get a hold of it, none of the shirts want to be his. He has the one and only.
-// call plane shift here and return to real world, Nick's shirt disappearing 
+Nick takes another shirt, grabbing for its incoporeal form, but his hand seems to pass through it. He can't get a hold of it, none of the shirts want to be his. He has the one and only.
+& //shift plane
 -> END
 
 === PullAwaySuccessful

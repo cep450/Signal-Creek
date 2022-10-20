@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprsheet_obj_warmsubject_real_max.png-0ab22b4b2c6d6c0d936046605c45c2ac.stex"
+path="res://.import/Clerk.png-0157d8339967078e8bdd89022758c46c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/sprsheet_obj_warmsubject_real_max.png"
-dest_files=[ "res://.import/sprsheet_obj_warmsubject_real_max.png-0ab22b4b2c6d6c0d936046605c45c2ac.stex" ]
+source_file="res://assets/sprites/characters/Clerk.png"
+dest_files=[ "res://.import/Clerk.png-0157d8339967078e8bdd89022758c46c.stex" ]
 
 [params]
 
