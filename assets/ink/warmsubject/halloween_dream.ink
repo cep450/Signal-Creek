@@ -1,8 +1,10 @@
 VAR currentPartyChar = "THE PARTY"
+
 There is a large, strange decoration on the shelf with a spooky orange and black hue. Because of the color pallete, it seems like it's a Halloween decoration. Otherwise, though, it's too hard to tell what it's supposed to be. It has legs, eyes, and a planty growth covering the rest of it. If one didn't know better, it might look a little... alive.
 
 :THE PARTY:
- * NOUR: [Takes a closer look.] -> nourspeak
+ * NOUR: [Takes a closer look.]
+    -> nourspeak
  * NICK: "I saw one of those last year."
     -> nickspeak
  * MS SUWAN: "I've never celebrated Halloween."
