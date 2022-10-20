@@ -35,5 +35,9 @@ func _process(_delta):
 		if overlay.color.a > 0: #decrease overlay alpha to fade-in
 			overlay.color.a -=.1
 
-
-
+func pixel_perfect(delta):
+	var cam_pos = Vector2(clamp(following.global_position.x, cam_min.x, cam_max.x), clamp(following.global_position.y, cam_min.y, cam_max.y))
+	actual_cam_pos = lerp(actual_cam_pos, cam_pos, lerpSpeed * delta)
+	var cam_subpixel_pos = actual_cam_pos.round() - actual_cam_pos
+	global_position = actual_cam_pos.round()
+	return cam_subpixel_pos
