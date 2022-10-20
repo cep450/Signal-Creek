@@ -14,7 +14,6 @@
 [ext_resource path="res://assets/prefabs/warmsubject/obj_KIDAMOGUS.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/prefabs/characters/pre_char_SALESASSOC.tscn" type="PackedScene" id=13]
 
-
 [sub_resource type="Environment" id=1]
 background_mode = 4
 tonemap_mode = 2
@@ -22,7 +21,8 @@ glow_enabled = true
 glow_levels/2 = true
 glow_bloom = 0.06
 glow_blend_mode = 0
-glow_hdr_luminance_cap = 20.0
+glow_hdr_threshold = 0.0
+glow_hdr_luminance_cap = 0.0
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -41,8 +41,7 @@ editor_draw_screen = false
 script = ExtResource( 4 )
 following = NodePath("../PlaneManager/Overworld/PARTY/NOUR")
 lerpSpeed = 8
-camera_bounds_max = Vector2( 384, 320 )
-window_scale = 6
+camera_bounds_max = Vector2( 464, 320 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 margin_left = -352.0

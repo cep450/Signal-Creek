@@ -10,7 +10,7 @@ export(Vector2) var camera_bounds_min
 export(Vector2) var camera_bounds_max
 
 #scale camera proportionally
-export var window_scale : int = 2
+export var window_scale : int = 3
 onready var game_size := Vector2((OS.window_size / window_scale).x, (OS.window_size / window_scale).y)
 onready var actual_cam_pos := global_position
 
@@ -28,6 +28,7 @@ func _ready():
 		fadingIn = true
 		overlay.color.a = 1 #solid black
 
+
 func _process(_delta):
 	if fadingIn: #ok i know there's a way to make this more efficient but idk coroutines in godot
 		yield(get_tree().create_timer(0.6), "timeout") #pause before fading in
@@ -40,4 +41,11 @@ func pixel_perfect(delta):
 	actual_cam_pos = lerp(actual_cam_pos, cam_pos, lerpSpeed * delta)
 	var cam_subpixel_pos = actual_cam_pos.round() - actual_cam_pos
 	global_position = actual_cam_pos.round()
+	
 	return cam_subpixel_pos
+
+func rescale_camera(windowscale):
+	window_scale = windowscale
+	game_size = Vector2((OS.window_size / window_scale).x, (OS.window_size / window_scale).y)
+	cam_min = Vector2(camera_bounds_min.x + game_size.x /2 + 1, camera_bounds_min.y + game_size.y /2 + 1)
+	cam_max = Vector2(camera_bounds_max.x - game_size.x /2 -1, camera_bounds_max.y - game_size.y /2 - 1)

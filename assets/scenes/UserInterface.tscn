@@ -6,32 +6,38 @@
 [ext_resource path="res://assets/ui/prefabs/popupDialogue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ui/prefabs/dialoguebox.tscn" type="PackedScene" id=6]
 
-
 [node name="UserInterface" type="Control"]
 margin_right = 960.0
 margin_bottom = 540.0
-rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 960.0
+margin_bottom = 540.0
 border_color = Color( 1, 1, 1, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="DialogueBox" parent="ReferenceRect" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 944.0
+margin_bottom = 540.0
+
+[node name="Portraits" parent="ReferenceRect" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 960.0
+margin_bottom = 540.0
+
 [node name="controls" parent="." instance=ExtResource( 1 )]
 visible = false
-
-[node name="DialogueBox" parent="." instance=ExtResource( 6 )]
 
 [node name="Interact_Indicator" parent="." instance=ExtResource( 3 )]
 visible = false
 
 [node name="PopupDialogue" parent="." instance=ExtResource( 4 )]
 visible = false
-
-[node name="Portraits" parent="." instance=ExtResource( 2 )]
