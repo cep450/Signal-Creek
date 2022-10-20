@@ -41,4 +41,3 @@ gui_disable_input = true
 
 [node name="UserInterface" parent="." instance=ExtResource( 3 )]
 light_mask = 32
-rect_scale = Vector2( 1, 1 )

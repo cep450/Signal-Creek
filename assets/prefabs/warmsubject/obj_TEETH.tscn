@@ -4,8 +4,7 @@
 [ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_real.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_dream.png" type="Texture" id=4]
-[ext_resource path="res://assets/ink/warmsubject/Teeth.ink" type="Resource" id=5]
-
+[ext_resource path="res://assets/ink/warmsubject/teeth.ink" type="Resource" id=5]
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 6, 1.5 )
@@ -47,7 +46,8 @@ __meta__ = {
 "_editor_description_": "NOTES: change this to JUST be the activearea and add as a child to static objects
 "
 }
-inkFile = ExtResource( 5 )
+inkFileDream = ExtResource( 5 )
+inkFileReal = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 shape = SubResource( 24 )

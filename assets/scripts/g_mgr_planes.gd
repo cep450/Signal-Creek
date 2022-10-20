@@ -24,9 +24,11 @@ func _physics_process(_delta):
 func shiftPlane():
 	if Gamevars.dream:
 		Gamevars.dream = false
+		Gamevars.plane = "real"
 		set_tilesets(realset)
 	else:
 		Gamevars.dream = true
+		Gamevars.plane = "dream"
 		set_tilesets(dreamset)
 
 func set_tilesets(setId):

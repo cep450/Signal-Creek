@@ -46,7 +46,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-inkFile = ExtResource( 5 )
+inkFileDream = ExtResource( 5 )
+inkFileReal = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 position = Vector2( 0, -8 )
