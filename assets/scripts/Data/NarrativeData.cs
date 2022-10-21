@@ -52,7 +52,6 @@ public class NarrativeData : Resource {
 
 
 
-
 	//TODO how and where to store this name stuff?
 	//TODO cap sensitive or not? 
 	/*

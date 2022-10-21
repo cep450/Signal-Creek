@@ -10,3 +10,6 @@ EXTERNAL partyLeader()
 	
 === function testInternal() ===
 	~ return "hello from inkside"
+
+
+VAR someExternalString = "hello from another file"

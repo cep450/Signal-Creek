@@ -9,6 +9,7 @@ export var speed : float
 onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
 
+
 func _physics_process(_delta):
 	if Gamevars.mode == "walk":
 		read_input()
