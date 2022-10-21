@@ -33,10 +33,20 @@ var currentDivert = 0 #index of selected choice in choice array
 var currentDivertEntry #currently displaying node of choice buttons
 var currentChoiceEntryDiverts #current choice buttons
 
+#InkLinker links ink with C# and gdscript functions 
+var inkLinker = preload("res://assets/scripts/InkLinker.cs")
+
+
 func _ready():
 	delete_children(vbox) #delete placeholders
 	panel.set_visible(false) #hide for now
-	player.LoadStory()
+	player.LoadStory() #tell ink player to load story resource
+
+	#load variable values from external storage
+	inkLinker.SetVariableValues(player);
+
+	#bind custom external functions between ink and C#
+	inkLinker.BindExternalFunctions(player);
 
 	if talk:
 		Gamevars.mode = "talk"
