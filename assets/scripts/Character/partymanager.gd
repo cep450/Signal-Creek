@@ -20,7 +20,7 @@ func _process(_delta):
 
 func set_partymember(charIndex):
 	self.currentIndex = charIndex
-	Gamevars.portrait.set_texture(portraits[currentIndex])
+	Globals.portrait.set_texture(portraits[currentIndex])
 	
 func get_partymember():
 	return self.partyMembers[currentIndex]

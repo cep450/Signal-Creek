@@ -22,13 +22,11 @@ func _physics_process(_delta):
 
 #change TileMaps to specified TileSet
 func shiftPlane():
-	if Gamevars.dream:
-		Gamevars.dream = false
-		Gamevars.plane = "real"
+	if Globals.world == Enums.World.DREAM:
+		Globals.world = Enums.World.REAL
 		set_tilesets(realset)
 	else:
-		Gamevars.dream = true
-		Gamevars.plane = "dream"
+		Globals.world = Enums.World.DREAM
 		set_tilesets(dreamset)
 
 func set_tilesets(setId):
@@ -38,7 +36,7 @@ func set_tilesets(setId):
 	move_objs()
 
 func set_obj_sprites():
-	if Gamevars.dream:
+	if Globals.world == Enums.World.DREAM:
 		for node in objects:
 			node.set_sheet(node.dreamsheet)
 	else:
@@ -47,7 +45,7 @@ func set_obj_sprites():
 	pass
 
 func move_objs():
-	if Gamevars.dream:
+	if Globals.world == Enums.World.DREAM:
 		for node in objects:
 			node.set_pos(node.dreampos)
 	else:

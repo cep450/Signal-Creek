@@ -49,10 +49,10 @@ func _ready():
 	inkLinker.BindExternalFunctions(player);
 
 	if talk:
-		Gamevars.mode = "talk"
+		Globals.mode = Enums.Mode.TALK
 
 func _process(_delta):
-	if Gamevars.mode == "talk":
+	if Globals.mode == Enums.Mode.TALK:
 		if displayingChoices:
 			if Input.is_action_just_released("ui_down"): #going through choices
 				
@@ -102,7 +102,7 @@ func _proceed():
 		var currentLine = player.get_CurrentText() #get current text from ink player
 		
 		if currentLine.substr(0, 1) == "&":
-			Gamevars.planeManager.shiftPlane()
+			Globals.planeManager.shiftPlane()
 			currentLine = currentLine.trim_prefix('&')
 			
 		if currentLine.substr(0, 1) == ":": #this is a name for the choice entry nametag; not an entry to put in
@@ -125,7 +125,7 @@ func _proceed():
 	scroll.set_v_scroll(scroll.get_v_scrollbar().max_value)
 
 func displayChoices():
-	player.SetVariable("currentPartyChar", Gamevars.party.get_partymember())
+	player.SetVariable("currentPartyChar", Globals.party.get_partymember())
 	choiceArray = player.get_CurrentChoices() #get current choices from ink
 	
 	create_choiceEntry(choiceArray)
@@ -206,7 +206,7 @@ func clear_and_reset():
 	#keep these, they're specific to the UI nodes
 	panel.set_visible(false)
 	delete_children(vbox)
-	Gamevars.mode = "walk"
+	Globals.mode = Enums.Mode.WALK
 
 #play sound (doesn't loop)
 func play_sound(soundName):
@@ -221,6 +221,6 @@ func set_current_name(source):
 
 func load_story(inkFile):
 	player.LoadStory(inkFile)
-	print(Gamevars.party.get_partymember())
+	print(Globals.party.get_partymember())
 	print("running")
-	player.SetVariable("currentPartyChar", Gamevars.party.get_partymember())
+	player.SetVariable("currentPartyChar", Globals.party.get_partymember())
