@@ -16,12 +16,12 @@ var choiceEntry = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_c
 var divert = preload("res://assets/ui/prefabs_ui/pre_ui_dialoguebox_entry_choice_divert.tscn")
 
 #sounds
+#TODO move these 
 export var choiceSelectSound : AudioStreamSample #scrolling through choices
 export var choiceEntrySound : AudioStreamSample #when a new choice entry appears
 export var newEntrySound : AudioStreamSample #when a new entry or dialogue entry appears
 
 #TODO: add variable for "current story"; interactive object will notify this script of what its ink story is
-
 
 export var talk : bool #for isolated testing purposes; default to false for full game
 
@@ -36,10 +36,20 @@ var currentDivert = 0 #index of selected choice in choice array
 var currentDivertEntry #currently displaying node of choice buttons
 var currentChoiceEntryDiverts #current choice buttons
 
+#InkLinker links ink with C# and gdscript functions 
+var inkLinker = preload("res://assets/scripts/InkLinker.cs")
+
+
 func _ready():
 	delete_children(vbox) #delete placeholders
 	panel.set_visible(false) #hide for now
 	player.LoadStory() #tell ink player to load story resource
+
+	#load variable values from external storage
+	inkLinker.SetVariableValues(player);
+
+	#bind custom external functions between ink and C#
+	inkLinker.BindExternalFunctions(player);
 	
 	if talk:
 		Gamevars.mode = "talk"

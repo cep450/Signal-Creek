@@ -8,9 +8,9 @@ public class Character : Node2D
 		Can be moved by input or pathfinding and animates and updates sprites accordingly.
 	*/
 	
-	
 	static readonly int moraleMax = 3;
 	int morale = moraleMax;
+	string inkName = "ERR NO NAME";
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -63,5 +63,12 @@ public class Character : Node2D
 	}
 	private void MoraleDepleted() {
 		//TODO: what happens when morale runs out?
+	}
+
+	public void SetInkName(string name) {
+		inkName = name;
+	}
+	public string InkName() {
+		return inkName;
 	}
 }

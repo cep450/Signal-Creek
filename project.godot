@@ -21,7 +21,8 @@ default_bus_layout=""
 
 [autoload]
 
-Gamevars="*res://assets/scripts/g_mgr_gamevars.gd"
+Gamevars="*res://assets/scripts/g_mgr_globalvars.gd"
+Party="*res://assets/scripts/Character/Party.cs"
 
 [display]
 
