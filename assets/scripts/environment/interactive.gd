@@ -10,16 +10,16 @@ var canInteract = false #whether you can interact
 func _process(_delta):
 	if canInteract:
 		if Input.is_action_just_pressed("interact"):
-			if Gamevars.mode == "walk":
-				Gamevars.mode = "talk"
+			if Globals.mode == Enums.Mode.WALK:
+				Globals.mode = Enums.Mode.TALK
 				
-				if Gamevars.plane == "dream" && inkFileDream:
-					Gamevars.dialoguebox.load_story(inkFileDream)
+				if Globals.world == Enums.World.DREAM && inkFileDream:
+					Globals.dialoguebox.load_story(inkFileDream)
 					
-				elif Gamevars.plane == "real" && inkFileReal:
-					Gamevars.dialoguebox.load_story(inkFileReal)
+				elif Globals.world == Enums.World.REAL && inkFileReal:
+					Globals.dialoguebox.load_story(inkFileReal)
 					
-				Gamevars.dialoguebox.panel.set_visible(true)
+				Globals.dialoguebox.panel.set_visible(true)
 
 func _on_InteractArea_body_entered(body):
 	if body.is_in_group("Player"):

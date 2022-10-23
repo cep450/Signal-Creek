@@ -11,10 +11,11 @@ var idle : String = "DownIdle"
 
 
 func _physics_process(_delta):
-	if Gamevars.mode == "walk":
+	if Globals.mode == Enums.Mode.WALK:
 		read_input()
 		
 		animPlayer.play(idle)
+		
 
 func read_input():
 	velocity = Vector2()

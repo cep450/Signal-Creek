@@ -10,10 +10,10 @@ export var camWidth : int = 320
 export var camHeight : int = 180
 
 func _ready():
-	Gamevars.dialoguebox = $UserInterface/ReferenceRect/DialogueBox
-	Gamevars.planeManager = $ViewportContainer/Viewport/Level/PlaneManager
-	Gamevars.party = $ViewportContainer/Viewport/Level/PlaneManager/Overworld/PARTY
-	Gamevars.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/portrait
+	Globals.dialoguebox = $UserInterface/ReferenceRect/DialogueBox
+	Globals.planeManager = $ViewportContainer/Viewport/Level/PlaneManager
+	Globals.party = $ViewportContainer/Viewport/Level/PlaneManager/Overworld/PARTY
+	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/portrait
 	
 	camera.rescale_camera(floor(OS.window_size.x/camWidth))
 
