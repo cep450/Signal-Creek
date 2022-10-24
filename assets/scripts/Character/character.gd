@@ -8,7 +8,7 @@ extends KinematicBody2D
 const maxMorale = 3
 var morale = maxMorale
 
-var inkName = "ERR NO NAME ASSIGNED"
+export var inkName = "ERR NO NAME ASSIGNED"
 
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2()

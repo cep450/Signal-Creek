@@ -1,26 +1,55 @@
 extends YSort
 
-var partyMembers = ["NICK", "NOUR", "MS SUWAN"]
+var partyMembers = [Enums.Char.NICK, Enums.Char.NOUR, Enums.Char.SUWAN]
 export(Array, Texture) var portraits = []
 
-var currentIndex = 0 #an int
+var leaderIndex = 0 setget update_leader_to #Keeps track of the current leader.
 
-var partymember = partyMembers[currentIndex]
+#var partymember = partyMembers[leaderIndex]
+
+#TODO GET RID OF THESE- TEMPORARY 
+var names = ["NICK", "NOUR", "SUWAN"]
 
 func _ready():
 	pass
 
 func _process(_delta):
 	if Input.is_action_just_pressed("switch_character"):
-		currentIndex += 1
-		if currentIndex > 2:
-			currentIndex = 0
-		set_partymember(currentIndex)
+		rotate_leader_left()
+		#leaderIndex += 1
+		#if leaderIndex > 2:
+		#	leaderIndex = 0
+		#update_leader_to(leaderIndex)
 	pass
 
-func set_partymember(charIndex):
-	self.currentIndex = charIndex
-	Globals.portrait.set_texture(portraits[currentIndex])
+#called by key input- TODO
+func rotate_leader_left(): #decrease index
+	var newIndex = leaderIndex + 1
+	if newIndex > 2:
+		newIndex = 0
+	update_leader_to(newIndex)
+
+#called by key input- TODO 
+func rotate_leader_right():	#increase index
+	var newIndex = leaderIndex - 1
+	if newIndex < 0:
+		newIndex = 2
+	update_leader_to(newIndex)
+
+#called automatically whenever leaderIndex is changed, thanks to setget.
+#changes the index variable, updates UI, any other logic anywhere else using signals.
+func update_leader_to(newIndex):
+	leaderIndex = newIndex
+	Globals.portrait.set_texture(portraits[leaderIndex])
+	#TODO: send a signal that we've switched to a specific character. 
+	#TODO; camera should update as well 
 	
+func get_leader():
+	return self.partyMembers[leaderIndex]
+
+func get_leader_inkname():
+	return get_leader().inkName
+
+#TODO GET RID OF- TEMPORARY 
 func get_partymember():
-	return self.partyMembers[currentIndex]
+	return names[leaderIndex]
