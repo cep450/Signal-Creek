@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/scripts/g_obj_shiftable.gd" type="Script" id=1]
-[ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/objects/sprsheet_obj_warmsubject_real.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/objects/sprsheet_obj_warmsubject_dream.png" type="Texture" id=4]
+[ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_real.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_dream.png" type="Texture" id=4]
 [ext_resource path="res://assets/ink/warmsubject/shelves.ink" type="Resource" id=5]
 
 [sub_resource type="RectangleShape2D" id=23]
@@ -26,7 +26,7 @@ light_mask = 4
 position = Vector2( 0, -32 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 48, 15, 48, 65 )
+region_rect = Rect2( 48, 16, 48, 64 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
@@ -35,7 +35,7 @@ light_mask = 4
 texture = ExtResource( 3 )
 offset = Vector2( 0.5, -32 )
 region_enabled = true
-region_rect = Rect2( 80, 16, 48.0001, 64 )
+region_rect = Rect2( 48, 16, 48, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8 )
@@ -46,7 +46,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-inkFile = ExtResource( 5 )
+inkFileDream = ExtResource( 5 )
+inkFileReal = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 position = Vector2( 0, -8 )

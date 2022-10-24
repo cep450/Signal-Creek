@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/ts_dream.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/prefabs/pre_player_default.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/scripts/g_mgr_planes.gd" type="Script" id=3]
-[ext_resource path="res://assets/scripts/g_mgr_cam.gd" type="Script" id=4]
+[ext_resource path="res://assets/prefabs/player_default.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
+[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/tilesets/ts_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/prefabs/objects/pre_obj_chair.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/prefabs/objects/pre_obj_shelf.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/prefabs/objects/pre_obj_boxes.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/textures/lights/tx_glow_128.png" type="Texture" id=10]
-[ext_resource path="res://assets/prefabs/objects/pre_obj_shelfside.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/prefabs/objects/chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/objects/shelf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/objects/boxes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/prefabs/objects/shelfside.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
