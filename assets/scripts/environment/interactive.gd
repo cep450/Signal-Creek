@@ -13,10 +13,10 @@ func _process(_delta):
 			if Globals.mode == Enums.Mode.WALK:
 				Globals.mode = Enums.Mode.TALK
 				
-				if Globals.world == Enums.World.DREAM && inkFileDream:
+				if Globals.world == Enums.Pln.DREAM && inkFileDream:
 					Globals.dialoguebox.load_story(inkFileDream)
 					
-				elif Globals.world == Enums.World.REAL && inkFileReal:
+				elif Globals.world == Enums.Pln.REAL && inkFileReal:
 					Globals.dialoguebox.load_story(inkFileReal)
 					
 				Globals.dialoguebox.panel.set_visible(true)
