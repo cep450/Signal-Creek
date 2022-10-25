@@ -23,6 +23,8 @@ func _ready():
 		
 	if !Engine.editor_hint:
 		$Hint.visible = false
+		if (get_node_or_null("ActiveArea") != null):
+			$Sprite.material.set_shader_param("color", Color.transparent)
 
 func _process(_delta):
 	if Engine.editor_hint:
@@ -43,8 +45,10 @@ func set_hint_attributes():
 
 
 func _on_ActiveArea_can_interact():
+	$Sprite.material.set_shader_param("color", Color.white)
 	pass # Replace with function body.
 
 
 func _on_ActiveArea_cannot_interact():
+	$Sprite.material.set_shader_param("color", Color.transparent)
 	pass # Replace with function body.
