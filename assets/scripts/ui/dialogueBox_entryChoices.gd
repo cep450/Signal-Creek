@@ -1,4 +1,4 @@
-extends "res://assets/scripts/ui/dialoguebox_entry_dialogue.gd"
+extends "res://assets/scripts/ui/dialogueBox_entryDialogue.gd"
 #extend normal dialogue entry for border and nametag color setting
 
 func add_choice_child(newNode):
