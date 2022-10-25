@@ -8,9 +8,9 @@
 [ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=6]
 [ext_resource path="res://assets/ui/themes/dialoguebox.tres" type="Theme" id=7]
 [ext_resource path="res://assets/scripts/ui/charcolors.gd" type="Script" id=8]
-[ext_resource path="res://assets/sounds/uisounds/newentry.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/sounds/uisounds/newchoiceentry.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/sounds/uisounds/choiceselect.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/uisounds/newEntry.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/uisounds/newChoiceEntry.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/uisounds/choiceSelect.wav" type="AudioStream" id=11]
 
 [node name="DialogueBox" type="Control"]
 anchor_right = 1.0
