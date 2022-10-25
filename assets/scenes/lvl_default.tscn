@@ -5,11 +5,11 @@
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
 [ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/tilesets/ts_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/prefabs/proposal/chair.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/prefabs/proposal/shelf.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/prefabs/proposal/boxes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefabs/proposal/obj_chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/proposal/obj_shelf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/proposal/obj_boxes.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
-[ext_resource path="res://assets/prefabs/proposal/shelfside.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/prefabs/proposal/obj_shelfSide.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4

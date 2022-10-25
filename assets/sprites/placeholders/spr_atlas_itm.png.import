@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/halloweendecor.png-ac20b06099f88eb6c6abad0ba58d374c.stex"
+path="res://.import/spr_atlas_itm.png-4ca77394074f5c048ee2fa50f6ed212a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/halloweendecor.png"
-dest_files=[ "res://.import/halloweendecor.png-ac20b06099f88eb6c6abad0ba58d374c.stex" ]
+source_file="res://assets/sprites/placeholders/spr_atlas_itm.png"
+dest_files=[ "res://.import/spr_atlas_itm.png-4ca77394074f5c048ee2fa50f6ed212a.stex" ]
 
 [params]
 
