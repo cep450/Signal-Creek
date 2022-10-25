@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_atlas_chr_light.png-bccd5c884300f3e388e23484668922df.stex"
+path="res://.import/nick_real.png-7de6a3fd962f59f752bca569a915f18a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/spr_atlas_chr_light.png"
-dest_files=[ "res://.import/spr_atlas_chr_light.png-bccd5c884300f3e388e23484668922df.stex" ]
+source_file="res://assets/sprites/characters/portraits/nick_real.png"
+dest_files=[ "res://.import/nick_real.png-7de6a3fd962f59f752bca569a915f18a.stex" ]
 
 [params]
 

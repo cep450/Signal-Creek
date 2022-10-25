@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_MsSuwanStaticCharacterSheet.png-034a240f9ed1722e2ccc5aa71c4aa41f.stex"
+path="res://.import/suwan_real.png-7344f203f847c634b7685d81f1eec2b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/spr_MsSuwanStaticCharacterSheet.png"
-dest_files=[ "res://.import/spr_MsSuwanStaticCharacterSheet.png-034a240f9ed1722e2ccc5aa71c4aa41f.stex" ]
+source_file="res://assets/sprites/characters/portraits/suwan_real.png"
+dest_files=[ "res://.import/suwan_real.png-7344f203f847c634b7685d81f1eec2b0.stex" ]
 
 [params]
 
