@@ -4,8 +4,8 @@
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_real.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_dream.png" type="Texture" id=4]
-[ext_resource path="res://assets/ink/warmsubject/tshirt_dream.ink" type="Resource" id=5]
-[ext_resource path="res://assets/ink/warmsubject/tshirt_real.ink" type="Resource" id=6]
+[ext_resource path="res://assets/ink/warmsubject/object_tshirt_dream.ink" type="Resource" id=5]
+[ext_resource path="res://assets/ink/warmsubject/object_tshirt_real.ink" type="Resource" id=6]
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 15, 3 )
