@@ -40,3 +40,11 @@ func set_hint_attributes():
 	$Hint.set_position(Vector2(realX, realY))
 	$Hint.set_texture(realsheet)
 	$Hint.offset.y = $Sprite.region_rect.size.y / -2
+
+
+func _on_ActiveArea_can_interact():
+	pass # Replace with function body.
+
+
+func _on_ActiveArea_cannot_interact():
+	pass # Replace with function body.
