@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_real.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_dream.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/objects/sheet_warmSubject_dream.png" type="Texture" id=2]
 [ext_resource path="res://assets/ink/warmsubject/obj_halloweenDecor_dream.ink" type="Resource" id=3]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=4]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=5]
