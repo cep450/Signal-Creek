@@ -6,6 +6,7 @@ export(StreamTexture) var realsheet
 
 onready var dreampos = self.get_global_position()
 onready var realpos
+
 export var realX: int
 export var realY: int
 
@@ -19,16 +20,13 @@ func _ready():
 		realpos = dreampos + Vector2(realX, realY)
 	if !inDream:
 		dreampos = Vector2(-100, -100)
+		
 	if !Engine.editor_hint:
-		self.set_global_position(dreampos)
+		$Hint.visible = false
 
 func _process(_delta):
 	if Engine.editor_hint:
-		$Hint.visible = true
-		$Hint.set_position(Vector2(realX, realY))
-		$Hint.set_texture(realsheet)
-	else:
-		$Hint.visible = false
+		set_hint_attributes()
 
 func set_sheet(sheetId):
 	$Sprite.set_texture(sheetId)
@@ -36,3 +34,9 @@ func set_sheet(sheetId):
 func set_pos(posId):
 	self.set_global_position(posId)
 	pass
+
+func set_hint_attributes():
+	$Hint.region_rect = $Sprite.region_rect
+	$Hint.set_position(Vector2(realX, realY))
+	$Hint.set_texture(realsheet)
+	$Hint.offset.y = $Sprite.region_rect.size.y / -2
