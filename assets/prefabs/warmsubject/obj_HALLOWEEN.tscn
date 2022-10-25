@@ -2,10 +2,10 @@
 
 [ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_real.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/objects/sprsheet_WARMSUBJECT_dream.png" type="Texture" id=2]
-[ext_resource path="res://assets/ink/warmsubject/object_halloween_dream.ink" type="Resource" id=3]
+[ext_resource path="res://assets/ink/warmsubject/obj_halloween_dream.ink" type="Resource" id=3]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=4]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=5]
-[ext_resource path="res://assets/ink/warmsubject/object_halloween_real.ink" type="Resource" id=6]
+[ext_resource path="res://assets/ink/warmsubject/obj_halloween_real.ink" type="Resource" id=6]
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 9.5, 4 )
