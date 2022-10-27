@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/newentry.wav-650c8e167ac72e70db31408b573b34db.sample"
+path="res://.import/newEntry.wav-4562e83042b11db43edefcbde65a182e.sample"
 
 [deps]
 
-source_file="res://assets/sounds/uisounds/newentry.wav"
-dest_files=[ "res://.import/newentry.wav-650c8e167ac72e70db31408b573b34db.sample" ]
+source_file="res://assets/sounds/uisounds/newEntry.wav"
+dest_files=[ "res://.import/newEntry.wav-4562e83042b11db43edefcbde65a182e.sample" ]
 
 [params]
 

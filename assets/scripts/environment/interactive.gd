@@ -7,6 +7,14 @@ export var inkFileReal : Resource
 
 var canInteract = false #whether you can interact
 
+#who sees this as interactable?
+var interactiveByNick = false
+var interactiveByNour = false 
+var interactiveBySuwan = false
+
+signal can_interact
+signal cannot_interact
+
 func _process(_delta):
 	if canInteract:
 		if Input.is_action_just_pressed("interact"):
@@ -24,7 +32,12 @@ func _process(_delta):
 func _on_InteractArea_body_entered(body):
 	if body.is_in_group("Player"):
 		canInteract = true
+		emit_signal("can_interact")
 
 func _on_InteractArea_body_exited(body):
 	if body.is_in_group("Player"):
 		canInteract = false
+		emit_signal("cannot_interact")
+
+#recieves signals on character switch 
+#ex. when we switch to nour, show a nour can interact outline 
