@@ -1,5 +1,7 @@
 extends Node2D
 
+#manages viewport, ui, plane stuff
+
 #intialize game variables
 onready var viewport_container = $ViewportContainer
 onready var viewport = $ViewportContainer/Viewport
