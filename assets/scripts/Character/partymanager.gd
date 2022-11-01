@@ -5,8 +5,6 @@ export(Array, Texture) var portraits = []
 
 var leaderIndex = 0 setget update_leader_to #Keeps track of the current leader.
 
-#var partymember = partyMembers[leaderIndex]
-
 #TODO GET RID OF THESE- TEMPORARY 
 var names = ["NICK", "NOUR", "SUWAN"]
 
