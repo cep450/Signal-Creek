@@ -7,12 +7,12 @@
 [ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 16, 10 )
+extents = Vector2( 16, 8 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 21, 12 )
 
-[node name="OBJECT" type="RigidBody2D" groups=["shiftable"]]
+[node name="Victorias" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
 script = ExtResource( 2 )
 __meta__ = {
@@ -39,7 +39,7 @@ region_enabled = true
 region_rect = Rect2( 142, 137, 35, 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -8 )
 shape = SubResource( 23 )
 
 [node name="ActiveArea" type="Area2D" parent="."]
