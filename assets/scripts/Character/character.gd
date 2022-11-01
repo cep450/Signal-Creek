@@ -6,23 +6,43 @@ extends KinematicBody2D
 #Has morale.
 
 const maxMorale = 3
-var morale = maxMorale
+var morale = maxMorale setget change_morale
 
 export var inkName = "ERR NO NAME ASSIGNED"
 
 var velocity : Vector2 = Vector2()
-var direction : Vector2 = Vector2()
-export var speed : float
+var directionFacing : Vector2 = Vector2()	#used for flashlight.
+#export var speed : float
+const walkSpeed : float = 3500.0	#needs to be named walkSpeed not speed 
 
 onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if Globals.mode == Enums.Mode.WALK:
-		read_input()
+		read_input(delta)
 		
 		animPlayer.play(idle)
+
+func read_input(deltaTime):
+	
+	var directionVector = Vector2(0,0)
+
+	if Input.is_action_pressed("ui_up"):
+		directionVector += Vector2.UP
+		
+	if Input.is_action_pressed("ui_down"):
+		directionVector += Vector2.DOWN
+	
+	if Input.is_action_pressed("ui_left"):
+		directionVector += Vector2.LEFT
+		
+	if Input.is_action_pressed("ui_right"):
+		directionVector += Vector2.RIGHT
+	
+	move(directionVector, deltaTime)
+
 
 func animate_up():
 	animPlayer.play("Up")
@@ -43,46 +63,40 @@ func animate_right():
 func animate_idle():
 	animPlayer.play(idle);
 
-#func move(directionVector : Vector2):
-	#directionVector should be normalized
-	#multiply by delta and speed
-	#call the correct movement animation based on angle 
-	#pass
 
-func read_input():
-	velocity = Vector2()
-	
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= speed
-		direction = Vector2(0, -1)
-		
-		animPlayer.play("Up")
-		idle = "UpIdle"
-		
-	elif Input.is_action_pressed("ui_down"):
-		velocity.y += speed
-		direction = Vector2(0, 1)
-		animPlayer.play("Down")
-		idle = "DownIdle"
-	
-	elif Input.is_action_pressed("ui_left"):
-		velocity.x -= speed
-		direction = Vector2(-1, 0)
-		animPlayer.play("Left")
-		idle = "LeftIdle"
-		
-	elif Input.is_action_pressed("ui_right"):
-		velocity.x += speed
-		direction = Vector2(1, 0)
+func move(directionVector : Vector2, deltaTime):
 
-		animPlayer.play("Right")
-		idle = "RightIdle"
-	else:
-		animPlayer.play(idle);
+	#not moving, idle and return early
+	if(directionVector.length() == 0):
+		animate_idle()
 		pass
-		
-	velocity = velocity.normalized()
-	velocity = move_and_slide(velocity * 100)
+	
+	directionVector = directionVector.normalized()
+
+	#we're moving- update directionFacing
+	directionFacing = directionVector
+
+	#play the right animation based on the angle we're moving 
+	if(abs(directionVector.x) >= abs(directionVector.y)):
+		#x mag is greater, use left/right animations
+		if(directionVector.x > 0):
+			#positive direction
+			animate_right()
+		else:
+			animate_left()
+	else:
+		if(directionVector.y > 0):
+			animate_up()
+		else:
+			animate_down()
+
+	#actually move
+	velocity = directionVector * walkSpeed * deltaTime
+	velocity = move_and_slide(velocity)
+
+
+func change_morale(_newValue):
+	print("ERR: MORALE WAS ATTEMPTED TO CHANGE DIRECTLY, DO NOT DO THIS, USE gain_morale AND lose_morale INSTEAD SO ASSOCIATED LOGIC ALSO HAPPENS")
 
 func gain_morale():
 	morale = max(morale + 1, maxMorale)

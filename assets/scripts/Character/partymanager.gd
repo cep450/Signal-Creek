@@ -1,6 +1,7 @@
 extends YSort
 
 var partyMembers = [Enums.Char.NICK, Enums.Char.NOUR, Enums.Char.SUWAN]
+var characterObjects = [Globals.nick, Globals.nour, Globals.suwan]
 export(Array, Texture) var portraits = []
 
 var leaderIndex = 0 setget update_leader_to #Keeps track of the current leader.
@@ -14,10 +15,6 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("switch_character"):
 		rotate_leader_left()
-		#leaderIndex += 1
-		#if leaderIndex > 2:
-		#	leaderIndex = 0
-		#update_leader_to(leaderIndex)
 	pass
 
 #called by key input- TODO
@@ -40,7 +37,7 @@ func update_leader_to(newIndex):
 	leaderIndex = newIndex
 	Globals.portrait.set_texture(portraits[leaderIndex])
 	#TODO: send a signal that we've switched to a specific character. 
-	#TODO; camera should update as well 
+	#TODO: camera should re-center as well 
 	
 func get_leader():
 	return self.partyMembers[leaderIndex]
