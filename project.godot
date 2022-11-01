@@ -29,6 +29,7 @@ Enums="*res://assets/scripts/enums.gd"
 window/size/width=960
 window/size/height=540
 window/size/resizable=false
+window/size/fullscreen=true
 window/size/always_on_top=true
 window/size/test_width=960
 window/size/test_height=540
