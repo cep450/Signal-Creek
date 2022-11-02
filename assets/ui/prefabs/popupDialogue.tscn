@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/ui/themes/InteractBox.tres" type="Theme" id=1]
+[ext_resource path="res://assets/ui/themes/theme_interactBox.tres" type="Theme" id=1]
 
 [node name="PopupDialogue" type="Control"]
 margin_left = 233.0

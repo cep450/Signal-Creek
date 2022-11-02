@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_victorias_real.ink-38b90d08d08d50da61f164302f223c03.res"
+
+[deps]
+
+source_file="res://assets/ink/hallway/obj_victorias_real.ink"
+dest_files=[ "res://.import/obj_victorias_real.ink-38b90d08d08d50da61f164302f223c03.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

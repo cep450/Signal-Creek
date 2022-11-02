@@ -1,14 +1,11 @@
 using Godot;
 
-
 public class InkLinker : Node {
 
 	/*
-
 		Ink to C#/Godot switchboard. 
 		Binds external functions.
 		Sets narrative variables from NarrativeData. 
-
 	*/
 
 	//Bind external ink functions, when present in a story, to their game counterparts. 
