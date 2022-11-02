@@ -125,7 +125,7 @@ func _proceed():
 	scroll.set_v_scroll(scroll.get_v_scrollbar().max_value)
 
 func displayChoices():
-	player.SetVariable("currentPartyChar", Globals.party.get_partymember())
+	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
 	choiceArray = player.get_CurrentChoices() #get current choices from ink
 	
 	create_choiceEntry(choiceArray)
@@ -221,6 +221,6 @@ func set_current_name(source):
 
 func load_story(inkFile):
 	player.LoadStory(inkFile)
-	print(Globals.party.get_partymember())
+	print(Globals.party.get_leader_inkname())
 	print("running")
-	player.SetVariable("currentPartyChar", Globals.party.get_partymember())
+	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())

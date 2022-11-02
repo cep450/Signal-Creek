@@ -5,6 +5,8 @@ extends KinematicBody2D
 #Updates sprites/animations accordingly.
 #Has morale.
 
+export(Texture) var portrait
+
 const maxMorale = 3
 var morale = maxMorale setget change_morale
 
