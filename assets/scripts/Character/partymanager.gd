@@ -14,27 +14,47 @@ func _ready():
 	pass
 
 func _process(_delta):
-	checkInput()
+	if Globals.mode == Enums.Mode.WALK:
+		check_input()
 
-func checkInput():
+func _physics_process(_delta):
+	if Globals.mode == Enums.Mode.WALK:
+		check_input_physics()
+
+func check_input_physics():
+	
+	var directionVector = Vector2(0,0)
+
+	if Input.is_action_pressed("ui_up"):
+		directionVector += Vector2.UP
+		
+	if Input.is_action_pressed("ui_down"):
+		directionVector += Vector2.DOWN
+	
+	if Input.is_action_pressed("ui_left"):
+		directionVector += Vector2.LEFT
+		
+	if Input.is_action_pressed("ui_right"):
+		directionVector += Vector2.RIGHT
+	
+	characterObjects[leaderIndex].move(directionVector)
+	characterObjects[wrapi(leaderIndex + 1, 0,3)].pathfind_to(get_leader())
+	characterObjects[wrapi(leaderIndex - 1, 0,3)].pathfind_to(get_leader())
+
+func check_input():
 	if Input.is_action_just_pressed("char_switch_left"):
 		rotate_leader_left()
 	if Input.is_action_just_pressed("char_switch_right"):
 		rotate_leader_right()
 
+
 #called by key input- TODO
-func rotate_leader_left(): #decrease index
-	var newIndex = leaderIndex + 1
-	if newIndex > 2:
-		newIndex = 0
-	update_leader_to(newIndex)
+func rotate_leader_left():
+	leaderIndex = wrapi(leaderIndex - 1, 0,3)
 
 #called by key input- TODO 
-func rotate_leader_right():	#increase index
-	var newIndex = leaderIndex - 1
-	if newIndex < 0:
-		newIndex = 2
-	update_leader_to(newIndex)
+func rotate_leader_right():
+	leaderIndex = wrapi(leaderIndex + 1, 0,3)
 
 #called automatically whenever leaderIndex is changed, thanks to setget.
 #changes the index variable, updates UI, any other logic anywhere else using signals.
