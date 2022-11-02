@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/ink/placeholder_antibodies.ink" type="Resource" id=1]
+[ext_resource path="res://assets/ink/bandn/obj_polaroid_both.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
