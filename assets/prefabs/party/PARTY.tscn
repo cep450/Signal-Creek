@@ -12,10 +12,10 @@
 script = ExtResource( 1 )
 portraits = [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ) ]
 
-[node name="NICK" parent="." instance=ExtResource( 4 )]
+[node name="NICK" parent="." groups=["Player"] instance=ExtResource( 4 )]
 position = Vector2( -20, 0 )
 
-[node name="NOUR" parent="." instance=ExtResource( 8 )]
+[node name="NOUR" parent="." groups=["Player"] instance=ExtResource( 8 )]
 
-[node name="SUWAN" parent="." instance=ExtResource( 5 )]
+[node name="SUWAN" parent="." groups=["Player"] instance=ExtResource( 5 )]
 position = Vector2( 20, 0 )
