@@ -4,18 +4,15 @@
 [ext_resource path="res://assets/prefabs/party/PartyCharacterAnimator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/character/character.gd" type="Script" id=3]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4, 2 )
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 10, 8 )
 
-[node name="SUWAN" type="KinematicBody2D"]
+[node name="SUWAN" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 3 )
-speed = 1.0
+inkName = "SUWAN"
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
