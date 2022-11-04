@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_makeup_real.ink-bdf9c6673884e2bab4c5de8aa3d7cb91.res"
+
+[deps]
+
+source_file="res://assets/ink/topicstop/obj_makeup_real.ink"
+dest_files=[ "res://.import/obj_makeup_real.ink-bdf9c6673884e2bab4c5de8aa3d7cb91.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
