@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_womensClothing_dream.ink-c12194ba17c206f298b9cef25615cd22.res"
+
+[deps]
+
+source_file="res://assets/ink/hallway/obj_womensClothing_dream.ink"
+dest_files=[ "res://.import/obj_womensClothing_dream.ink-c12194ba17c206f298b9cef25615cd22.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

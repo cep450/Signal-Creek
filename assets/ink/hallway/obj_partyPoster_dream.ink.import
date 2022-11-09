@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_partyPoster_dream.ink-0aae2e310761b89eca5c02e08a79e5e9.res"
+
+[deps]
+
+source_file="res://assets/ink/hallway/obj_partyPoster_dream.ink"
+dest_files=[ "res://.import/obj_partyPoster_dream.ink-0aae2e310761b89eca5c02e08a79e5e9.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

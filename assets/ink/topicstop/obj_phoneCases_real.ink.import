@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_phoneCases_real.ink-5bd1d4c6570b611f83f3a0a2a661ff82.res"
+
+[deps]
+
+source_file="res://assets/ink/topicstop/obj_phoneCases_real.ink"
+dest_files=[ "res://.import/obj_phoneCases_real.ink-5bd1d4c6570b611f83f3a0a2a661ff82.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
