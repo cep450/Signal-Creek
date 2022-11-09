@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_pens_dream.ink-5157c034c96d16a9b3d4f06b537a5188.res"
+
+[deps]
+
+source_file="res://assets/ink/bandn/obj_pens_dream.ink"
+dest_files=[ "res://.import/obj_pens_dream.ink-5157c034c96d16a9b3d4f06b537a5188.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
