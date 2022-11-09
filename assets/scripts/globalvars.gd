@@ -9,6 +9,7 @@ onready var planeManager = null
 onready var party = null
 onready var portrait = null
 onready var world = Enums.Pln.REAL #use a bool instead? only 2 states. 
+onready var camera = null
 
 onready var nick = null
 onready var nour = null
