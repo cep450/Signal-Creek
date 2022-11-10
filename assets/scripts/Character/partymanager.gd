@@ -61,8 +61,6 @@ func rotate_leader_right():
 func update_leader_to(newIndex):
 	leaderIndex = newIndex
 	Globals.portrait.set_texture(portraits[leaderIndex])
-
-	#camera centers on this character
 	Globals.camera.following = characterObjects[leaderIndex]
 
 	#TODO: play a sound?

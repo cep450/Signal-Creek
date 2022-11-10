@@ -69,13 +69,13 @@ func move(directionVector : Vector2):
 	velocity = directionVector * walkSpeed * get_physics_process_delta_time()
 	velocity = move_and_slide(velocity)
 
+
 var pathfindStopApproach : float = 22	#don't keep walking towards char if at this dist.
 var pathfindMoveAway : float = 18		#if char is within this space, back up to make space
 func pathfind_to(target : Node2D):
 	
 	#Temporary naive pathfinding. 
 	var angleTowards = target.position - self.position
-
 	if(angleTowards.length() < pathfindStopApproach):
 		if(angleTowards.length() < pathfindMoveAway):
 			angleTowards = -angleTowards
@@ -83,6 +83,7 @@ func pathfind_to(target : Node2D):
 			angleTowards = Vector2.ZERO
 
 	move(angleTowards)
+
 
 func change_morale(_newValue):
 	print("ERR: MORALE WAS ATTEMPTED TO CHANGE DIRECTLY, DO NOT DO THIS, USE gain_morale AND lose_morale INSTEAD SO ASSOCIATED LOGIC ALSO HAPPENS")

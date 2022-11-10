@@ -43,10 +43,9 @@ func _ready():
 	player.LoadStory() #tell ink player to load story resource
 
 	#load variable values from external storage
-	inkLinker.SetVariableValues(player);
-
+	#start listening to variable changes 
 	#bind custom external functions between ink and C#
-	inkLinker.BindExternalFunctions(player);
+	inkLinker.LinkLoadedStory(player);
 
 	if talk:
 		Globals.mode = Enums.Mode.TALK

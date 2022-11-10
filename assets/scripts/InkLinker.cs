@@ -8,6 +8,27 @@ public class InkLinker : Node {
 		Sets narrative variables from NarrativeData. 
 	*/
 
+	//where do we load narrative data? 
+	//where is the narrative data object stored?
+	//should narrative data be an autoload?
+	//should the functions go in a different thing?
+	//how does it get serialized 
+
+	public static void LinkLoadedStory(InkPlayer player) {
+
+		//TODO load from narrative data 
+
+		//"Cannot assign to a variable that hasn't been declared in the story"
+		//ok so need some kind of var header for all stories
+		//and look at it here or something 
+		//player.SetVariable("testVarName", "varValue");
+
+		//cannot observe variable either, if not in the story
+		//player.ObserveVariable("testVarName");
+
+		BindExternalFunctions(player);
+	}
+
 	//Bind external ink functions, when present in a story, to their game counterparts. 
 	public static void BindExternalFunctions(InkPlayer player) {
 
@@ -48,7 +69,7 @@ public class InkLinker : Node {
 
 		//TODO 
 
-		NarrativeData.InitStory(player);
+		//NarrativeData.InitStory(player);
 
 
 

@@ -5,20 +5,42 @@ public class NarrativeData : Resource {
 	
 	/*
 
-		Where variables live so they can persist across ink files.
+		Data object where variables live so they can persist across ink files.
 
-		Will be saved by the SaveManager. 
+		Updated and read by the VariableObserver.
+		Saved and loaded by the SaveManager.
 
 	*/
 
-	static Dictionary<string, string> inkVars;
-	//TODO data: strings, what? can it be multiple? what does a normal hashmap use 
-	//is there a vers of this in godot 
+	static Dictionary<string, Ink.Runtime.Object> inkVars;
 
-	//TODO could also store names here if we use that.
+	public void LoadVariableValues() {
 
+	}
 
-	//TODO THIS WILL NEED A VARIABLE LISTENER!!!!! 
+	public void BeginObserving() {
+		
+	}
+
+	//start listening to this file (when file opens)
+	//TODO do this via an event 
+	/*
+	public void StartListening(InkPlayer player) {
+		//tell the story to call this when a var changes
+		player.variablesState.variableChangedEvent += VariableChanged;
+	}
+
+	//stop listening to this file (when file closes)
+	//TODO do via an event 
+	public void StopListening(InkPlayer player) {
+		player.variablesState.variableChangedEvent -= VariableChanged;
+	}
+
+	//Called when a var gets changed in ink 
+	private void VariableChanged(string varName, Ink.Runtime.Object value) {
+
+	}
+	*/
 
 
 	//TODO let it automatically read vars from files? or pull from some kind of ink reference file. 
@@ -26,7 +48,6 @@ public class NarrativeData : Resource {
 
 	//When starting up the game, regardless of if a save file exists, create the dictionary from the variable names in the base ink functions/vars file.
 	public static void InitFromFile() {
-
 
 
 
@@ -48,24 +69,5 @@ public class NarrativeData : Resource {
 
 
 	}
-
-
-
-
-	//TODO how and where to store this name stuff?
-	//TODO cap sensitive or not? 
-	/*
-	public void SetName(string charName) {
-		
-	}
-	public void SetName(string speaker, string charName) {
-		
-	}
-	public void Name(string character) {
-		
-	}
-	public void Name(string speaker, string character) {
-		
-	}*/
 
 }

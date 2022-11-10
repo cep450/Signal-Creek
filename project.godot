@@ -42,6 +42,10 @@ scene_naming=1
 
 enabled=PoolStringArray( "res://addons/paulloz.ink/plugin.cfg" )
 
+[global]
+
+build=false
+
 [importer_defaults]
 
 texture={
