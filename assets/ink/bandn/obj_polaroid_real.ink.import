@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_polaroid_real.ink-8c92b8ea45bdda8a5a4ed115efab45ac.res"
+
+[deps]
+
+source_file="res://assets/ink/bandn/obj_polaroid_real.ink"
+dest_files=[ "res://.import/obj_polaroid_real.ink-8c92b8ea45bdda8a5a4ed115efab45ac.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

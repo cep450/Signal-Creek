@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_dragonplush_dream.ink-34569c12c98cd99991f9bc602e0c16d0.res"
+path="res://.import/obj_dragonPlush_dream.ink-664c69984a3f9c7a5c4cc61c993ddb37.res"
 
 [deps]
 
-source_file="res://assets/ink/bandn/obj_dragonplush_dream.ink"
-dest_files=[ "res://.import/obj_dragonplush_dream.ink-34569c12c98cd99991f9bc602e0c16d0.res" ]
+source_file="res://assets/ink/bandn/obj_dragonPlush_dream.ink"
+dest_files=[ "res://.import/obj_dragonPlush_dream.ink-664c69984a3f9c7a5c4cc61c993ddb37.res" ]
 
 [params]
 
