@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=5]
+[ext_resource path="res://assets/prefabs/topicspot/obj_phoneCases.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/topicspot/obj_pinButtons.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/topicspot/obj_makeup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefabs/topicspot/obj_sailorMoonPosters.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/prefabs/topicspot/obj_consoles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/prefabs/topicspot/obj_graphicTees.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/prefabs/topicspot/obj_coolShirt.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -78,6 +85,14 @@ color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
 range_item_cull_mask = 7
 
+[node name="BigLight2" type="Light2D" parent="PlaneManager/Lights"]
+position = Vector2( 316, 36 )
+scale = Vector2( 3.625, 2.5 )
+texture = ExtResource( 5 )
+color = Color( 0.933333, 0.858824, 0.709804, 1 )
+energy = 0.9
+range_item_cull_mask = 7
+
 [node name="Overworld" type="YSort" parent="PlaneManager"]
 __meta__ = {
 "_edit_lock_": true
@@ -93,3 +108,24 @@ tile_data = PoolIntArray( 65539, 0, 327680, 65540, 0, 196612, 65541, 0, 327684, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Consoles" parent="PlaneManager/Overworld" instance=ExtResource( 10 )]
+position = Vector2( 267, 193 )
+
+[node name="CoolShirt" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
+position = Vector2( 376, 100 )
+
+[node name="GraphicTees" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 338, 101 )
+
+[node name="Makeup" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 154, 95 )
+
+[node name="PhoneCases" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 249, 90 )
+
+[node name="PinButtons" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 221, 84 )
+
+[node name="SailorMoonPosters" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
+position = Vector2( 293, 83 )
