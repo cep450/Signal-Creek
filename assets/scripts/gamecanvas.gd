@@ -17,6 +17,7 @@ func _ready():
 	Globals.party = $ViewportContainer/Viewport/Level/PlaneManager/Overworld/PARTY
 	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/portrait
 	
+	
 	camera.rescale_camera(floor(OS.window_size.x/camWidth))
 
 func _process(delta):

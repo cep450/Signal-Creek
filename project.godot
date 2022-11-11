@@ -23,6 +23,7 @@ default_bus_layout=""
 
 Globals="*res://assets/scripts/globalvars.gd"
 Enums="*res://assets/scripts/enums.gd"
+InkLinker="*res://assets/scripts/InkLinker.cs"
 
 [display]
 

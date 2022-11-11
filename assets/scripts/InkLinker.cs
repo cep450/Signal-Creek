@@ -10,7 +10,7 @@ public class InkLinker : Node {
 
 	//Bind external ink functions, when present in a story, to their game counterparts. 
 	public static void BindExternalFunctions(InkPlayer player) {
-
+		GD.Print("read this too");
 		//can't do this: 
 		//player.BindExternalFunction("partyLeaderDouble", Party.CurrentCharacter().InkName);
 		//TODO is it because of the chained call, or because CurrentCharacter could be null or change at runtime? 
@@ -40,6 +40,7 @@ public class InkLinker : Node {
 	#player.BindExternalFunction("partyLeader", (string name) => { Party.CurrentCharacter().GetInkName();})
 	#player.BindExternalFunction("isNickLeader","Party.LeaderIsNick")
 	#TODO*/
+	//player.BindExternalFunction("TestExternal", player, "TestExternalFunc");
 	}
 
 	//From the values stored in NarrativeData, set any vars for this story file to the correct values.

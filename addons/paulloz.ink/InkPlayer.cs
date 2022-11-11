@@ -291,6 +291,7 @@ public class InkPlayer : Node
 	public void BindExternalFunction(string inkFuncName, Node node, string funcName)
 	{
 		BindExternalFunction(inkFuncName, node, funcName, false);
+		GD.Print("bound external function: " + inkFuncName + " " + funcName);
 	}
 
 	public void BindExternalFunction(string inkFuncName, Node node, string funcName, bool lookaheadSafe)

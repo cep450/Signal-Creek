@@ -32,6 +32,7 @@ var displayingChoices #whether we're in choice mode
 var currentDivert = 0 #index of selected choice in choice array
 var currentDivertEntry #currently displaying node of choice buttons
 var currentChoiceEntryDiverts #current choice buttons
+var functionsbound = false
 
 #InkLinker links ink with C# and gdscript functions 
 var inkLinker = preload("res://assets/scripts/InkLinker.cs")
@@ -46,10 +47,16 @@ func _ready():
 	inkLinker.SetVariableValues(player);
 
 	#bind custom external functions between ink and C#
-	inkLinker.BindExternalFunctions(player);
+	#inkLinker.BindExternalFunctions(player);
+	
 
 	if talk:
 		Globals.mode = Enums.Mode.TALK
+		
+
+func TestExternalFunc():
+	print("poopie")
+
 
 func _process(_delta):
 	if Globals.mode == Enums.Mode.TALK:
@@ -93,6 +100,10 @@ func _process(_delta):
 
 #progress the ink player
 func _proceed():
+	if !functionsbound:
+		functionsbound = "true"
+		player.BindExternalFunction("TestExternal", self, "TestExternalFunc")
+		
 	if !player.get_CanContinue() && !player.get_HasChoices(): #end of conversation; close everything
 		clear_and_reset()
 		
