@@ -96,6 +96,7 @@ public class InkLinker : Node {
 	#player.BindExternalFunction("partyLeader", (string name) => { Party.CurrentCharacter().GetInkName();})
 	#player.BindExternalFunction("isNickLeader","Party.LeaderIsNick")
 	#TODO*/
+	//player.BindExternalFunction("TestExternal", player, "TestExternalFunc");
 	}
 
 	//From the values stored in NarrativeData, set any vars for this story file to the correct values.
