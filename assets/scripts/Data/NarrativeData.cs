@@ -12,14 +12,34 @@ public class NarrativeData : Resource {
 
 	*/
 
+
+	//TODO we need proper variable observing so that gameplay logic can happen
+	//or just use external functions i guess 
+
 	static Dictionary<string, Ink.Runtime.Object> inkVars;
 
-	public void LoadVariableValues() {
+
+	//Pass in the name of the variable.
+	//If the variable exists in storage, pass back the stored value here.
+	//If the variable doesn't exist in storage, create it, and set it to its value in the script.
+	public void LoadVarValue(string varName, InkPlayer player) {
+
+		//variable doesn't exist in dictionary
+		if(!inkVars.ContainsKey(varName)) {
+			//get its value as given in the script
+
+			//create a dictionary entry
+			//give it its script value
+		}
+
+		//return the stored value 
+		//return inkVars[varName];
+		player.SetVariable(varName, inkVars[varName]);
 
 	}
 
 	public void BeginObserving() {
-		
+
 	}
 
 	//start listening to this file (when file opens)

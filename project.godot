@@ -45,6 +45,8 @@ enabled=PoolStringArray( "res://addons/paulloz.ink/plugin.cfg" )
 [global]
 
 build=false
+marshall=false
+variables=false
 
 [importer_defaults]
 
@@ -76,6 +78,7 @@ ink={
 [ink]
 
 inklecate_path="res://inklecate_win.exe"
+marshall_state_variables=true
 
 [input]
 

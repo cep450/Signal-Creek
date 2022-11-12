@@ -26,11 +26,46 @@ public class InkLinker : Node {
 		//cannot observe variable either, if not in the story
 		//player.ObserveVariable("testVarName");
 
+		LoadRelevantVariables(player);
+
 		BindExternalFunctions(player);
 	}
 
+
+
+	//think we just have to call player.ObserveVariable(string name)
+	//which returns the signal for when it's changed ?
+
+
+	//so another way to do this can be, 
+	//update all the variables when we load a file 
+	//and on close a file, get all the variables, and save them 
+	//and have other game logic.... get the ink variable itself? 
+		//or when it asks the dictionary, it checks if an ink is running, and if it is, gets the variable value in that moment 
+	
+	
+
+
+
+
+	//get the var names from plaintext.
+	private static string[] PullScriptVariables(InkPlayer player) {
+
+
+	}
+
+	private static void LoadRelevantVariables(InkPlayer player) {
+
+		//Look at the beginning of the file for the variables used here.
+		//Load their stored values.
+
+		
+
+
+	}
+
 	//Bind external ink functions, when present in a story, to their game counterparts. 
-	public static void BindExternalFunctions(InkPlayer player) {
+	private static void BindExternalFunctions(InkPlayer player) {
 
 		//can't do this: 
 		//player.BindExternalFunction("partyLeaderDouble", Party.CurrentCharacter().InkName);
