@@ -114,8 +114,7 @@ position = Vector2( 84, 185 )
 position = Vector2( 221, 84 )
 
 [node name="SailorMoonPosters" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
-position = Vector2( 296, 74 )
-z_index = 1
+position = Vector2( 297, 85 )
 
 [node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 14 )]
 position = Vector2( 94, 96 )

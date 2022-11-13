@@ -1,5 +1,7 @@
 //Poster of Sailors Uranus and Neptune [heavily implied queer couple]
 //Nour makes a passing comment about how she always felt a wonderful sense of giddiness when she would see Sailor Uranus in a suit, or when their gender became unclear.
+VAR currentPartyChar = "PARTY"
+
 
 //REAL NOT VISITED
 //here, we check if real has been visited, and skip to realvisited if so.
