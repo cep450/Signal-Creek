@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=5]
@@ -35,25 +34,6 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 352, 353 )
-z_index = 16
-current = true
-editor_draw_screen = false
-script = ExtResource( 2 )
-lerpSpeed = 8
-camera_bounds_max = Vector2( 464, 320 )
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D"]
-margin_left = -352.0
-margin_top = -353.0
-margin_right = 608.0
-margin_bottom = 187.0
-color = Color( 0, 0, 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.619608, 0.470588, 0.705882, 1 )
