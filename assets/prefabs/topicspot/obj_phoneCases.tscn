@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/ink/topicstop/obj_phoneCases_real.ink" type="Resource" id=1]
+[ext_resource path="res://assets/ink/topicspot/obj_phoneCases_real.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_topicSpot_dream.png" type="Texture" id=5]
-[ext_resource path="res://assets/ink/topicstop/obj_phoneCases_dream.ink" type="Resource" id=6]
+[ext_resource path="res://assets/ink/topicspot/obj_phoneCases_dream.ink" type="Resource" id=6]
 [ext_resource path="res://assets/sprites/objects/sheet_topicSpot_real.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
