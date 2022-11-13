@@ -26,19 +26,19 @@ realsheet = ExtResource( 7 )
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 material = ExtResource( 4 )
-position = Vector2( 0, -25 )
+position = Vector2( 0, -20 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 127, 31, 34, 50 )
+region_rect = Rect2( 129, 15, 30, 40 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
 show_behind_parent = true
 light_mask = 4
 texture = ExtResource( 7 )
-offset = Vector2( 0, -25 )
+offset = Vector2( 0, -20 )
 region_enabled = true
-region_rect = Rect2( 127, 31, 34, 50 )
+region_rect = Rect2( 129, 15, 30, 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8 )
