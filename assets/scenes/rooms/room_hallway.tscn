@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/sprites/tilesets/set_hallway_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/tilesets/tiles_hallway_dream.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/sprites/tilesets/set_hallway_real.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/sprites/tilesets/set_hallway_real.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
 
 [sub_resource type="Environment" id=1]
@@ -17,22 +15,6 @@ glow_bloom = 0.06
 glow_blend_mode = 0
 glow_hdr_threshold = 0.0
 glow_hdr_luminance_cap = 0.0
-
-[sub_resource type="TileSet" id=3]
-0/name = "tiles_hallway_dream.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 110, 95, 18, 17 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -53,10 +35,10 @@ __meta__ = {
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 dreamset = ExtResource( 1 )
-realset = ExtResource( 5 )
+realset = ExtResource( 4 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -84,15 +66,9 @@ __meta__ = {
 }
 
 [node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
-tile_set = SubResource( 3 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
 cell_y_sort = true
 format = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Node2D" type="Node2D" parent="PlaneManager/Overworld"]
-
-[node name="Sprite" type="Sprite" parent="PlaneManager/Overworld/Node2D"]
+tile_data = PoolIntArray( 65539, 0, 327680, 65540, 0, 196612, 65541, 0, 327684, 65542, 0, 196612, 65543, 0, 196612, 65544, 0, 327684, 65545, 0, 196612, 65546, 0, 327684, 65547, 0, 196612, 65548, 0, 327684, 65549, 0, 196612, 65550, 0, 196612, 65551, 0, 196612, 65552, 0, 196612, 65553, 0, 196612, 65554, 0, 196612, 65555, 0, 196612, 65556, 0, 196612, 65557, 0, 327684, 65558, 0, 196612, 65559, 0, 327684, 65560, 0, 196612, 65561, 0, 393219, 262147, 2, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 3, 0 )
