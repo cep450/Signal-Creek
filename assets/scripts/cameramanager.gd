@@ -24,6 +24,7 @@ onready var overlay = $ColorRect
 var fadingIn = false
 
 func _ready():
+	Globals.camera = self
 	if !noFade:
 		fadingIn = true
 		overlay.color.a = 1 #solid black

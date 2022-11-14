@@ -5,6 +5,8 @@ extends KinematicBody2D
 #Updates sprites/animations accordingly.
 #Has morale.
 
+export(Texture) var portrait
+
 const maxMorale = 3
 var morale = maxMorale setget change_morale
 
@@ -12,37 +14,10 @@ export var inkName = "ERR NO NAME ASSIGNED"
 
 var velocity : Vector2 = Vector2()
 var directionFacing : Vector2 = Vector2()	#used for flashlight.
-#export var speed : float
 const walkSpeed : float = 3500.0	#needs to be named walkSpeed not speed 
 
 onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
-
-
-func _physics_process(delta):
-	if Globals.mode == Enums.Mode.WALK:
-		read_input(delta)
-		
-		animPlayer.play(idle)
-
-func read_input(deltaTime):
-	
-	var directionVector = Vector2(0,0)
-
-	if Input.is_action_pressed("ui_up"):
-		directionVector += Vector2.UP
-		
-	if Input.is_action_pressed("ui_down"):
-		directionVector += Vector2.DOWN
-	
-	if Input.is_action_pressed("ui_left"):
-		directionVector += Vector2.LEFT
-		
-	if Input.is_action_pressed("ui_right"):
-		directionVector += Vector2.RIGHT
-	
-	move(directionVector, deltaTime)
-
 
 func animate_up():
 	animPlayer.play("Up")
@@ -64,7 +39,7 @@ func animate_idle():
 	animPlayer.play(idle);
 
 
-func move(directionVector : Vector2, deltaTime):
+func move(directionVector : Vector2):
 
 	#not moving, idle and return early
 	if(directionVector.length() == 0):
@@ -91,9 +66,23 @@ func move(directionVector : Vector2, deltaTime):
 			animate_down()
 
 	#actually move
-	velocity = directionVector * walkSpeed * deltaTime
+	velocity = directionVector * walkSpeed * get_physics_process_delta_time()
 	velocity = move_and_slide(velocity)
 
+var pathfindStopApproach : float = 22	#don't keep walking towards char if at this dist.
+var pathfindMoveAway : float = 18		#if char is within this space, back up to make space
+func pathfind_to(target : Node2D):
+	
+	#Temporary naive pathfinding. 
+	var angleTowards = target.position - self.position
+
+	if(angleTowards.length() < pathfindStopApproach):
+		if(angleTowards.length() < pathfindMoveAway):
+			angleTowards = -angleTowards
+		else:
+			angleTowards = Vector2.ZERO
+
+	move(angleTowards)
 
 func change_morale(_newValue):
 	print("ERR: MORALE WAS ATTEMPTED TO CHANGE DIRECTLY, DO NOT DO THIS, USE gain_morale AND lose_morale INSTEAD SO ASSOCIATED LOGIC ALSO HAPPENS")

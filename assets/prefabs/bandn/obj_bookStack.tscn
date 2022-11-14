@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/ink/bandn/obj_bookstack_both.ink" type="Resource" id=1]
+[ext_resource path="res://assets/ink/bandn/obj_bookStack_dream.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=5]
+[ext_resource path="res://assets/ink/bandn/obj_bookStack_real.ink" type="Resource" id=6]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 16, 8 )
@@ -48,7 +49,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 inkFileDream = ExtResource( 1 )
-inkFileReal = ExtResource( 1 )
+inkFileReal = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 position = Vector2( 0, -4 )

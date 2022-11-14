@@ -21,8 +21,12 @@ public class InkLinker : Node {
 
 		//final param is isLookaheadSafe 
 
+
+		//THIS ONE WORKED
+		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
+		//just need to figure out how to call godot funcs instead
 		
-		player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
+		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
 		//player.BindExternalFunction("TestExternal", TestExternalFunc);
 		//player.BindExternalFunction("TestExternal", InkLinker.TestExternalFunc, true);
 		//player.BindExternalFunction("nickIsLeader", (Boolean)Party.LeaderIsNick, true);

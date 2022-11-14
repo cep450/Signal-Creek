@@ -1,17 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/ink/topicstop/obj_sailorMoonPosters_dream.ink" type="Resource" id=1]
+[ext_resource path="res://assets/ink/topicspot/obj_sailorMoonPosters_dream.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
-[ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=5]
-[ext_resource path="res://assets/ink/topicstop/obj_sailorMoonPosters_real.ink" type="Resource" id=6]
+[ext_resource path="res://assets/sprites/objects/sheet_topicSpot_dream.png" type="Texture" id=5]
+[ext_resource path="res://assets/ink/topicspot/obj_sailorMoonPosters_real.ink" type="Resource" id=6]
+[ext_resource path="res://assets/sprites/objects/sheet_topicSpot_real.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 16, 8 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 21, 12 )
+extents = Vector2( 22, 14.5 )
 
 [node name="SailorMoonPosters" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
@@ -20,24 +21,24 @@ __meta__ = {
 "_editor_description_": ""
 }
 dreamsheet = ExtResource( 5 )
-realsheet = ExtResource( 5 )
+realsheet = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 material = ExtResource( 4 )
-position = Vector2( 0, -19 )
+position = Vector2( 0, -30 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 142, 137, 35, 40 )
+region_rect = Rect2( 129, 15, 30, 40 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
 show_behind_parent = true
 light_mask = 4
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 offset = Vector2( 0, -20 )
 region_enabled = true
-region_rect = Rect2( 142, 137, 35, 40 )
+region_rect = Rect2( 129, 15, 30, 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8 )
@@ -52,7 +53,7 @@ inkFileDream = ExtResource( 1 )
 inkFileReal = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
-position = Vector2( 0, -4 )
+position = Vector2( 0, -1.5 )
 shape = SubResource( 22 )
 
 [connection signal="body_entered" from="ActiveArea" to="ActiveArea" method="_on_InteractArea_body_entered"]
