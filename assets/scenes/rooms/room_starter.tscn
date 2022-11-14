@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
-[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=5]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -30,7 +30,7 @@ position = Vector2( 352, 353 )
 z_index = 16
 current = true
 editor_draw_screen = false
-script = ExtResource( 4 )
+script = ExtResource( 1 )
 lerpSpeed = 8
 camera_bounds_max = Vector2( 464, 320 )
 
@@ -52,11 +52,11 @@ __meta__ = {
 
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
-dreamset = ExtResource( 1 )
-realset = ExtResource( 5 )
+dreamset = ExtResource( 2 )
+realset = ExtResource( 4 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -73,7 +73,7 @@ __meta__ = {
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
 position = Vector2( 232, 160 )
 scale = Vector2( 3.625, 2.5 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
 range_item_cull_mask = 7
@@ -84,7 +84,7 @@ __meta__ = {
 }
 
 [node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
 cell_y_sort = true
