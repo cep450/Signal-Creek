@@ -1,18 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=1]
-[ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=2]
-[ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=3]
-[ext_resource path="res://assets/ink/hallway/obj_womensClothing_real.ink" type="Resource" id=4]
-[ext_resource path="res://assets/ink/hallway/obj_womensClothing_dream.ink" type="Resource" id=5]
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 6, 5.5 )
-
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 94.5, 40.5 )
 
 [node name="CafeChairs" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
@@ -25,7 +18,6 @@ realsheet = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
-material = ExtResource( 3 )
 position = Vector2( 0, -8 )
 texture = ExtResource( 7 )
 region_enabled = true
@@ -43,21 +35,3 @@ region_rect = Rect2( 58, 65, 12, 16 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5.5 )
 shape = SubResource( 23 )
-
-[node name="ActiveArea" type="Area2D" parent="."]
-visible = false
-script = ExtResource( 2 )
-__meta__ = {
-"_editor_description_": ""
-}
-inkFileDream = ExtResource( 5 )
-inkFileReal = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
-position = Vector2( 0, -21 )
-shape = SubResource( 22 )
-
-[connection signal="body_entered" from="ActiveArea" to="ActiveArea" method="_on_InteractArea_body_entered"]
-[connection signal="body_exited" from="ActiveArea" to="ActiveArea" method="_on_InteractArea_body_exited"]
-[connection signal="can_interact" from="ActiveArea" to="." method="_on_ActiveArea_can_interact"]
-[connection signal="cannot_interact" from="ActiveArea" to="." method="_on_ActiveArea_cannot_interact"]
