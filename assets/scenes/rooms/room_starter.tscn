@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=5]
 [ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=6]
+[ext_resource path="res://assets/prefabs/party/PARTY.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -33,6 +34,7 @@ z_index = 16
 current = true
 editor_draw_screen = false
 script = ExtResource( 1 )
+following = NodePath("../PlaneManager/Overworld/PARTY")
 lerpSpeed = 8
 camera_bounds_max = Vector2( 464, 320 )
 
@@ -95,3 +97,6 @@ tile_data = PoolIntArray( 65539, 0, 327680, 65540, 0, 196612, 65541, 0, 327684, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 91, 105 )
