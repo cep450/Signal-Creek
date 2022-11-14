@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
-[ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=5]
 [ext_resource path="res://assets/ink/hallway/obj_oldDoll_real.ink" type="Resource" id=6]
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=7]
 
@@ -27,7 +27,7 @@ realsheet = ExtResource( 7 )
 light_mask = 4
 material = ExtResource( 4 )
 position = Vector2( 0, -12 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 33, 89, 14, 24 )
 
