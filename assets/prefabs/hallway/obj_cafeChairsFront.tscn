@@ -1,56 +1,57 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/ink/hallway/obj_womensClothing_real.ink" type="Resource" id=1]
-[ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
-[ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
-[ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
-[ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=5]
-[ext_resource path="res://assets/ink/hallway/obj_womensClothing_dream.ink" type="Resource" id=6]
+[ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=2]
+[ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=3]
+[ext_resource path="res://assets/ink/hallway/obj_womensClothing_real.ink" type="Resource" id=4]
+[ext_resource path="res://assets/ink/hallway/obj_womensClothing_dream.ink" type="Resource" id=5]
+[ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 89, 33 )
+extents = Vector2( 6, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 94.5, 40.5 )
 
-[node name="WomensClothing" type="RigidBody2D" groups=["shiftable"]]
+[node name="CafeChairsFront" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-dreamsheet = ExtResource( 5 )
+dreamsheet = ExtResource( 6 )
 realsheet = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
-material = ExtResource( 4 )
-position = Vector2( 0, -44 )
+material = ExtResource( 3 )
+position = Vector2( 0, -8 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 246, 80, 178, 66 )
+region_rect = Rect2( 84, 33, 12, 16 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
 show_behind_parent = true
 light_mask = 4
 texture = ExtResource( 7 )
-offset = Vector2( 0, -33 )
+offset = Vector2( 0, -8 )
 region_enabled = true
-region_rect = Rect2( 246, 80, 178, 66 )
+region_rect = Rect2( 84, 33, 12, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -33 )
+position = Vector2( 0, -5.5 )
 shape = SubResource( 23 )
 
 [node name="ActiveArea" type="Area2D" parent="."]
-script = ExtResource( 3 )
+visible = false
+script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-inkFileDream = ExtResource( 6 )
-inkFileReal = ExtResource( 1 )
+inkFileDream = ExtResource( 5 )
+inkFileReal = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 position = Vector2( 0, -21 )

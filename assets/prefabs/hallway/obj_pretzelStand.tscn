@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/ink/hallway/obj_pretzelStand_dream.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=5]
 [ext_resource path="res://assets/ink/hallway/obj_pretzelStand_real.ink" type="Resource" id=6]
+[ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 48, 24.5 )
@@ -26,7 +27,7 @@ realsheet = ExtResource( 5 )
 light_mask = 4
 material = ExtResource( 4 )
 position = Vector2( 0, -49 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 134, 31, 98, 98 )
 
