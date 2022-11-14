@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/ink/hallway/obj_oldDoll_dream.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_warmSubject_real.png" type="Texture" id=5]
 [ext_resource path="res://assets/ink/hallway/obj_oldDoll_real.ink" type="Resource" id=6]
+[ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 12.5, 8.5 )
@@ -20,7 +21,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 dreamsheet = ExtResource( 5 )
-realsheet = ExtResource( 5 )
+realsheet = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
@@ -34,7 +35,7 @@ region_rect = Rect2( 58, 114, 25, 17 )
 modulate = Color( 1, 1, 1, 0.313726 )
 show_behind_parent = true
 light_mask = 4
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 offset = Vector2( 0, -8.5 )
 region_enabled = true
 region_rect = Rect2( 58, 114, 25, 17 )
