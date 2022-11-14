@@ -1,9 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/tilesets/set_topicSpot_real.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=5]
 [ext_resource path="res://assets/prefabs/topicspot/obj_phoneCases.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/prefabs/topicspot/obj_pinButtons.tscn" type="PackedScene" id=7]
@@ -12,6 +10,11 @@
 [ext_resource path="res://assets/prefabs/topicspot/obj_consoles.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/prefabs/topicspot/obj_graphicTees.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/prefabs/topicspot/obj_coolShirt.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sprites/tilesets/set_topicSpot_dream.tres" type="TileSet" id=13]
+[ext_resource path="res://assets/prefabs/topicspot/obj_shelf.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/prefabs/topicspot/obj_chair.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/prefabs/topicspot/obj_shelfSide.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=17]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -24,6 +27,7 @@ glow_hdr_threshold = 0.0
 glow_hdr_luminance_cap = 0.0
 
 [node name="Level" type="Node2D"]
+script = ExtResource( 17 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
@@ -32,38 +36,19 @@ __meta__ = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 352, 353 )
-z_index = 16
-current = true
-editor_draw_screen = false
-script = ExtResource( 2 )
-lerpSpeed = 8
-camera_bounds_max = Vector2( 464, 320 )
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D"]
-margin_left = -352.0
-margin_top = -353.0
-margin_right = 608.0
-margin_bottom = 187.0
-color = Color( 0, 0, 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.505882, 0.372549, 0.584314, 1 )
+color = Color( 0.619608, 0.470588, 0.705882, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
-dreamset = ExtResource( 1 )
-realset = ExtResource( 4 )
+dreamset = ExtResource( 13 )
+realset = ExtResource( 1 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 13 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -86,8 +71,8 @@ energy = 0.9
 range_item_cull_mask = 7
 
 [node name="BigLight2" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 316, 36 )
-scale = Vector2( 3.625, 2.5 )
+position = Vector2( 232, 12 )
+scale = Vector2( 3.72266, 2.56735 )
 texture = ExtResource( 5 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
@@ -99,7 +84,7 @@ __meta__ = {
 }
 
 [node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 13 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
 cell_y_sort = true
@@ -110,22 +95,31 @@ __meta__ = {
 }
 
 [node name="Consoles" parent="PlaneManager/Overworld" instance=ExtResource( 10 )]
-position = Vector2( 267, 193 )
+position = Vector2( 380, 174 )
 
 [node name="CoolShirt" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
-position = Vector2( 376, 100 )
+position = Vector2( 279, 177 )
 
 [node name="GraphicTees" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
-position = Vector2( 338, 101 )
+position = Vector2( 279, 137 )
 
 [node name="Makeup" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
-position = Vector2( 154, 95 )
+position = Vector2( 166, 154 )
 
 [node name="PhoneCases" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
-position = Vector2( 249, 90 )
+position = Vector2( 84, 185 )
 
 [node name="PinButtons" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
 position = Vector2( 221, 84 )
 
 [node name="SailorMoonPosters" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
-position = Vector2( 293, 83 )
+position = Vector2( 297, 85 )
+
+[node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 14 )]
+position = Vector2( 94, 96 )
+
+[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 15 )]
+position = Vector2( 66, 203 )
+
+[node name="ShelfSide" parent="PlaneManager/Overworld" instance=ExtResource( 16 )]
+position = Vector2( 56, 128 )

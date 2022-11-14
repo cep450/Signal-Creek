@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_graphicTees_real.ink-4afef5963392ad6a5a980e149483b078.res"
+
+[deps]
+
+source_file="res://assets/ink/topicspot/obj_graphicTees_real.ink"
+dest_files=[ "res://.import/obj_graphicTees_real.ink-4afef5963392ad6a5a980e149483b078.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
