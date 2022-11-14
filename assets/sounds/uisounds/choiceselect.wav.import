@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/choiceselect.wav-aac6b2c023563917c4c469a348e7bec1.sample"
+path="res://.import/choiceSelect.wav-a9e226d7964ddf2d572b3aa00401b98d.sample"
 
 [deps]
 
-source_file="res://assets/sounds/uisounds/choiceselect.wav"
-dest_files=[ "res://.import/choiceselect.wav-aac6b2c023563917c4c469a348e7bec1.sample" ]
+source_file="res://assets/sounds/uisounds/choiceSelect.wav"
+dest_files=[ "res://.import/choiceSelect.wav-a9e226d7964ddf2d572b3aa00401b98d.sample" ]
 
 [params]
 
