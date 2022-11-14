@@ -12,7 +12,7 @@
 extents = Vector2( 25.25, 8 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 25, 12 )
+extents = Vector2( 31.5, 24 )
 
 [node name="CafeTables" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
@@ -29,7 +29,7 @@ material = ExtResource( 4 )
 position = Vector2( 0, -17 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 70, 63, 50, 34 )
+region_rect = Rect2( 70, 64, 50, 34 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
@@ -38,7 +38,7 @@ light_mask = 4
 texture = ExtResource( 7 )
 offset = Vector2( 0, -17 )
 region_enabled = true
-region_rect = Rect2( 70, 63, 50, 34 )
+region_rect = Rect2( 70, 64, 50, 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.25, -8 )
@@ -53,7 +53,7 @@ inkFileDream = ExtResource( 1 )
 inkFileReal = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
-position = Vector2( 0, -4 )
+position = Vector2( 0.5, -16 )
 shape = SubResource( 22 )
 
 [connection signal="body_entered" from="ActiveArea" to="ActiveArea" method="_on_InteractArea_body_entered"]
