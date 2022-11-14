@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_hotWheels_dream.ink-210e913e20b8fa2fd0713310ed291cd3.res"
+path="res://.import/obj_hotwheels_dream.ink-ac7f31ac42cff4c6738d8160bf55658b.res"
 
 [deps]
 
-source_file="res://assets/ink/bandn/obj_hotWheels_dream.ink"
-dest_files=[ "res://.import/obj_hotWheels_dream.ink-210e913e20b8fa2fd0713310ed291cd3.res" ]
+source_file="res://assets/ink/bandn/obj_hotwheels_dream.ink"
+dest_files=[ "res://.import/obj_hotwheels_dream.ink-ac7f31ac42cff4c6738d8160bf55658b.res" ]
 
 [params]
 
