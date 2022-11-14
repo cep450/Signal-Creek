@@ -135,43 +135,46 @@ z_index = 1
 [node name="WomensClothing" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
 position = Vector2( 265, 77 )
 
-[node name="CafeChairs" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
-position = Vector2( 447, 152 )
+[node name="CafeChairs" type="YSort" parent="PlaneManager/Overworld"]
+position = Vector2( 265, 77 )
 
 [node name="CafeChairs3" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 97, 0 )
+position = Vector2( 279, 75 )
 
 [node name="CafeChairs2" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 0, 48 )
+position = Vector2( 182, 123 )
 
 [node name="CafeChairs4" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 97, 48 )
+position = Vector2( 279, 123 )
 
 [node name="CafeChairs5" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 66, 0 )
+position = Vector2( 248, 75 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
 [node name="CafeChairs6" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 163, 0 )
+position = Vector2( 345, 75 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
 [node name="CafeChairs7" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 66, 48 )
+position = Vector2( 248, 123 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
 [node name="CafeChairs8" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 163, 48 )
+position = Vector2( 345, 123 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
 [node name="CafeChairsFront" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 7 )]
-position = Vector2( 33, -26 )
+position = Vector2( 215, 49 )
 
 [node name="CafeChairsFront2" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 7 )]
-position = Vector2( 130, -26 )
+position = Vector2( 312, 49 )
+
+[node name="CafeChairs" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
+position = Vector2( 182, 75 )
 
 [node name="TrashCan" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
 position = Vector2( 417, 136 )
