@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/npc_rina_dream.ink-b230f677a264713e74ff731b0b258971.res"
+
+[deps]
+
+source_file="res://assets/ink/bandn/npc_rina_dream.ink"
+dest_files=[ "res://.import/npc_rina_dream.ink-b230f677a264713e74ff731b0b258971.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

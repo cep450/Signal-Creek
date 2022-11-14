@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_cafeTables_real.ink-7337df6c41db4ca79811d94f00d961e3.res"
+
+[deps]
+
+source_file="res://assets/prefabs/obj_cafeTables_real.ink"
+dest_files=[ "res://.import/obj_cafeTables_real.ink-7337df6c41db4ca79811d94f00d961e3.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
