@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/npc_rina_real.ink-085b809c1733d4ecb393078888efc989.res"
+
+[deps]
+
+source_file="res://assets/ink/bandn/npc_rina_real.ink"
+dest_files=[ "res://.import/npc_rina_real.ink-085b809c1733d4ecb393078888efc989.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

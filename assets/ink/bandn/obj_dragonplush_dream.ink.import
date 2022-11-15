@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/obj_dragonplush_dream.ink-34569c12c98cd99991f9bc602e0c16d0.res"
+
+[deps]
+
+source_file="res://assets/ink/bandn/obj_dragonplush_dream.ink"
+dest_files=[ "res://.import/obj_dragonplush_dream.ink-34569c12c98cd99991f9bc602e0c16d0.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
