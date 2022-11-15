@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/scenes/controlsreference.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/prefabs/portraits.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/prefabs/interactIndicator.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/ui/prefabs/popupDialogue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/prefabs/popup_dialogue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ui/prefabs/dialoguebox.tscn" type="PackedScene" id=6]
 
 [node name="UserInterface" type="Control"]

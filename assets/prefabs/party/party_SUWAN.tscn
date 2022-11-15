@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/sprites/characters/sheet_Suwan.png" type="Texture" id=1]
 [ext_resource path="res://assets/prefabs/party/PartyCharacterAnimator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/character/character.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/characters/portraits/suwan_real.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4, 2 )
@@ -12,7 +13,8 @@ extents = Vector2( 10, 8 )
 
 [node name="SUWAN" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 3 )
-inkName = "SUWAN"
+portrait = ExtResource( 4 )
+inkName = "MS SUWAN"
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 2

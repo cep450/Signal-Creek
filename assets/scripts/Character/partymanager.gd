@@ -3,7 +3,7 @@ extends YSort
 var partyMembers = [Enums.Char.NICK, Enums.Char.NOUR, Enums.Char.SUWAN]
 onready var characterObjects = [self.get_child(0), self.get_child(1), self.get_child(2)]
 
-export(Array, Texture) var portraits = []
+export(Array, Texture) onready var portraits = []
 
 var leaderIndex = 0 setget update_leader_to #Keeps track of the current leader.
 
