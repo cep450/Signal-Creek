@@ -6,7 +6,7 @@ export(Vector2) var room_bounds_min = Vector2(0,0)
 export(Vector2) var room_bounds_max = Vector2(464, 320)
 
 	
-func get_planeManager():
+func get_plane_manager():
 	return plane_manager
 	
 func place_party(partyNode):

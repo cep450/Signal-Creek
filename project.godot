@@ -23,7 +23,6 @@ default_bus_layout=""
 
 Globals="*res://assets/scripts/globalvars.gd"
 Enums="*res://assets/scripts/enums.gd"
-Gamevars="res://assets/scripts/g_mgr_gamevars.gd"
 
 [display]
 

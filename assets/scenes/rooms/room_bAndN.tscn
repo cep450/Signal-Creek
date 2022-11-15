@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=2]
@@ -14,16 +14,6 @@
 [ext_resource path="res://assets/prefabs/bandn/obj_polaroid.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/prefabs/bandn/obj_priceOfSalt.tscn" type="PackedScene" id=13]
 
-[sub_resource type="Environment" id=1]
-background_mode = 4
-tonemap_mode = 2
-glow_enabled = true
-glow_levels/2 = true
-glow_bloom = 0.06
-glow_blend_mode = 0
-glow_hdr_threshold = 0.0
-glow_hdr_luminance_cap = 0.0
-
 [node name="Level" type="Node2D"]
 position = Vector2( -28, -76 )
 script = ExtResource( 2 )
@@ -31,9 +21,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.470588, 0.431373, 0.423529, 1 )
