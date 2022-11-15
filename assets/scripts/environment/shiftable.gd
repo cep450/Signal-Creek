@@ -14,10 +14,13 @@ export var inDream : bool = true
 export var inReal : bool = true
 
 func _ready():
+	
 	if !inReal:
 		realpos = Vector2(-100, -100)
+		
 	else:
 		realpos = dreampos + Vector2(realX, realY)
+		
 	if !inDream:
 		dreampos = Vector2(-100, -100)
 		
@@ -25,19 +28,25 @@ func _ready():
 		$Hint.visible = false
 		if (get_node_or_null("ActiveArea") != null):
 			$Sprite.material.set_shader_param("color", Color.transparent)
+			
 
 func _process(_delta):
+	
 	if Engine.editor_hint:
 		set_hint_attributes()
 
+
 func set_sheet(sheetId):
 	$Sprite.set_texture(sheetId)
+	
 	
 func set_pos(posId):
 	self.set_global_position(posId)
 	pass
 
+
 func set_hint_attributes():
+	
 	$Hint.region_rect = $Sprite.region_rect
 	$Hint.set_position(Vector2(realX, realY))
 	$Hint.set_texture(realsheet)
@@ -45,10 +54,10 @@ func set_hint_attributes():
 
 
 func _on_ActiveArea_can_interact():
+	
 	$Sprite.material.set_shader_param("color", Color.white)
-	pass # Replace with function body.
 
 
 func _on_ActiveArea_cannot_interact():
+	
 	$Sprite.material.set_shader_param("color", Color.transparent)
-	pass # Replace with function body.
