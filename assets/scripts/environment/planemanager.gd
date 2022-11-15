@@ -1,9 +1,9 @@
 extends Node
 
-#change current plane you are on (dream or decay)
+#change current plane you are on (dream world or real world)
 
-onready var ground = $Ground
-onready var walls = $Overworld/Walls
+onready var ground_node = $Ground
+onready var walls_node = $Overworld/Walls
 onready var objects = []
 
 export (TileSet) var dreamset 
@@ -20,10 +20,11 @@ func _ready():
 func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("planeshift"):
-		shiftPlane()
+		shift_planes()
 
 
-func shiftPlane():
+func shift_planes():
+	
 	if Globals.world == Enums.Pln.DREAM:
 		Globals.world = Enums.Pln.REAL
 		set_tilesets(realset)
@@ -32,13 +33,15 @@ func shiftPlane():
 		set_tilesets(dreamset)
 
 func set_tilesets(setId):
-	ground.set_tileset(setId)
-	walls.set_tileset(setId)
-	set_obj_sprites()
-	move_objs()
+	
+	ground_node.set_tileset(setId)
+	walls_node.set_tileset(setId)
+	set_objects_sprites()
+	move_objects()
 
 
-func set_obj_sprites():
+func set_objects_sprites():
+	
 	if Globals.world == Enums.Pln.DREAM:
 		for node in objects:
 			node.set_sheet(node.dreamsheet)
@@ -48,10 +51,10 @@ func set_obj_sprites():
 	pass
 
 
-func move_objs():
+func move_objects():
 	if Globals.world == Enums.Pln.DREAM:
 		for node in objects:
-			node.set_pos(node.dreampos)
+			node.set_position(node.dream_world_position)
 	else:
 		for node in objects:
-			node.set_pos(node.realpos)
+			node.set_position(node.real_world_position)
