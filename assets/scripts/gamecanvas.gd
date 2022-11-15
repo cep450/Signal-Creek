@@ -9,7 +9,7 @@ onready var viewport = $ViewportContainer/Viewport
 onready var current_level = $ViewportContainer/Viewport/Level
 onready var camera = $ViewportContainer/Viewport/Level/Camera2D
 
-var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
+#var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
 var room_BandN = preload("res://assets/scenes/rooms/room_bAndN.tscn")
 var room_hallway = preload("res://assets/scenes/rooms/room_hallway.tscn")
 var room_topicSpot = preload("res://assets/scenes/rooms/room_topicSpot.tscn")
