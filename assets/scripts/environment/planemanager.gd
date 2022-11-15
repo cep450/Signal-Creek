@@ -16,11 +16,13 @@ func _ready():
 		objects.push_back(node)
 	pass
 
+
 func _physics_process(_delta):
+	
 	if Input.is_action_just_pressed("planeshift"):
 		shiftPlane()
 
-#change TileMaps to specified TileSet
+
 func shiftPlane():
 	if Globals.world == Enums.Pln.DREAM:
 		Globals.world = Enums.Pln.REAL
@@ -35,6 +37,7 @@ func set_tilesets(setId):
 	set_obj_sprites()
 	move_objs()
 
+
 func set_obj_sprites():
 	if Globals.world == Enums.Pln.DREAM:
 		for node in objects:
@@ -43,6 +46,7 @@ func set_obj_sprites():
 		for node in objects:
 			node.set_sheet(node.realsheet)
 	pass
+
 
 func move_objs():
 	if Globals.world == Enums.Pln.DREAM:

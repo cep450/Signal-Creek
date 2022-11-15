@@ -6,7 +6,7 @@ onready var viewport_container = $ViewportContainer
 onready var viewport = $ViewportContainer/Viewport
 
 onready var current_room = $ViewportContainer/Viewport/Room
-onready var camera = $ViewportContainer/Viewport/Level/Camera2D
+onready var camera = $ViewportContainer/Viewport/Room/Camera2D
 
 #var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
 var room_BandN = preload("res://assets/scenes/rooms/room_bAndN.tscn")
@@ -22,14 +22,15 @@ export var camera_pixel_height : int = 180
 
 func _ready():
 	
+	Globals.planeManager = $ViewportContainer/Viewport/Room/PlaneManager
+	Globals.party = $ViewportContainer/Viewport/Room/PlaneManager/Overworld/PARTY
+	
 	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
-	Globals.planeManager = $ViewportContainer/Viewport/Level/PlaneManager
-	Globals.party = $ViewportContainer/Viewport/Level/PlaneManager/Overworld/PARTY
 	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/HBoxContainer/portrait
 	
 	camera.rescale_camera(floor(OS.window_size.x/camera_pixel_width))
 	set_current_room(rooms[0])
-	
+
 
 func _process(delta):
 	
@@ -40,12 +41,12 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("reset"):
 		reset_game()
-		
+
 
 func reset_game():
 	
 	current_room.get_tree().change_scene(current_room.get_tree().current_scene.filename)
-	
+
 
 func set_current_room(levelnode):
 	
@@ -61,7 +62,7 @@ func set_current_room(levelnode):
 	Globals.planeManager = thisRoom.get_plane_manager()
 
 	viewport.remove_child(previousRoom)
-	
+
 
 func cycle_rooms():
 	
@@ -71,4 +72,5 @@ func cycle_rooms():
 		currentRoomIndex = 0
 		
 	set_current_room(rooms[currentRoomIndex])
-	print("current room: " + current_room)
+	print(current_room)
+

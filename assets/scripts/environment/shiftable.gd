@@ -13,6 +13,7 @@ export var realY: int
 export var inDream : bool = true
 export var inReal : bool = true
 
+
 func _ready():
 	
 	if !inReal:
@@ -28,7 +29,7 @@ func _ready():
 		$Hint.visible = false
 		if (get_node_or_null("ActiveArea") != null):
 			$Sprite.material.set_shader_param("color", Color.transparent)
-			
+
 
 func _process(_delta):
 	
@@ -37,9 +38,10 @@ func _process(_delta):
 
 
 func set_sheet(sheetId):
+	
 	$Sprite.set_texture(sheetId)
-	
-	
+
+
 func set_pos(posId):
 	self.set_global_position(posId)
 	pass
