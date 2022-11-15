@@ -32,6 +32,7 @@ func shift_planes():
 		Globals.world = Enums.Pln.DREAM
 		set_tilesets(dreamset)
 
+
 func set_tilesets(setId):
 	
 	ground_node.set_tileset(setId)
@@ -43,18 +44,21 @@ func set_tilesets(setId):
 func set_objects_sprites():
 	
 	if Globals.world == Enums.Pln.DREAM:
-		for node in objects:
-			node.set_sheet(node.dreamsheet)
+		for object in objects:
+			object.set_sheet(object.dreamsheet)
+			
 	else:
-		for node in objects:
-			node.set_sheet(node.realsheet)
+		for object in objects:
+			object.set_sheet(object.realsheet)
 	pass
 
 
 func move_objects():
+	
 	if Globals.world == Enums.Pln.DREAM:
-		for node in objects:
-			node.set_position(node.dream_world_position)
+		for object in objects:
+			object.set_position(object.dream_world_position)
+			
 	else:
-		for node in objects:
-			node.set_position(node.real_world_position)
+		for object in objects:
+			object.set_position(object.real_world_position)
