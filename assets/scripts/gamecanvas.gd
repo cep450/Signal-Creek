@@ -24,6 +24,7 @@ func _ready():
 	
 	Globals.planeManager = $ViewportContainer/Viewport/Room/PlaneManager
 	Globals.party = $ViewportContainer/Viewport/Room/PlaneManager/Overworld/PARTY
+	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
 	
 	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
 	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/HBoxContainer/portrait
@@ -48,10 +49,10 @@ func reset_game():
 	current_room.get_tree().change_scene(current_room.get_tree().current_scene.filename)
 
 
-func set_current_room(levelnode):
+func set_current_room(roomPrefab):
 	
 	var previousRoom = current_room
-	var thisRoom = levelnode.instance()
+	var thisRoom = roomPrefab.instance()
 	viewport.add_child(thisRoom)
 	
 	current_room = thisRoom

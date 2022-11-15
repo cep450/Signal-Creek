@@ -9,10 +9,10 @@ onready var vertical_layout_node = $Panel/MarginContainer/ScrollContainer/VBoxCo
 onready var player = $InkPlayer
 onready var audioPlayer = $AudioStreamPlayer
 
-var TextEntry = preload("res://assets/ui/prefabs/dialogueBox_entry.tscn")
-var DialogueEntry = preload("res://assets/ui/prefabs/dialogueBox_entryDialogue.tscn")
-var ChoiceEntry = preload("res://assets/ui/prefabs/dialogueBox_entryChoices.tscn")
-var Divert = preload("res://assets/ui/prefabs/dialogueBox_entryChoices_Divert.tscn")
+var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entry.tscn")
+var DialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
+var ChoiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
+var Divert = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_divert.tscn")
 
 export var choiceSelectSound : AudioStreamSample #scroll_nodeing through choices
 export var ChoiceEntrySound : AudioStreamSample #when a new choice entry appears
@@ -22,7 +22,7 @@ export var talk : bool #for isolated testing purposes; default to false for full
 
 #DIALOGUE ENTRY VARS
 var currentName = "THE PARTY" #stores the current name to put into entry nametags
-onready var color_manager = $ColorManager #for name colors
+
 #var currentColor = Color(1, 1, 1)
 
 #CHOICE ENTRY VARS
@@ -156,7 +156,7 @@ func create_entry_dialogue(newtext):
 	var newDialogueEntry = DialogueEntry.instance()
 	vertical_layout_node.add_child(newDialogueEntry)
 
-	newDialogueEntry.set_nametag(currentName, color_manager.get_current_color())
+	newDialogueEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
 	newDialogueEntry.remove_placeholders()
 	
 	var newParagraph = TextEntry.instance()
@@ -176,7 +176,7 @@ func create_entry_choices(choices):
 	newChoiceEntry.remove_placeholders()
 	
 	
-	newChoiceEntry.set_nametag(currentName, color_manager.get_current_color())
+	newChoiceEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
 	
 	for option in choices: #iterate through choices, add nodes as children
 		var newDivert = Divert.instance()
@@ -185,7 +185,7 @@ func create_entry_choices(choices):
 		
 		if ":" in option:
 			var nameSubstring = option.split(":", false)[0].strip_escapes()
-			var colorCode = color_manager.get_current_color()
+			var colorCode = Globals.colorManager.get_current_color()
 
 			var textSubstring = option.split(":", false)[1].strip_escapes()
 			
@@ -229,7 +229,7 @@ func play_sound(soundName):
 func set_current_name(source):
 	
 	currentName = source
-	color_manager.set_current_color(source)
+	Globals.colorManager.set_current_color(source)
 
 
 func load_story(inkFile):

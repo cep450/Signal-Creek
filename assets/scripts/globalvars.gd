@@ -5,6 +5,7 @@ extends Node
 onready var player = null
 onready var mode = Enums.Mode.WALK
 onready var dialogueBox = null
+onready var colorManager = null
 onready var planeManager = null
 onready var party = null
 onready var portrait = null
