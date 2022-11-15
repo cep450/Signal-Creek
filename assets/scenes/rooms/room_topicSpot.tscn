@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/prefabs/topicspot/obj_shelfSide.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=17]
 
-[node name="Level" type="Node2D"]
+[node name="Room" type="Node2D"]
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],

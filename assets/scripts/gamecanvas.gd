@@ -5,7 +5,7 @@ extends Node2D
 onready var viewport_container = $ViewportContainer
 onready var viewport = $ViewportContainer/Viewport
 
-onready var current_room = $ViewportContainer/Viewport/Level
+onready var current_room = $ViewportContainer/Viewport/Room
 onready var camera = $ViewportContainer/Viewport/Level/Camera2D
 
 #var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
@@ -14,7 +14,7 @@ var room_hallway = preload("res://assets/scenes/rooms/room_hallway.tscn")
 var room_topicSpot = preload("res://assets/scenes/rooms/room_topicSpot.tscn")
 
 var rooms = [room_BandN, room_hallway, room_topicSpot]
-var roomIndex = 0
+var currentRoomIndex = 0
 
 
 export var camera_pixel_width : int = 320
@@ -50,14 +50,13 @@ func set_current_room(levelnode):
 	previousRoom.remove_party(Globals.party)
 	thisRoom.place_party(Globals.party)
 	
-	
 	Globals.planeManager = thisRoom.get_plane_manager()
 
 	viewport.remove_child(previousRoom)
 
 func cycle_rooms():
-	roomIndex += 1
-	if roomIndex >= rooms.size():
-		roomIndex = 0
-	set_current_room(rooms[roomIndex])
+	currentRoomIndex += 1
+	if currentRoomIndex >= rooms.size():
+		currentRoomIndex = 0
+	set_current_room(rooms[currentRoomIndex])
 	print(current_room)
