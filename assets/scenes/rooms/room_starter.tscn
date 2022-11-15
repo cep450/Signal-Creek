@@ -1,38 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
-[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=5]
+[ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=6]
+[ext_resource path="res://assets/prefabs/party/PARTY.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Environment" id=1]
-background_mode = 4
-tonemap_mode = 2
-glow_enabled = true
-glow_levels/2 = true
-glow_bloom = 0.06
-glow_blend_mode = 0
-glow_hdr_threshold = 0.0
-glow_hdr_luminance_cap = 0.0
-
-[node name="Level" type="Node2D"]
+[node name="Room" type="Node2D"]
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 352, 353 )
 z_index = 16
 current = true
 editor_draw_screen = false
-script = ExtResource( 4 )
+script = ExtResource( 1 )
+camera_following = NodePath("../PlaneManager/Overworld/PARTY/NICK")
 lerpSpeed = 8
-camera_bounds_max = Vector2( 464, 320 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 margin_left = -352.0
@@ -52,11 +42,11 @@ __meta__ = {
 
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
-dreamset = ExtResource( 1 )
-realset = ExtResource( 5 )
+dreamset = ExtResource( 2 )
+realset = ExtResource( 4 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -73,7 +63,7 @@ __meta__ = {
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
 position = Vector2( 232, 160 )
 scale = Vector2( 3.625, 2.5 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
 energy = 0.9
 range_item_cull_mask = 7
@@ -84,7 +74,7 @@ __meta__ = {
 }
 
 [node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
 cell_y_sort = true
@@ -93,3 +83,8 @@ tile_data = PoolIntArray( 65539, 0, 327680, 65540, 0, 196612, 65541, 0, 327684, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="PARTY" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 91, 105 )
+
+[editable path="PlaneManager/Overworld/PARTY"]
