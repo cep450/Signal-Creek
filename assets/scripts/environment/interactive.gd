@@ -7,9 +7,9 @@ export var inkFileReal : Resource
 
 var canInteract = false
 
-var interactiveByNick = false
-var interactiveByNour = false 
-var interactiveBySuwan = false
+export var interactiveByNick = false
+export var interactiveByNour = false 
+export var interactiveBySuwan = false
 
 signal can_interact
 signal cannot_interact
@@ -36,10 +36,23 @@ func _process(_delta):
 
 func _on_InteractArea_body_entered(body):
 	
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") && body == Globals.party.get_leader():
 		
-		canInteract = true
-		emit_signal("can_interact")
+		var currentLeader = Globals.party.leaderIndex
+		
+		if currentLeader == 0 && interactiveByNick:
+			canInteract = true
+			emit_signal("can_interact")
+			
+		elif currentLeader == 1 && interactiveByNour:
+			canInteract = true
+			emit_signal("can_interact")
+			
+		elif currentLeader == 2 && interactiveBySuwan:
+			canInteract = true
+			emit_signal("can_interact")
+			
+
 
 
 func _on_InteractArea_body_exited(body):

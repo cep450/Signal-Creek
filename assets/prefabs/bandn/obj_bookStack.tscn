@@ -51,6 +51,7 @@ __meta__ = {
 }
 inkFileDream = ExtResource( 1 )
 inkFileReal = ExtResource( 6 )
+interactiveBySuwan = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 position = Vector2( 0, -8 )
