@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/sounds/uisounds/newEntry.wav" type="AudioStream" id=1]
-[ext_resource path="res://assets/sounds/uisounds/newChoiceEntry.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/sounds/uisounds/choiceSelect.wav" type="AudioStream" id=3]
 [ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=4]
 [ext_resource path="res://assets/ui/prefabs/dialogueBox_entry.tscn" type="PackedScene" id=5]
@@ -19,7 +18,6 @@ margin_right = -16.0
 theme = ExtResource( 9 )
 script = ExtResource( 11 )
 choiceSelectSound = ExtResource( 3 )
-choiceEntrySound = ExtResource( 2 )
 newEntrySound = ExtResource( 1 )
 
 [node name="InkPlayer" type="Node" parent="."]

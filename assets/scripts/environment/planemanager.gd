@@ -50,7 +50,6 @@ func set_objects_sprites():
 	else:
 		for object in objects:
 			object.set_sheet(object.realsheet)
-	pass
 
 
 func move_objects():

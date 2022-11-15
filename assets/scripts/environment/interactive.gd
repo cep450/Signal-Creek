@@ -31,7 +31,7 @@ func _process(_delta):
 				elif Globals.world == Enums.Pln.REAL && inkFileReal:
 					Globals.dialogueBox.load_story(inkFileReal)
 					
-				Globals.dialogueBox.panel.set_visible(true)
+				Globals.dialogueBox.background_panel_node.set_visible(true)
 
 
 func _on_InteractArea_body_entered(body):
