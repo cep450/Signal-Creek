@@ -34,9 +34,7 @@ z_index = 16
 current = true
 editor_draw_screen = false
 script = ExtResource( 1 )
-following = NodePath("../PlaneManager/Overworld/PARTY")
 lerpSpeed = 8
-camera_bounds_max = Vector2( 464, 320 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 margin_left = -352.0

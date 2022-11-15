@@ -5,7 +5,7 @@ extends Area2D
 export var inkFileDream : Resource
 export var inkFileReal : Resource
 
-var canInteract = false #whether you can interact
+var canInteract = false
 
 #who sees this as interactable?
 var interactiveByNick = false
