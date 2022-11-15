@@ -39,7 +39,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("room_toggle"):
 		cycle_rooms()
 		
-	if Input.is_action_just_pressed("reset"):
+	if Input.is_action_just_pressed("reset") && Globals.mode == Enums.Mode.WALK:
 		reset_game()
 
 

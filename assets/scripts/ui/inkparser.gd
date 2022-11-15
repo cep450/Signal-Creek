@@ -22,7 +22,8 @@ export var talk : bool #for isolated testing purposes; default to false for full
 
 #DIALOGUE ENTRY VARS
 var currentName = "THE PARTY" #stores the current name to put into entry nametags
-var currentColor = Color(1, 1, 1)
+onready var color_manager = $ColorManager #for name colors
+#var currentColor = Color(1, 1, 1)
 
 #CHOICE ENTRY VARS
 var currentChoiceStrings
@@ -66,6 +67,7 @@ func _process(_delta):
 				currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(true)
 				
 				play_sound(choiceSelectSound)
+				
 			if Input.is_action_just_released("ui_up"):
 				
 				currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(false)
@@ -154,7 +156,7 @@ func create_entry_dialogue(newtext):
 	var newDialogueEntry = DialogueEntry.instance()
 	vertical_layout_node.add_child(newDialogueEntry)
 
-	newDialogueEntry.set_nametag(currentName, currentColor)
+	newDialogueEntry.set_nametag(currentName, color_manager.get_current_color())
 	newDialogueEntry.remove_placeholders()
 	
 	var newParagraph = TextEntry.instance()
@@ -172,7 +174,9 @@ func create_entry_choices(choices):
 	vertical_layout_node.add_child(newChoiceEntry)
 	
 	newChoiceEntry.remove_placeholders()
-	newChoiceEntry.set_nametag(currentName, currentColor)
+	
+	
+	newChoiceEntry.set_nametag(currentName, color_manager.get_current_color())
 	
 	for option in choices: #iterate through choices, add nodes as children
 		var newDivert = Divert.instance()
@@ -181,12 +185,12 @@ func create_entry_choices(choices):
 		
 		if ":" in option:
 			var nameSubstring = option.split(":", false)[0].strip_escapes()
-			var colorCode = $ColorManager.characterColors.get(nameSubstring.to_lower().trim_suffix(":"))
-			#[color=<code/name>]
-			#$ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
+			var colorCode = color_manager.get_current_color()
+
 			var textSubstring = option.split(":", false)[1].strip_escapes()
 			
 			newText = '[color=#' + colorCode.to_html() + '][b]' + nameSubstring + ':[/b][/color]' + textSubstring 
+			
 		else:
 			newText = '[' + option + ']'
 		
@@ -200,6 +204,7 @@ func create_entry_choices(choices):
 
 
 static func delete_children(node):
+	
 	for n in node.get_children():
 		node.remove_child(n)
 		n.queue_free()
@@ -207,10 +212,9 @@ static func delete_children(node):
 
 func clear_and_reset():
 	#unsure if these two apply universally; they refer to the ink player itself
-	player.Reset()
+	#player.Reset()
 	player.LoadStory()
 	
-	#keep these, they're specific to the UI nodes
 	background_panel_node.set_visible(false)
 	delete_children(vertical_layout_node)
 	Globals.mode = Enums.Mode.WALK
@@ -225,13 +229,12 @@ func play_sound(soundName):
 func set_current_name(source):
 	
 	currentName = source
-	currentColor = $ColorManager.characterColors.get(currentName.to_lower().trim_suffix(":"))
-	pass
+	color_manager.set_current_color(source)
 
 
 func load_story(inkFile):
 	
 	player.LoadStory(inkFile)
-	print(Globals.party.get_leader_inkname())
-	print("running")
+	print("Current Party Leader: " + Globals.party.get_leader_inkname())
+	print("Ink Player is Running")
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
