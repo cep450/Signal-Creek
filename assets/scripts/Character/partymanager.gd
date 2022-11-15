@@ -3,7 +3,8 @@ extends YSort
 var partyMembers = [Enums.Char.NICK, Enums.Char.NOUR, Enums.Char.SUWAN]
 onready var characterObjects = [self.get_child(0), self.get_child(1), self.get_child(2)]
 
-export(Array, Texture) var portraits = []
+export(Array, Texture) var dream_portraits = []
+export(Array, Texture) var real_portraits = []
 
 var leaderIndex = 0 setget update_leader_to #Keeps track of the current leader.
 
@@ -62,7 +63,11 @@ func rotate_leader_right():
 #changes the index variable, updates UI, any other logic anywhere else using signals.
 func update_leader_to(newIndex):
 	leaderIndex = newIndex
-	Globals.portrait.set_character(portraits[leaderIndex], get_leader_inkname())
+	
+	if Globals.world == Enums.Pln.DREAM:
+		Globals.portrait.set_character(dream_portraits[leaderIndex], get_leader_inkname())
+	else:
+		Globals.portrait.set_character(real_portraits[leaderIndex], get_leader_inkname())
 
 	#camera centers on this character
 	
