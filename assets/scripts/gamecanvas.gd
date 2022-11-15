@@ -2,7 +2,6 @@ extends Node2D
 
 #manages viewport, ui, plane stuff
 
-#intialize game variables
 onready var viewport_container = $ViewportContainer
 onready var viewport = $ViewportContainer/Viewport
 
@@ -22,10 +21,9 @@ export var camWidth : int = 320
 export var camHeight : int = 180
 
 func _ready():
-	Globals.dialoguebox = $UserInterface/ReferenceRect/DialogueBox
+	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
 	Globals.planeManager = $ViewportContainer/Viewport/Level/PlaneManager
 	Globals.party = $ViewportContainer/Viewport/Level/PlaneManager/Overworld/PARTY
-	
 	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/portrait
 	
 	camera.rescale_camera(floor(OS.window_size.x/camWidth))

@@ -22,12 +22,12 @@ func _process(_delta):
 				Globals.mode = Enums.Mode.TALK
 				
 				if Globals.world == Enums.Pln.DREAM && inkFileDream:
-					Globals.dialoguebox.load_story(inkFileDream)
+					Globals.dialogueBox.load_story(inkFileDream)
 					
 				elif Globals.world == Enums.Pln.REAL && inkFileReal:
-					Globals.dialoguebox.load_story(inkFileReal)
+					Globals.dialogueBox.load_story(inkFileReal)
 					
-				Globals.dialoguebox.panel.set_visible(true)
+				Globals.dialogueBox.panel.set_visible(true)
 
 func _on_InteractArea_body_entered(body):
 	if body.is_in_group("Player"):
