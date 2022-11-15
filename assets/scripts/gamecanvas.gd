@@ -27,7 +27,7 @@ func _ready():
 	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
 	
 	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
-	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/HBoxContainer/portrait
+	Globals.portrait = $UserInterface/ReferenceRect/Portraits
 	
 	camera.rescale_camera(floor(OS.window_size.x/camera_pixel_width))
 	set_current_room(rooms[0])
