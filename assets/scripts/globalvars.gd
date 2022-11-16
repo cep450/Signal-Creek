@@ -18,3 +18,10 @@ onready var party = null
 onready var nick = null
 onready var nour = null
 onready var suwan = null
+
+#global static functions
+static func delete_children(node):
+	
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()

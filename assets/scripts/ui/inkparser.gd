@@ -31,7 +31,7 @@ var inkLinker = preload("res://assets/scripts/InkLinker.cs")
 
 func _ready():
 	
-	delete_children(vertical_layout_node)
+	Globals.delete_children(vertical_layout_node)
 	background_panel_node.set_visible(false)
 	player.LoadStory()
 
@@ -113,10 +113,10 @@ func _proceed():
 			set_current_name(currentLine.split(":", false)[0] + ":")
 			create_entry_dialogue(currentLine.split(":", false)[1].strip_escapes().trim_prefix(' '))
 		
-		else: #if line doesn't contain name, it's a normal text entry
+		else: #it's a normal text entry
 			create_entry(currentLine.strip_escapes())
 		
-	elif !isDisplayingChoices: #create entry with choices
+	elif !isDisplayingChoices:
 		displayChoices()
 		
 	#scroll_node to bottom when new message appears (make this tween later)
@@ -127,7 +127,7 @@ func _proceed():
 func displayChoices():
 	
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
-	currentChoiceStrings = player.get_CurrentChoices() #get current choices from ink
+	currentChoiceStrings = player.get_CurrentChoices()
 	
 	create_entry_choices(currentChoiceStrings)
 	isDisplayingChoices = true
@@ -199,20 +199,13 @@ func create_entry_choices(choices):
 	Globals.soundManager.play_sound(Globals.soundManager.new_choice_entry_sound)
 
 
-static func delete_children(node):
-	
-	for n in node.get_children():
-		node.remove_child(n)
-		n.queue_free()
-
-
 func clear_and_reset():
 	#unsure if these two apply universally; they refer to the ink player itself
 	#player.Reset()
 	player.LoadStory()
 	
 	background_panel_node.set_visible(false)
-	delete_children(vertical_layout_node)
+	Globals.delete_children(vertical_layout_node)
 	Globals.mode = Enums.Mode.WALK
 
 
