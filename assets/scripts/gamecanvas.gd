@@ -2,28 +2,77 @@ extends Node2D
 
 #manages viewport, ui, plane stuff
 
-#intialize game variables
 onready var viewport_container = $ViewportContainer
 onready var viewport = $ViewportContainer/Viewport
-onready var current_level = $ViewportContainer/Viewport/Level
-onready var camera = $ViewportContainer/Viewport/Level/Camera2D
 
-export var camWidth : int = 320
-export var camHeight : int = 180
+onready var current_room = $ViewportContainer/Viewport/Room
+onready var camera = $ViewportContainer/Viewport/Room/Camera2D
+
+#var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
+var room_BandN = preload("res://assets/scenes/rooms/room_bandn.tscn")
+var room_hallway = preload("res://assets/scenes/rooms/room_hallway.tscn")
+var room_topicSpot = preload("res://assets/scenes/rooms/room_topicSpot.tscn")
+
+var rooms = [room_BandN, room_hallway, room_topicSpot]
+var currentRoomIndex = 0
+
+export var camera_pixel_width : int = 320
+export var camera_pixel_height : int = 180
+
 
 func _ready():
-	Globals.dialoguebox = $UserInterface/ReferenceRect/DialogueBox
-	Globals.planeManager = $ViewportContainer/Viewport/Level/PlaneManager
-	Globals.party = $ViewportContainer/Viewport/Level/PlaneManager/Overworld/PARTY
-	Globals.portrait = $UserInterface/ReferenceRect/Portraits/MarginContainer/portrait
 	
-	camera.rescale_camera(floor(OS.window_size.x/camWidth))
+	Globals.planeManager = $ViewportContainer/Viewport/Room/PlaneManager
+	Globals.party = $ViewportContainer/Viewport/Room/PlaneManager/Overworld/PARTY
+	Globals.soundManager = $SoundManager
+	
+	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
+	Globals.portrait = $UserInterface/ReferenceRect/Portraits
+	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
+	
+	camera.rescale_camera(floor(OS.window_size.x/camera_pixel_width))
+	set_current_room(rooms[0])
+
 
 func _process(delta):
-	viewport_container.material.set_shader_param("cam_offset", camera.pixel_perfect(delta))
-	if Input.is_action_just_pressed("reset"):
-		reset_level()
-		
-func reset_level():
-	current_level.get_tree().change_scene(current_level.get_tree().current_scene.filename)
 	
+	viewport_container.material.set_shader_param("cam_offset", camera.pixel_perfect(delta))
+	
+	if Input.is_action_just_pressed("room_toggle"):
+		cycle_rooms()
+		
+	if Input.is_action_just_pressed("reset") && Globals.mode == Enums.Mode.WALK:
+		reset_game()
+
+
+func reset_game():
+	
+	current_room.get_tree().change_scene(current_room.get_tree().current_scene.filename)
+
+
+func set_current_room(roomPrefab):
+	
+	var previousRoom = current_room
+	var thisRoom = roomPrefab.instance()
+	viewport.add_child(thisRoom)
+	
+	current_room = thisRoom
+	
+	previousRoom.remove_party(Globals.party)
+	thisRoom.place_party(Globals.party)
+	
+	Globals.planeManager = thisRoom.get_plane_manager()
+
+	viewport.remove_child(previousRoom)
+
+
+func cycle_rooms():
+	
+	currentRoomIndex += 1
+	
+	if currentRoomIndex >= rooms.size():
+		currentRoomIndex = 0
+		
+	set_current_room(rooms[currentRoomIndex])
+	print(current_room)
+

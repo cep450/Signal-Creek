@@ -3,7 +3,8 @@ extends YSort
 var partyMembers = [Enums.Char.NICK, Enums.Char.NOUR, Enums.Char.SUWAN]
 onready var characterObjects = [self.get_child(0), self.get_child(1), self.get_child(2)]
 
-export(Array, Texture) var portraits = []
+export(Array, Texture) var dream_portraits = []
+export(Array, Texture) var real_portraits = []
 
 var leaderIndex = 0 setget update_leader_to #Keeps track of the current leader.
 
@@ -51,19 +52,26 @@ func check_input():
 #called by key input- TODO
 func rotate_leader_left():
 	leaderIndex = wrapi(leaderIndex - 1, 0,3)
+	update_leader_to(leaderIndex)
 
 #called by key input- TODO 
 func rotate_leader_right():
 	leaderIndex = wrapi(leaderIndex + 1, 0,3)
+	update_leader_to(leaderIndex)
 
 #called automatically whenever leaderIndex is changed, thanks to setget.
 #changes the index variable, updates UI, any other logic anywhere else using signals.
 func update_leader_to(newIndex):
 	leaderIndex = newIndex
-	Globals.portrait.set_texture(portraits[leaderIndex])
+	
+	if Globals.world == Enums.Pln.DREAM:
+		Globals.portrait.set_character(dream_portraits[leaderIndex], get_leader_inkname())
+	else:
+		Globals.portrait.set_character(real_portraits[leaderIndex], get_leader_inkname())
 
 	#camera centers on this character
-	Globals.camera.following = characterObjects[leaderIndex]
+	
+	Globals.camera.camera_following = characterObjects[leaderIndex]
 
 	#TODO: play a sound?
 

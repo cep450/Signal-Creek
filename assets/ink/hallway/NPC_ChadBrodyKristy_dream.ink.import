@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/npc_chadbrodykristy_dream.ink-de3adf64bf479cf4920725cd0de299df.res"
+
+[deps]
+
+source_file="res://assets/ink/hallway/npc_chadbrodykristy_dream.ink"
+dest_files=[ "res://.import/npc_chadbrodykristy_dream.ink-de3adf64bf479cf4920725cd0de299df.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_oldDoll_dream.ink-a272c3eb7cbae1e792eb8d857fda8318.res"
+path="res://.import/obj_olddoll_dream.ink-f0a5e8f429ddc07d16efc100d6510b81.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/obj_oldDoll_dream.ink"
-dest_files=[ "res://.import/obj_oldDoll_dream.ink-a272c3eb7cbae1e792eb8d857fda8318.res" ]
+source_file="res://assets/ink/hallway/obj_olddoll_dream.ink"
+dest_files=[ "res://.import/obj_olddoll_dream.ink-f0a5e8f429ddc07d16efc100d6510b81.res" ]
 
 [params]
 
