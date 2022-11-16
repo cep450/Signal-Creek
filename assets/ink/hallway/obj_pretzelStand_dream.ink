@@ -29,7 +29,9 @@ NOUR: Looks like now's my chance to try some junk food!
 No response.
 
 :NOUR:
-* [Huh? Why the hell isn't he responding?]NOUR: Hello? Hey, are you deaf or something?
+* [Huh? Why the hell isn't he responding?]NOUR: Hello? Hey, are you deaf or something? ->response
+
+==response==
 
 Still, no response.
 

@@ -1,6 +1,6 @@
 //REAL NOT VISITED
 // here, we check if real world phone cases have been visited, and skip to realvisited if so.
-
+VAR currentPartyChar = "PARTY"
 The phone cases have cute little animals on them, most covered in glitter and in all colors of the rainbow. Nick seems completely enamoured by them.
 
 NICK: "Oh! Look! A frog!"
