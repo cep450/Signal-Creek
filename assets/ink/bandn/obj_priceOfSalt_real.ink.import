@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_priceofsalt_real.ink-c3254b1bfbc2146466b764239febd6e8.res"
+path="res://.import/obj_priceOfSalt_real.ink-b11b0937d5064bd091aa78b49ca7469a.res"
 
 [deps]
 
-source_file="res://assets/ink/bandn/obj_priceofsalt_real.ink"
-dest_files=[ "res://.import/obj_priceofsalt_real.ink-c3254b1bfbc2146466b764239febd6e8.res" ]
+source_file="res://assets/ink/bandn/obj_priceOfSalt_real.ink"
+dest_files=[ "res://.import/obj_priceOfSalt_real.ink-b11b0937d5064bd091aa78b49ca7469a.res" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_cafetables_dream.ink-3e7c90b302f53e37b079b11d5fa325b8.res"
+path="res://.import/obj_cafeTables_dream.ink-20f116eef6db0e139909851fd9c95efe.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/obj_cafetables_dream.ink"
-dest_files=[ "res://.import/obj_cafetables_dream.ink-3e7c90b302f53e37b079b11d5fa325b8.res" ]
+source_file="res://assets/ink/hallway/obj_cafeTables_dream.ink"
+dest_files=[ "res://.import/obj_cafeTables_dream.ink-20f116eef6db0e139909851fd9c95efe.res" ]
 
 [params]
 
