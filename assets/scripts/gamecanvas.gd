@@ -9,7 +9,7 @@ onready var current_room = $ViewportContainer/Viewport/Room
 onready var camera = $ViewportContainer/Viewport/Room/Camera2D
 
 #var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
-var room_BandN = preload("res://assets/scenes/rooms/room_bAndN.tscn")
+var room_BandN = preload("res://assets/scenes/rooms/room_bandn.tscn")
 var room_hallway = preload("res://assets/scenes/rooms/room_hallway.tscn")
 var room_topicSpot = preload("res://assets/scenes/rooms/room_topicSpot.tscn")
 

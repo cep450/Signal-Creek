@@ -4,9 +4,13 @@ extends Node
 
 onready var audioPlayer = $AudioStreamPlayer2D
 
-export var choice_select_sound : AudioStreamSample #scroll_nodeing through choices
-export var new_choice_entry_sound : AudioStreamSample #when a new choice entry appears
-export var new_entry_sound : AudioStreamSample #when a new entry or dialogue entry appears
+export var choice_select_sound : AudioStreamSample
+export var new_choice_entry_sound : AudioStreamSample
+export var new_entry_sound : AudioStreamSample
+
+export var music_bandn : AudioStreamSample
+export var music_hallway : AudioStreamSample
+export var music_topicspot : AudioStreamSample
 
 func play_sound(soundName):
 	

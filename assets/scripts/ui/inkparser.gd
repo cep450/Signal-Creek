@@ -1,17 +1,17 @@
 extends Control
 
 #InkParser parses ink passages and interfaces with the ink player
-#note, choices will be referred to as "Diverts" (what ink calls them)
 
 onready var background_panel_node = $Panel
 onready var scroll_node = $Panel/MarginContainer/ScrollContainer
 onready var vertical_layout_node = $Panel/MarginContainer/ScrollContainer/VBoxContainer
 onready var player = $InkPlayer
 
+#load resources to make new prefabs
 var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entry.tscn")
 var DialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
 var ChoiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
-var Divert = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_divert.tscn")
+var Divert = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
 
 export var startTalking : bool #for isolated testing purposes; default to false for full game
 
@@ -61,6 +61,7 @@ func _process(_delta):
 				
 				Globals.soundManager.play_sound(Globals.soundManager.choice_select_sound)
 				
+				
 			if Input.is_action_just_released("ui_up"):
 				
 				currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(false)
@@ -72,8 +73,10 @@ func _process(_delta):
 				currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(true)
 				
 				Globals.soundManager.play_sound(Globals.soundManager.choice_select_sound)
+				
 			
-			if Input.is_action_just_pressed("interact"): #Divert is submitted
+			if Input.is_action_just_pressed("interact"):
+				
 				vertical_layout_node.remove_child(currentlyHighlightedChoiceEntry) #remove the choicebox
 				
 				if currentlyHighlightedChoice < 0:
