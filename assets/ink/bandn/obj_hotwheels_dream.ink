@@ -1,5 +1,6 @@
 //the dream hot wheels file
 
+VAR currentPartyChar = "PARTY"
 ->MsSuwanDreamHotWheels
 ->PartyDreamHotWheels
 
@@ -26,7 +27,10 @@ She walks away feeling content, knowing that she can't continue being reminded o
 ==PartyDreamHotWheels==
 A shiny race car. Looks very new. 
     ->DONE
-    
+
+==dreamvisited==
+Just the hotwheels toy you saw before..
+->DONE
 
     
 

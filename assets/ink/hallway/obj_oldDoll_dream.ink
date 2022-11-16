@@ -1,5 +1,5 @@
 //dream doll
-
+VAR currentPartyChar = "PARTY"
 //after plane switching
 ->MsSuwanDreamOldDoll
 ->PartyDreamOldDoll
@@ -11,4 +11,8 @@ Ms Suwan's fingertips lightly touch the glossy figurine. As she tries to grip he
 
 ==PartyDreamOldDoll==
 The cracks in the doll fade and the porcelain begins to shine. 
+->DONE
+
+== dreamvisited == 
+The doll lays on the floor once again...
 ->DONE
