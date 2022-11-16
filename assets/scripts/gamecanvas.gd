@@ -24,10 +24,11 @@ func _ready():
 	
 	Globals.planeManager = $ViewportContainer/Viewport/Room/PlaneManager
 	Globals.party = $ViewportContainer/Viewport/Room/PlaneManager/Overworld/PARTY
-	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
+	Globals.soundManager = $SoundManager
 	
 	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
 	Globals.portrait = $UserInterface/ReferenceRect/Portraits
+	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
 	
 	camera.rescale_camera(floor(OS.window_size.x/camera_pixel_width))
 	set_current_room(rooms[0])
