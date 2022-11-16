@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_partyposter_dream.ink-e5bccb9a34f433b1b584415140ad49d8.res"
+path="res://.import/obj_partyPoster_dream.ink-0aae2e310761b89eca5c02e08a79e5e9.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/obj_partyposter_dream.ink"
-dest_files=[ "res://.import/obj_partyposter_dream.ink-e5bccb9a34f433b1b584415140ad49d8.res" ]
+source_file="res://assets/ink/hallway/obj_partyPoster_dream.ink"
+dest_files=[ "res://.import/obj_partyPoster_dream.ink-0aae2e310761b89eca5c02e08a79e5e9.res" ]
 
 [params]
 

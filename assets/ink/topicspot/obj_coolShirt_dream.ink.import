@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_coolshirt_dream.ink-ae875ce0280f7c143dfe9177b3828472.res"
+path="res://.import/obj_coolShirt_dream.ink-829dfe17ad37b44e452b5cfdfb0974c7.res"
 
 [deps]
 
-source_file="res://assets/ink/topicspot/obj_coolshirt_dream.ink"
-dest_files=[ "res://.import/obj_coolshirt_dream.ink-ae875ce0280f7c143dfe9177b3828472.res" ]
+source_file="res://assets/ink/topicspot/obj_coolShirt_dream.ink"
+dest_files=[ "res://.import/obj_coolShirt_dream.ink-829dfe17ad37b44e452b5cfdfb0974c7.res" ]
 
 [params]
 

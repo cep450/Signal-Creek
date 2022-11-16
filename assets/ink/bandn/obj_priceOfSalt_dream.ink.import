@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_priceofsalt_dream.ink-217f0219050cd6385f9725415d7744f8.res"
+path="res://.import/obj_priceOfSalt_dream.ink-0470067d90a1b9131f4d6fef91134cfc.res"
 
 [deps]
 
-source_file="res://assets/ink/bandn/obj_priceofsalt_dream.ink"
-dest_files=[ "res://.import/obj_priceofsalt_dream.ink-217f0219050cd6385f9725415d7744f8.res" ]
+source_file="res://assets/ink/bandn/obj_priceOfSalt_dream.ink"
+dest_files=[ "res://.import/obj_priceOfSalt_dream.ink-0470067d90a1b9131f4d6fef91134cfc.res" ]
 
 [params]
 
