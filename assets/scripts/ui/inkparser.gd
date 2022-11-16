@@ -151,6 +151,8 @@ func create_entry_dialogue(newtext):
 	
 	var newDialogueEntry = DialogueEntry.instance()
 	vertical_layout_node.add_child(newDialogueEntry)
+	
+
 
 	newDialogueEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
 	newDialogueEntry.remove_placeholders()
