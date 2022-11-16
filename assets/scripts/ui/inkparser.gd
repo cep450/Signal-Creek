@@ -1,36 +1,29 @@
 extends Control
 
 #InkParser parses ink passages and interfaces with the ink player
-#note, choices will be referred to as "Diverts" (what ink calls them)
 
 onready var background_panel_node = $Panel
 onready var scroll_node = $Panel/MarginContainer/ScrollContainer
 onready var vertical_layout_node = $Panel/MarginContainer/ScrollContainer/VBoxContainer
 onready var player = $InkPlayer
-onready var audioPlayer = $AudioStreamPlayer
 
+#load resources to make new prefabs
 var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entry.tscn")
 var DialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
 var ChoiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
-var Divert = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_divert.tscn")
+var Choice = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
 
-export var choiceSelectSound : AudioStreamSample #scroll_nodeing through choices
-export var ChoiceEntrySound : AudioStreamSample #when a new choice entry appears
-export var newEntrySound : AudioStreamSample #when a new entry or dialogue entry appears
-
-export var talk : bool #for isolated testing purposes; default to false for full game
+export var startTalking : bool #for isolated testing purposes; default to false for full game
 
 #DIALOGUE ENTRY VARS
 var currentName = "THE PARTY" #stores the current name to put into entry nametags
-
-#var currentColor = Color(1, 1, 1)
 
 #CHOICE ENTRY VARS
 var currentChoiceStrings
 var isDisplayingChoices
 var currentlyHighlightedChoice = 0
 var currentlyHighlightedChoiceEntry
-var currentChoiceEntryDiverts
+var currentChoiceEntryChoices
 
 #InkLinker links ink with C# and gdscript functions 
 var inkLinker = preload("res://assets/scripts/InkLinker.cs")
@@ -38,7 +31,7 @@ var inkLinker = preload("res://assets/scripts/InkLinker.cs")
 
 func _ready():
 	
-	delete_children(vertical_layout_node)
+	Globals.delete_children(vertical_layout_node)
 	background_panel_node.set_visible(false)
 	player.LoadStory()
 
@@ -48,7 +41,7 @@ func _ready():
 	#bind custom external functions between ink and C#
 	inkLinker.BindExternalFunctions(player);
 
-	if talk:
+	if startTalking:
 		Globals.mode = Enums.Mode.TALK
 
 
@@ -58,29 +51,32 @@ func _process(_delta):
 		if isDisplayingChoices:
 			if Input.is_action_just_released("ui_down"):
 				
-				currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(false)
+				currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(false)
 				currentlyHighlightedChoice += 1
 				
 				if currentlyHighlightedChoice >= currentChoiceStrings.size():
 					currentlyHighlightedChoice = 0
 					
-				currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(true)
+				currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(true)
 				
-				play_sound(choiceSelectSound)
+				Globals.soundManager.play_sound(Globals.soundManager.choice_select_sound)
+				
 				
 			if Input.is_action_just_released("ui_up"):
 				
-				currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(false)
+				currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(false)
 				currentlyHighlightedChoice -= 1
 				
 				if currentlyHighlightedChoice < 0:
 					currentlyHighlightedChoice = currentChoiceStrings.size() - 1
 					
-				currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(true)
+				currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(true)
 				
-				play_sound(choiceSelectSound)
+				Globals.soundManager.play_sound(Globals.soundManager.choice_select_sound)
+				
 			
-			if Input.is_action_just_pressed("interact"): #Divert is submitted
+			if Input.is_action_just_pressed("interact"):
+				
 				vertical_layout_node.remove_child(currentlyHighlightedChoiceEntry) #remove the choicebox
 				
 				if currentlyHighlightedChoice < 0:
@@ -117,10 +113,10 @@ func _proceed():
 			set_current_name(currentLine.split(":", false)[0] + ":")
 			create_entry_dialogue(currentLine.split(":", false)[1].strip_escapes().trim_prefix(' '))
 		
-		else: #if line doesn't contain name, it's a normal text entry
+		else: #it's a normal text entry
 			create_entry(currentLine.strip_escapes())
 		
-	elif !isDisplayingChoices: #create entry with choices
+	elif !isDisplayingChoices:
 		displayChoices()
 		
 	#scroll_node to bottom when new message appears (make this tween later)
@@ -131,13 +127,13 @@ func _proceed():
 func displayChoices():
 	
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
-	currentChoiceStrings = player.get_CurrentChoices() #get current choices from ink
+	currentChoiceStrings = player.get_CurrentChoices()
 	
 	create_entry_choices(currentChoiceStrings)
 	isDisplayingChoices = true
 	
 	currentlyHighlightedChoice = 0
-	currentChoiceEntryDiverts[currentlyHighlightedChoice].set_highlighted(true)
+	currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(true)
 
 
 func create_entry(text):
@@ -148,7 +144,7 @@ func create_entry(text):
 	newEntry.text = text
 	isDisplayingChoices = false
 	
-	play_sound(newEntrySound)
+	Globals.soundManager.play_sound(Globals.soundManager.new_entry_sound)
 
 
 func create_entry_dialogue(newtext):
@@ -165,7 +161,7 @@ func create_entry_dialogue(newtext):
 	
 	isDisplayingChoices = false
 	
-	play_sound(newEntrySound)
+	Globals.soundManager.play_sound(Globals.soundManager.new_entry_sound)
 
 
 func create_entry_choices(choices):
@@ -179,7 +175,7 @@ func create_entry_choices(choices):
 	newChoiceEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
 	
 	for option in choices: #iterate through choices, add nodes as children
-		var newDivert = Divert.instance()
+		var newDivert = Choice.instance()
 		
 		var newText
 		
@@ -198,16 +194,9 @@ func create_entry_choices(choices):
 		newChoiceEntry.add_choice_child(newDivert)
 		
 	currentlyHighlightedChoiceEntry = newChoiceEntry
-	currentChoiceEntryDiverts = newChoiceEntry.get_choices()
+	currentChoiceEntryChoices = newChoiceEntry.get_choices()
 	
-	play_sound(ChoiceEntrySound)
-
-
-static func delete_children(node):
-	
-	for n in node.get_children():
-		node.remove_child(n)
-		n.queue_free()
+	Globals.soundManager.play_sound(Globals.soundManager.new_choice_entry_sound)
 
 
 func clear_and_reset():
@@ -216,14 +205,8 @@ func clear_and_reset():
 	player.LoadStory()
 	
 	background_panel_node.set_visible(false)
-	delete_children(vertical_layout_node)
+	Globals.delete_children(vertical_layout_node)
 	Globals.mode = Enums.Mode.WALK
-
-
-func play_sound(soundName):
-	
-	audioPlayer.stream = soundName
-	audioPlayer.play()
 
 
 func set_current_name(source):

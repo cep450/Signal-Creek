@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_womensClothing_real.ink-14b60988414f2071bcbf81ffefa722d2.res"
+path="res://.import/obj_womensclothing_real.ink-05622d9adb21e77532d049b1d740b026.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/obj_womensClothing_real.ink"
-dest_files=[ "res://.import/obj_womensClothing_real.ink-14b60988414f2071bcbf81ffefa722d2.res" ]
+source_file="res://assets/ink/hallway/obj_womensclothing_real.ink"
+dest_files=[ "res://.import/obj_womensclothing_real.ink-05622d9adb21e77532d049b1d740b026.res" ]
 
 [params]
 

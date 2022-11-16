@@ -9,7 +9,7 @@ onready var current_room = $ViewportContainer/Viewport/Room
 onready var camera = $ViewportContainer/Viewport/Room/Camera2D
 
 #var room_warmSubject = preload("res://assets/scenes/rooms/room_warmSubject.tscn")
-var room_BandN = preload("res://assets/scenes/rooms/room_bAndN.tscn")
+var room_BandN = preload("res://assets/scenes/rooms/room_bandn.tscn")
 var room_hallway = preload("res://assets/scenes/rooms/room_hallway.tscn")
 var room_topicSpot = preload("res://assets/scenes/rooms/room_topicSpot.tscn")
 
@@ -24,10 +24,11 @@ func _ready():
 	
 	Globals.planeManager = $ViewportContainer/Viewport/Room/PlaneManager
 	Globals.party = $ViewportContainer/Viewport/Room/PlaneManager/Overworld/PARTY
-	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
+	Globals.soundManager = $SoundManager
 	
 	Globals.dialogueBox = $UserInterface/ReferenceRect/DialogueBox
 	Globals.portrait = $UserInterface/ReferenceRect/Portraits
+	Globals.colorManager = $UserInterface/ReferenceRect/DialogueBox/ColorManager
 	
 	camera.rescale_camera(floor(OS.window_size.x/camera_pixel_width))
 	set_current_room(rooms[0])

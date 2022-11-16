@@ -1,7 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/sounds/uisounds/newEntry.wav" type="AudioStream" id=1]
-[ext_resource path="res://assets/sounds/uisounds/choiceSelect.wav" type="AudioStream" id=3]
 [ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=4]
 [ext_resource path="res://assets/ui/prefabs/dialogueBox_entry.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ui/prefabs/dialoguebox_entrychoices.tscn" type="PackedScene" id=6]
@@ -9,7 +7,7 @@
 [ext_resource path="res://assets/ink/placeholder_antibodies.ink" type="Resource" id=8]
 [ext_resource path="res://assets/ui/themes/theme_dialogueBox.tres" type="Theme" id=9]
 [ext_resource path="res://assets/scripts/ui/charcolors.gd" type="Script" id=10]
-[ext_resource path="res://assets/scripts/ui/inkParser.gd" type="Script" id=11]
+[ext_resource path="res://assets/scripts/ui/inkparser.gd" type="Script" id=11]
 
 [node name="DialogueBox" type="Control"]
 anchor_right = 1.0
@@ -17,8 +15,6 @@ anchor_bottom = 1.0
 margin_right = -16.0
 theme = ExtResource( 9 )
 script = ExtResource( 11 )
-choiceSelectSound = ExtResource( 3 )
-newEntrySound = ExtResource( 1 )
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -65,8 +61,6 @@ margin_bottom = 388.0
 margin_top = 408.0
 margin_right = 276.0
 margin_bottom = 528.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="ColorManager" type="Control" parent="."]
 margin_right = 40.0
