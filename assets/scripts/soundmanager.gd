@@ -2,7 +2,8 @@ extends Node
 
 #audio manager; accessed globally, plays all sounds
 
-onready var audioPlayer = $AudioStreamPlayer
+onready var soundPlayer = $SoundEffects
+onready var ambientPlayer = $Ambience
 
 export var choice_select_sound : AudioStreamSample
 export var new_choice_entry_sound : AudioStreamSample
@@ -14,5 +15,5 @@ export var music_topicspot : AudioStreamSample
 
 func play_sound(soundName):
 	
-	audioPlayer.stream = soundName
-	audioPlayer.play()
+	soundPlayer.stream = soundName
+	soundPlayer.play()
