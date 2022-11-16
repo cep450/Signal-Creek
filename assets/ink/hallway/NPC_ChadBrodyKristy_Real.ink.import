@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/NPC_ChadBrodyKristy_Real.ink-7cecce0a3c79a2dbc0d7e7af0c7447a3.res"
+path="res://.import/npc_chadbrodykristy_real.ink-228d7dd24c096e74a69f80328f2806b4.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/NPC_ChadBrodyKristy_Real.ink"
-dest_files=[ "res://.import/NPC_ChadBrodyKristy_Real.ink-7cecce0a3c79a2dbc0d7e7af0c7447a3.res" ]
+source_file="res://assets/ink/hallway/npc_chadbrodykristy_real.ink"
+dest_files=[ "res://.import/npc_chadbrodykristy_real.ink-228d7dd24c096e74a69f80328f2806b4.res" ]
 
 [params]
 

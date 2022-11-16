@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_bookStack_real.ink-e5f504384df0b309e0a60e58a844f4cb.res"
+path="res://.import/obj_bookstack_real.ink-9db4dc8374831624c6874b31ba9af84a.res"
 
 [deps]
 
-source_file="res://assets/ink/bandn/obj_bookStack_real.ink"
-dest_files=[ "res://.import/obj_bookStack_real.ink-e5f504384df0b309e0a60e58a844f4cb.res" ]
+source_file="res://assets/ink/bandn/obj_bookstack_real.ink"
+dest_files=[ "res://.import/obj_bookstack_real.ink-9db4dc8374831624c6874b31ba9af84a.res" ]
 
 [params]
 

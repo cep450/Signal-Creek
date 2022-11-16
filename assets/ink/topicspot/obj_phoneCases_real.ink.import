@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_phoneCases_real.ink-374f6210fd46808fc2522d113554f727.res"
+path="res://.import/obj_phonecases_real.ink-b22117dec9b63fe62927837d8ce8a9f9.res"
 
 [deps]
 
-source_file="res://assets/ink/topicspot/obj_phoneCases_real.ink"
-dest_files=[ "res://.import/obj_phoneCases_real.ink-374f6210fd46808fc2522d113554f727.res" ]
+source_file="res://assets/ink/topicspot/obj_phonecases_real.ink"
+dest_files=[ "res://.import/obj_phonecases_real.ink-b22117dec9b63fe62927837d8ce8a9f9.res" ]
 
 [params]
 

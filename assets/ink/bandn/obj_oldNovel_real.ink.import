@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_oldNovel_real.ink-cf963e63afbb9f6829d65afd0fefd693.res"
+path="res://.import/obj_oldnovel_real.ink-8d5ef0c99fd249ec63be4dc7330ed356.res"
 
 [deps]
 
-source_file="res://assets/ink/bandn/obj_oldNovel_real.ink"
-dest_files=[ "res://.import/obj_oldNovel_real.ink-cf963e63afbb9f6829d65afd0fefd693.res" ]
+source_file="res://assets/ink/bandn/obj_oldnovel_real.ink"
+dest_files=[ "res://.import/obj_oldnovel_real.ink-8d5ef0c99fd249ec63be4dc7330ed356.res" ]
 
 [params]
 
