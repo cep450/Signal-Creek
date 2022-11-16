@@ -2,7 +2,7 @@ extends Node
 
 #audio manager; accessed globally, plays all sounds
 
-onready var audioPlayer = $AudioStreamPlayer2D
+onready var audioPlayer = $AudioStreamPlayer
 
 export var choice_select_sound : AudioStreamSample
 export var new_choice_entry_sound : AudioStreamSample

@@ -70,4 +70,6 @@ choice_select_sound = ExtResource( 5 )
 new_choice_entry_sound = ExtResource( 7 )
 new_entry_sound = ExtResource( 6 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SoundManager"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource( 5 )
+bus = "SoundEffects"
