@@ -11,7 +11,7 @@ onready var player = $InkPlayer
 var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entry.tscn")
 var DialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
 var ChoiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
-var Divert = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
+var Choice = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
 
 export var startTalking : bool #for isolated testing purposes; default to false for full game
 
@@ -175,7 +175,7 @@ func create_entry_choices(choices):
 	newChoiceEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
 	
 	for option in choices: #iterate through choices, add nodes as children
-		var newDivert = Divert.instance()
+		var newDivert = Choice.instance()
 		
 		var newText
 		
