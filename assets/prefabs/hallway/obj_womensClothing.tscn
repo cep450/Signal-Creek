@@ -27,7 +27,7 @@ realsheet = ExtResource( 7 )
 light_mask = 4
 material = ExtResource( 4 )
 position = Vector2( 0, -44 )
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 246, 80, 178, 66 )
 
@@ -51,6 +51,7 @@ __meta__ = {
 }
 inkFileDream = ExtResource( 6 )
 inkFileReal = ExtResource( 1 )
+interactiveBySuwan = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
 position = Vector2( 0, -21 )

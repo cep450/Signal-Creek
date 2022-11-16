@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_pinButtons_real.ink-a1501ca739fa22850b4de194b3752b04.res"
+path="res://.import/obj_pinbuttons_real.ink-fdcdf10d29f6f1f58e5de49ba18408b4.res"
 
 [deps]
 
-source_file="res://assets/ink/topicspot/obj_pinButtons_real.ink"
-dest_files=[ "res://.import/obj_pinButtons_real.ink-a1501ca739fa22850b4de194b3752b04.res" ]
+source_file="res://assets/ink/topicspot/obj_pinbuttons_real.ink"
+dest_files=[ "res://.import/obj_pinbuttons_real.ink-fdcdf10d29f6f1f58e5de49ba18408b4.res" ]
 
 [params]
 
