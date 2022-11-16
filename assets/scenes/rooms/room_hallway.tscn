@@ -23,6 +23,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
+room_bounds_min = Vector2( 0, -16 )
+room_bounds_max = Vector2( 736, 320 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.956863, 0.701961, 0.92549, 1 )

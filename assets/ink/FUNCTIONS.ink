@@ -13,3 +13,5 @@ EXTERNAL partyLeader()
 
 
 VAR someExternalString = "hello from another file"
+
+VAR currentPartyChar = "PARTY"
