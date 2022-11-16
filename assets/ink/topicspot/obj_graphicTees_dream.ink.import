@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_graphictees_dream.ink-069d5607e18381124eac11f14cff5cd4.res"
+path="res://.import/obj_graphicTees_dream.ink-7cc2862426748c1639d4a84fdc22ef8e.res"
 
 [deps]
 
-source_file="res://assets/ink/topicspot/obj_graphictees_dream.ink"
-dest_files=[ "res://.import/obj_graphictees_dream.ink-069d5607e18381124eac11f14cff5cd4.res" ]
+source_file="res://assets/ink/topicspot/obj_graphicTees_dream.ink"
+dest_files=[ "res://.import/obj_graphicTees_dream.ink-7cc2862426748c1639d4a84fdc22ef8e.res" ]
 
 [params]
 
