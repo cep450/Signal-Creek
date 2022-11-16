@@ -16,3 +16,6 @@ He keeps picking at it but eventually sighs and gives up.
 NICK: "Nevermind... there's no free sauces here anyways, and that's the best part."
 
 ->END
+//real cafe tables
+
+VAR currentPartyChar = "PARTY"

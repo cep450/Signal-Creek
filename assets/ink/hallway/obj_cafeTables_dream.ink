@@ -11,3 +11,7 @@ The tables seem even shinier, now that the dirt of the other world is gone. Nick
 NICK: "I like it better this way... I don't like seeing the tables so run down. Someone cares for them, here. Strange. Maybe this *isn't* the backrooms but some... some *good* version of the backrooms, you know?"
 
 -> END
+//dream cafe tables file
+
+VAR currentPartyChar = "PARTY"
+
