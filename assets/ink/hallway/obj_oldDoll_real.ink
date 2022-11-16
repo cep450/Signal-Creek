@@ -1,5 +1,6 @@
 //real tamagotchi
 
+VAR currentPartyChar = "PARTY"
 -> MsSuwanOldDoll
 -> PartyOldDoll
 
@@ -21,4 +22,8 @@ She breaks the eye contact between herself and the doll and brings herself to wa
 
 ==PartyOldDoll==
 A porcelain doll sits on a dusty shelf. It's piercing glass eyes are difficult to ignore.
+->DONE
+
+==dreamvisited==
+The creepy old doll's eyes are following you once more.
 ->DONE

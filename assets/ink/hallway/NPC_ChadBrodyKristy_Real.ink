@@ -1,6 +1,7 @@
 //after Ms Suwan talks to Chad Brody and Kristy
-
-
+VAR currentPartyChar = "PARTY"
+->dreamvisited
+==dreamvisited==
 NOUR: "Hey are you okay? You look a little pale?"
     * [Yes, I'm fine] -> shy1
     
@@ -12,4 +13,5 @@ NOUR: Are you sure? You can talk about it if you want.
 ==ending1==
 NOUR: Ok sorry. 
     -> END
+
 
