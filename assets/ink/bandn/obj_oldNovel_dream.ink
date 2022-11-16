@@ -1,5 +1,5 @@
 //the dream old novel file
-
+VAR currentPartyChar = "PARTY"
 //after plane switching is called
 -> MsSuwanDreamNovel
 -> partyDreamNovel
@@ -22,5 +22,9 @@ Ms Suwan puts the novel back to the shelf, trying to brush off the discontentnes
 ==partyDreamNovel==
 Copies of Jane Eyre fill the bookshelf.
 ->DONE
+
+==dreamvisited==
+Just the same copies of Jane Eyre on the bookshelf
+->END
     
     
