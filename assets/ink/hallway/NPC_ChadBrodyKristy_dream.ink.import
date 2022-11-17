@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/NPC_ChadBrodyKristy_dream.ink-56e6d26903c1853b6ef8e6b3176d3354.res"
+path="res://.import/npc_chadbrodykristy_dream.ink-de3adf64bf479cf4920725cd0de299df.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/NPC_ChadBrodyKristy_dream.ink"
-dest_files=[ "res://.import/NPC_ChadBrodyKristy_dream.ink-56e6d26903c1853b6ef8e6b3176d3354.res" ]
+source_file="res://assets/ink/hallway/npc_chadbrodykristy_dream.ink"
+dest_files=[ "res://.import/npc_chadbrodykristy_dream.ink-de3adf64bf479cf4920725cd0de299df.res" ]
 
 [params]
 

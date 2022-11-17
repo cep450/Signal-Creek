@@ -1,5 +1,6 @@
 //the real old novel file
 
+VAR currentPartyChar = "PARTY"
 //in the real world the old novel has an effect on Ms Suwan and 
 ->MsSuwanOldNovel
 ->PartyOldNovel
@@ -21,12 +22,15 @@ She places the novel back on the shelf, unable to allow herself to remember.
     *Walk away-> walkAway
 
 == walkAway==
-    She slowly walks away from the bookshelf, her mind still stuck on the novel.
+She slowly walks away from the bookshelf, her mind still stuck on the novel.
     ->END
 
 ==PartyOldNovel==
 A dusted copy of Jane Eyre sits on the bookshelf.
 ->DONE
-    
+
+==dreamvisited==
+the Jane Eyre book sitting alone on the bookshelf
+->END
 
 

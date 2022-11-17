@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/obj_pretzelStand_dream.ink-af4fdd89529a1b0826c9c6ecb7ca432c.res"
+path="res://.import/obj_pretzelstand_dream.ink-19adf70ba681a3c4259b63d79309d172.res"
 
 [deps]
 
-source_file="res://assets/ink/hallway/obj_pretzelStand_dream.ink"
-dest_files=[ "res://.import/obj_pretzelStand_dream.ink-af4fdd89529a1b0826c9c6ecb7ca432c.res" ]
+source_file="res://assets/ink/hallway/obj_pretzelstand_dream.ink"
+dest_files=[ "res://.import/obj_pretzelstand_dream.ink-19adf70ba681a3c4259b63d79309d172.res" ]
 
 [params]
 

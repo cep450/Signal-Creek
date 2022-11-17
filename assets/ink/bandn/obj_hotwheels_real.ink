@@ -1,5 +1,5 @@
 //the real hot wheels file
-
+VAR currentPartyChar = "PARTY"
 -> MsSuwanHotWheels
 -> PartyHotWheels
 ==MsSuwanHotWheels==
@@ -10,5 +10,9 @@ A minature toy of an American car.
 
 ==PartyHotWheels==
 An minature American toy car.
+->DONE
+
+==dreamvisited==
+The hot wheels toy you saw before...
 ->DONE
 
