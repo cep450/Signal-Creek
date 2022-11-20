@@ -21,7 +21,6 @@ z_index = 16
 current = true
 editor_draw_screen = false
 script = ExtResource( 1 )
-camera_following = NodePath("../PlaneManager/Overworld/PARTY/NICK")
 lerpSpeed = 8
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]

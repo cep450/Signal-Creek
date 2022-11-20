@@ -29,7 +29,8 @@ public class NarrativeData : Resource {
 			//get its value as given in the script
 
 			//create a dictionary entry
-			//give it its script value
+			//give it its initial script value
+			//inkVars.Add(varName, player.GetVariableValue(varName)); //TODO this err 
 		}
 
 		//return the stored value 
@@ -37,6 +38,11 @@ public class NarrativeData : Resource {
 		player.SetVariable(varName, inkVars[varName]);
 
 	}
+
+
+	//string[] ReadVarsInFile() {
+
+	//}
 
 	public void BeginObserving() {
 

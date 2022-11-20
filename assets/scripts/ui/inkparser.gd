@@ -26,7 +26,10 @@ var currentlyHighlightedChoiceEntry
 var currentChoiceEntryChoices
 
 #InkLinker links ink with C# and gdscript functions 
-var inkLinker = preload("res://assets/scripts/InkLinker.cs")
+var inkLinker = preload("res://assets/scripts/Ink/InkLinker.cs")
+
+#Story state save file location 
+var saveFilePath = "res://saves/StorySave"
 
 
 func _ready():
@@ -38,7 +41,8 @@ func _ready():
 	#load variable values from external storage
 	#start listening to variable changes 
 	#bind custom external functions between ink and C#
-	inkLinker.LinkLoadedStory(player);
+	inkLinker.LinkLoadedStory(player)
+	bind_external_functions()
 
 	if startTalking:
 		Globals.mode = Enums.Mode.TALK
@@ -201,7 +205,30 @@ func create_entry_choices(choices):
 	Globals.soundManager.play_sound(Globals.soundManager.new_choice_entry_sound)
 
 
+#Called when opening the story. 
+func load_story(inkFile):
+	
+	player.LoadStory(inkFile)
+
+	#load variable state from disk 
+	print("loading ink save from disk")
+	player.LoadStateFromDisk(saveFilePath)
+	print("finished loading save")
+
+	#tell ink the current party leader 
+	print("Current Party Leader: " + Globals.party.get_leader_inkname())
+	print("Ink Player is Running")
+	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
+
+
+#Called when can't continue, to close the story. 
 func clear_and_reset():
+
+	#save variable state to disk 
+	print("saving ink state to disk")
+	player.SaveStateOnDisk(saveFilePath)
+	print("finished saving state")
+
 	#unsure if these two apply universally; they refer to the ink player itself
 	#player.Reset()
 	player.LoadStory()
@@ -216,10 +243,28 @@ func set_current_name(source):
 	currentName = source
 	Globals.colorManager.set_current_color(source)
 
+func bind_external_functions():
 
-func load_story(inkFile):
-	
-	player.LoadStory(inkFile)
-	print("Current Party Leader: " + Globals.party.get_leader_inkname())
-	print("Ink Player is Running")
-	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
+	#the boolean at the end is if it's lookahead safe- if the func can be called before it actually reaches that line
+
+	#TODO: if can't bind funcs not in the file, check if they exist first with contains 
+
+	player.BindExternalFunction("getWorld", Globals.world_inkname, false)
+	player.BindExternalFunction("shiftWorld", Globals.planeManager.shift_planes, false)
+
+	player.BindExternalFunction("getPartyLeader", Globals.party.get_leader_inkname, true)
+	player.BindExternalFunction("leaderIsNick", Globals.party.leader_nick, true)
+	player.BindExternalFunction("leaderIsNour", Globals.party.leader_nour, true)
+	player.BindExternalFunction("leaderIsSuwan", Globals.party.leader_suwan, true)
+
+	player.BindExternalFunction("getMoraleNick", Globals.party.nick.get_morale, false)
+	player.BindExternalFunction("getMoraleNour", Globals.party.nour.get_morale, false)
+	player.BindExternalFunction("getMoraleSuwan", Globals.party.suwan.get_morale, false)
+
+	player.BindExternalFunction("gainMoraleNick", Globals.party.nick.gain_morale, false)
+	player.BindExternalFunction("gainMoraleNour", Globals.party.nour.gain_morale, false)
+	player.BindExternalFunction("gainMoraleSuwan", Globals.party.suwan.gain_morale, false)
+
+	player.BindExternalFunction("loseMoraleNick", Globals.party.nick.gain_morale, false)
+	player.BindExternalFunction("loseMoraleNour", Globals.party.nour.gain_morale, false)
+	player.BindExternalFunction("loseMoraleSuwan", Globals.party.suwan.gain_morale, false)

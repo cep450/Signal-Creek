@@ -73,10 +73,8 @@ new_entry_sound = ExtResource( 6 )
 
 [node name="SoundEffects" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource( 5 )
-bus = "SoundEffects"
 
 [node name="Ambience" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource( 8 )
 volume_db = -2.788
 autoplay = true
-bus = "Ambience"

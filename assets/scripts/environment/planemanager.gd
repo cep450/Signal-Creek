@@ -25,8 +25,6 @@ func _physics_process(_delta):
 
 func shift_planes():
 	
-	
-	
 	if Globals.world == Enums.Pln.DREAM:
 		Globals.world = Enums.Pln.REAL
 		set_tilesets(realset)

@@ -19,12 +19,25 @@ onready var nick = null
 onready var nour = null
 onready var suwan = null
 
+
+#variable getters and setters 
+func world_inkname() -> String:
+	if(world == Enums.Pln.DREAM):
+		return "DREAM"
+	elif(world == Enums.Pln.REAL):
+		return "REAL"
+	print("ERR: tried to get world ink name, but wasn't DREAM or REAL!")
+	return "ERR"
+
+
 #global static functions
 static func delete_children(node):
-	
 	for n in node.get_children():
 		node.remove_child(n)
 		n.queue_free()
+
+
+
 
 
 #save data loading and saving 

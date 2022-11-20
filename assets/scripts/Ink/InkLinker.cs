@@ -14,6 +14,16 @@ public class InkLinker : Node {
 	//should the functions go in a different thing?
 	//how does it get serialized 
 
+
+	static readonly string pathToSaveFile = "res://saves/storysave.json";
+
+
+
+	//THERE IS LoadStoryAndSetState()
+
+
+
+	//when story is loaded 
 	public static void LinkLoadedStory(InkPlayer player) {
 
 		//TODO load from narrative data 
@@ -29,6 +39,14 @@ public class InkLinker : Node {
 		LoadRelevantVariables(player);
 
 		BindExternalFunctions(player);
+
+
+		player.LoadStateFromDisk(pathToSaveFile);
+	}
+
+	//when story is closed 
+	public static void UnlinkLoadedStory(InkPlayer player) {
+		player.SaveStateOnDisk(pathToSaveFile);
 	}
 
 
@@ -49,10 +67,10 @@ public class InkLinker : Node {
 
 
 	//get the var names from plaintext.
-	private static string[] PullScriptVariables(InkPlayer player) {
+//	private static string[] PullScriptVariables(InkPlayer player) {
 
 
-	}
+//	}
 
 	private static void LoadRelevantVariables(InkPlayer player) {
 
@@ -67,6 +85,17 @@ public class InkLinker : Node {
 	//Bind external ink functions, when present in a story, to their game counterparts. 
 	private static void BindExternalFunctions(InkPlayer player) {
 
+		//TO BIND C# FUNCTIONS:
+		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
+		//see https://github.com/paulloz/godot-ink/blob/main/addons/paulloz.ink/InkPlayer.cs for headers
+
+
+		//TO BIND GDSCRIPT FUNCTIONS: 
+		//using a gdscript file 
+
+
+
+
 		//can't do this: 
 		//player.BindExternalFunction("partyLeaderDouble", Party.CurrentCharacter().InkName);
 		//TODO is it because of the chained call, or because CurrentCharacter could be null or change at runtime? 
@@ -78,10 +107,6 @@ public class InkLinker : Node {
 		//final param is isLookaheadSafe 
 
 
-		//THIS ONE WORKED
-		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
-		//just need to figure out how to call godot funcs instead
-		
 		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
 		//player.BindExternalFunction("TestExternal", TestExternalFunc);
 		//player.BindExternalFunction("TestExternal", InkLinker.TestExternalFunc, true);

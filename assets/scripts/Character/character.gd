@@ -9,7 +9,7 @@ export(Texture) var dream_portrait
 export(Texture) var real_portrait
 
 const maxMorale = 3
-var morale = maxMorale setget change_morale
+var morale = maxMorale setget change_morale, get_morale
 
 export var inkName = "ERR NO NAME ASSIGNED"
 
@@ -85,6 +85,10 @@ func pathfind_to(target : Node2D):
 
 	move(angleTowards)
 
+
+#morale functions
+func get_morale() -> int:
+	return morale
 
 func change_morale(_newValue):
 	print("ERR: MORALE WAS ATTEMPTED TO CHANGE DIRECTLY, DO NOT DO THIS, USE gain_morale AND lose_morale INSTEAD SO ASSOCIATED LOGIC ALSO HAPPENS")
