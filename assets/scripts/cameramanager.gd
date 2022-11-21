@@ -1,6 +1,7 @@
 extends Camera2D
 
 #camera manager
+#cameramanager.gd
 
 #object to follow
 export (NodePath) onready var camera_following = get_node(camera_following)

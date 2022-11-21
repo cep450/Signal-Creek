@@ -3,7 +3,7 @@ using Godot;
 public class InkLinker : Node {
 
 	/*
-		Ink to C#/Godot switchboard. 
+		Ink to C# switchboard. (Ink to Godot happens in inkParser right now.)
 		Binds external functions.
 		Sets narrative variables from NarrativeData. 
 	*/
@@ -22,7 +22,6 @@ public class InkLinker : Node {
 	//THERE IS LoadStoryAndSetState()
 
 
-
 	//when story is loaded 
 	public static void LinkLoadedStory(InkPlayer player) {
 
@@ -36,18 +35,35 @@ public class InkLinker : Node {
 		//cannot observe variable either, if not in the story
 		//player.ObserveVariable("testVarName");
 
+
+
+		player.LoadStateFromDisk(pathToSaveFile);
+
 		LoadRelevantVariables(player);
 
 		BindExternalFunctions(player);
 
-
-		player.LoadStateFromDisk(pathToSaveFile);
 	}
+
 
 	//when story is closed 
 	public static void UnlinkLoadedStory(InkPlayer player) {
 		player.SaveStateOnDisk(pathToSaveFile);
 	}
+
+
+	//bind external *C#* functions. 
+	//Bind godot functions in inkparser's bind_external_functions.
+	private static void BindExternalFunctions(InkPlayer player) {
+
+		//TO BIND C# FUNCTIONS:
+		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
+		//see https://github.com/paulloz/godot-ink/blob/main/addons/paulloz.ink/InkPlayer.cs for headers
+
+	}
+
+
+	
 
 
 
@@ -83,7 +99,7 @@ public class InkLinker : Node {
 	}
 
 	//Bind external ink functions, when present in a story, to their game counterparts. 
-	private static void BindExternalFunctions(InkPlayer player) {
+	//private static void BindExternalFunctions(InkPlayer player) {
 
 		//TO BIND C# FUNCTIONS:
 		//player.BindExternalFunction("partyLeader", Party.LeaderInkName, true);
@@ -122,7 +138,7 @@ public class InkLinker : Node {
 	#player.BindExternalFunction("isNickLeader","Party.LeaderIsNick")
 	#TODO*/
 	//player.BindExternalFunction("TestExternal", player, "TestExternalFunc");
-	}
+	//}
 
 	//From the values stored in NarrativeData, set any vars for this story file to the correct values.
 	public static void SetVariableValues(InkPlayer player) {
