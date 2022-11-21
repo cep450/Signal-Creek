@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=2]
@@ -13,9 +13,66 @@
 [ext_resource path="res://assets/prefabs/bandn/obj_pens.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/prefabs/bandn/obj_polaroid.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/prefabs/bandn/obj_priceOfSalt.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/shaders/shader_outline.gdshader" type="Shader" id=14]
+[ext_resource path="res://assets/sprites/sheet_BN_real.png" type="Texture" id=16]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = ExtResource( 14 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
 
 [node name="Room" type="Node2D"]
-position = Vector2( -28, -76 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -34,7 +91,6 @@ dreamset = ExtResource( 1 )
 realset = ExtResource( 5 )
 
 [node name="Ground" type="TileMap" parent="PlaneManager"]
-position = Vector2( 28, 76 )
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
@@ -47,7 +103,7 @@ __meta__ = {
 }
 
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 260, 236 )
+position = Vector2( 218, 169 )
 scale = Vector2( 3.625, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
@@ -55,12 +111,8 @@ energy = 0.9
 range_item_cull_mask = 7
 
 [node name="Overworld" type="YSort" parent="PlaneManager"]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
-position = Vector2( 28, 76 )
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
@@ -68,23 +120,31 @@ cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( 65539, 0, 327680, 65540, 0, 196612, 65541, 0, 327684, 65542, 0, 196612, 65543, 0, 196612, 65544, 0, 327684, 65545, 0, 196612, 65546, 0, 327684, 65547, 0, 196612, 65548, 0, 327684, 65549, 0, 196612, 65550, 0, 196612, 65551, 0, 196612, 65552, 0, 196612, 65553, 0, 196612, 65554, 0, 196612, 65555, 0, 196612, 65556, 0, 196612, 65557, 0, 327684, 65558, 0, 196612, 65559, 0, 327684, 65560, 0, 196612, 65561, 0, 393219, 262147, 2, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 3, 0 )
 
-[node name="BookStack" parent="PlaneManager" instance=ExtResource( 8 )]
-position = Vector2( 132, 316 )
+[node name="BookStack" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+material = SubResource( 1 )
+position = Vector2( 104, 240 )
+realsheet = ExtResource( 16 )
 
-[node name="DragonPlush" parent="PlaneManager" instance=ExtResource( 6 )]
-position = Vector2( 181, 188 )
+[node name="DragonPlush" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+material = SubResource( 2 )
+position = Vector2( 153, 112 )
 
-[node name="HotWheels" parent="PlaneManager" instance=ExtResource( 7 )]
-position = Vector2( 320, 280 )
+[node name="HotWheels" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+material = SubResource( 3 )
+position = Vector2( 292, 204 )
 
-[node name="OldNovel" parent="PlaneManager" instance=ExtResource( 9 )]
-position = Vector2( 241, 225 )
+[node name="OldNovel" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
+material = SubResource( 4 )
+position = Vector2( 213, 149 )
 
-[node name="Pens" parent="PlaneManager" instance=ExtResource( 11 )]
-position = Vector2( 388, 220 )
+[node name="Pens" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+material = SubResource( 5 )
+position = Vector2( 360, 144 )
 
-[node name="Polaroid" parent="PlaneManager" instance=ExtResource( 12 )]
-position = Vector2( 163, 253 )
+[node name="Polaroid" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
+material = SubResource( 6 )
+position = Vector2( 135, 177 )
 
-[node name="PriceOfSalt" parent="PlaneManager" instance=ExtResource( 13 )]
-position = Vector2( 242, 278 )
+[node name="PriceOfSalt" parent="PlaneManager/Overworld" instance=ExtResource( 13 )]
+material = SubResource( 7 )
+position = Vector2( 214, 202 )

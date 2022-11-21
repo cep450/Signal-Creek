@@ -7,18 +7,22 @@ export var inkFileReal : Resource
 
 var canInteract = false
 
-#who sees this as interactable?
-var interactiveByNick = false
-var interactiveByNour = false 
-var interactiveBySuwan = false
+export var interactiveByNick = false
+export var interactiveByNour = false 
+export var interactiveBySuwan = false
 
 signal can_interact
 signal cannot_interact
 
+
 func _process(_delta):
+	
 	if canInteract:
+		
 		if Input.is_action_just_pressed("interact"):
+			
 			if Globals.mode == Enums.Mode.WALK:
+				
 				Globals.mode = Enums.Mode.TALK
 				
 				if Globals.world == Enums.Pln.DREAM && inkFileDream:
@@ -27,15 +31,34 @@ func _process(_delta):
 				elif Globals.world == Enums.Pln.REAL && inkFileReal:
 					Globals.dialogueBox.load_story(inkFileReal)
 					
-				Globals.dialogueBox.panel.set_visible(true)
+				Globals.dialogueBox.background_panel_node.set_visible(true)
+
 
 func _on_InteractArea_body_entered(body):
-	if body.is_in_group("Player"):
-		canInteract = true
-		emit_signal("can_interact")
+	
+	if body.is_in_group("Player") && body == Globals.party.get_leader():
+		
+		var currentLeader = Globals.party.leaderIndex
+		
+		if currentLeader == 0 && interactiveByNick:
+			canInteract = true
+			emit_signal("can_interact")
+			
+		elif currentLeader == 1 && interactiveByNour:
+			canInteract = true
+			emit_signal("can_interact")
+			
+		elif currentLeader == 2 && interactiveBySuwan:
+			canInteract = true
+			emit_signal("can_interact")
+			
+
+
 
 func _on_InteractArea_body_exited(body):
+	
 	if body.is_in_group("Player"):
+		
 		canInteract = false
 		emit_signal("cannot_interact")
 

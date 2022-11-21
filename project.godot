@@ -23,6 +23,7 @@ default_bus_layout=""
 
 Globals="*res://assets/scripts/globalvars.gd"
 Enums="*res://assets/scripts/enums.gd"
+InkLinker="*res://assets/scripts/InkLinker.cs"
 
 [display]
 
@@ -43,6 +44,12 @@ scene_naming=1
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/paulloz.ink/plugin.cfg" )
+
+[global]
+
+build=false
+marshall=false
+variables=false
 
 [importer_defaults]
 
@@ -74,6 +81,7 @@ ink={
 [ink]
 
 inklecate_path="res://inklecate_win.exe"
+marshall_state_variables=true
 
 [input]
 

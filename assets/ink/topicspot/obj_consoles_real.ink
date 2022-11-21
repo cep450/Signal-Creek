@@ -1,5 +1,6 @@
 //DREAM NOT VISITED
 // here, we check if the dream console has been visited, and skip to dreamvisited if so.
+VAR currentPartyChar = "PARTY"
 It's a game console demoing a game. Some Call of Duty-like war game is being demoed. 
 
 NICK: "Ah... my friends would love this!"
