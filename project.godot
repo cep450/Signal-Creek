@@ -15,10 +15,15 @@ run/main_scene="res://assets/scenes/Game.tscn"
 boot_splash/show_image=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 
+[audio]
+
+default_bus_layout=""
+
 [autoload]
 
 Globals="*res://assets/scripts/globalvars.gd"
 Enums="*res://assets/scripts/enums.gd"
+InkLinker="*res://assets/scripts/InkLinker.cs"
 
 [display]
 
@@ -28,6 +33,7 @@ window/size/resizable=false
 window/size/always_on_top=true
 window/size/test_width=960
 window/size/test_height=540
+window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -38,6 +44,12 @@ scene_naming=1
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/paulloz.ink/plugin.cfg" )
+
+[global]
+
+build=false
+marshall=false
+variables=false
 
 [importer_defaults]
 

@@ -1,9 +1,13 @@
 extends Camera2D
 
 #camera manager
+#cameramanager.gd
 
+#object to follow
 export (NodePath) onready var camera_following = get_node(camera_following)
-export var lerpSpeed : int #camera smoothing speed
+
+#camera smoothing speed
+export var lerpSpeed : int 
 
 #pixel-scale boundaries for camera-accessible areas
 export(Vector2) var room_bounds_min
