@@ -9,7 +9,7 @@ onready var vertical_layout_node = $Panel/MarginContainer/ScrollContainer/VBoxCo
 onready var player = $InkPlayer
 
 #load resources to make new prefabs
-var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entry.tscn")
+var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entrynormal.tscn")
 var DialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
 var ChoiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
 var Choice = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
@@ -27,7 +27,7 @@ var currentlyHighlightedChoiceEntry
 var currentChoiceEntryChoices
 
 #InkLinker links ink with C# and gdscript functions 
-var inkLinker = preload("res://assets/scripts/Ink/InkLinker.cs")
+var inkLinker = preload("res://assets/scripts/ink/InkLinker.cs")
 
 #Story state save file location 
 var saveFilePath = "res://saves/StorySave"
@@ -37,6 +37,8 @@ func _ready():
 	
 	Globals.delete_children(vertical_layout_node)
 	background_panel_node.set_visible(false)
+	player.SaveStateOnDisk("res://vars.txt")
+	Globals.inkvars = player.LoadStateFromDisk("res://vars.txt")
 	player.LoadStory()
 
 	#load variable values from external storage
@@ -209,12 +211,14 @@ func create_entry_choices(choices):
 #Called when opening the story. 
 func load_story(inkFile):
 	
-	player.LoadStory(inkFile)
+	
 
 	#load variable state from disk 
 	print("loading ink save from disk")
-	player.LoadStateFromDisk(saveFilePath)
+	Globals.inkvars = player.LoadStateFromDisk(saveFilePath)
 	print("finished loading save")
+	
+	player.LoadStoryAndSetState(inkFile, Globals.inkvars)
 
 	#tell ink the current party leader 
 	print("Current Party Leader: " + Globals.party.get_leader_inkname())

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/sailormoonposters_dream.ink-f6a9e694da54814ee6ba26b4f78924e0.res"
+
+[deps]
+
+source_file="res://assets/ink/topicspot/sailormoonposters_dream.ink"
+dest_files=[ "res://.import/sailormoonposters_dream.ink-f6a9e694da54814ee6ba26b4f78924e0.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

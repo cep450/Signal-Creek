@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=4]
-[ext_resource path="res://assets/ui/prefabs/dialogueBox_entry.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/ui/prefabs/dialoguebox_entrynormal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ui/prefabs/dialoguebox_entrychoices.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/ink/placeholder_antibodies.ink" type="Resource" id=8]
@@ -18,6 +18,7 @@ script = ExtResource( 11 )
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource( 4 )
+autoLoadStory = true
 story = ExtResource( 8 )
 
 [node name="Panel" type="Panel" parent="."]

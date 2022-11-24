@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/victorias_dream.ink-0b050a5294b5b2e3ca42b565ebe24802.res"
+
+[deps]
+
+source_file="res://assets/ink/hallway/victorias_dream.ink"
+dest_files=[ "res://.import/victorias_dream.ink-0b050a5294b5b2e3ca42b565ebe24802.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

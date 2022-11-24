@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/hotwheels_real.ink-19c48667a8ab56f47fc4ee05f52c1b81.res"
+
+[deps]
+
+source_file="res://assets/ink/bandn/hotwheels_real.ink"
+dest_files=[ "res://.import/hotwheels_real.ink-19c48667a8ab56f47fc4ee05f52c1b81.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

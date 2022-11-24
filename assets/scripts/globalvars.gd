@@ -19,6 +19,7 @@ onready var nick = null
 onready var nour = null
 onready var suwan = null
 
+onready var inkvars = ""
 
 #variable getters and setters 
 func world_inkname() -> String:
@@ -28,6 +29,8 @@ func world_inkname() -> String:
 		return "REAL"
 	print("ERR: tried to get world ink name, but wasn't DREAM or REAL!")
 	return "ERR"
+
+
 
 
 #global static functions

@@ -68,6 +68,7 @@ margin_right = 960.0
 margin_bottom = 540.0
 
 [node name="MotionOverlay" type="Panel" parent="."]
+visible = false
 material = ExtResource( 10 )
 margin_right = 960.0
 margin_bottom = 540.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/litter_dream.ink-dd51b38041151bf764abb302d5e82c8a.res"
+
+[deps]
+
+source_file="res://assets/ink/hallway/litter_dream.ink"
+dest_files=[ "res://.import/litter_dream.ink-dd51b38041151bf764abb302d5e82c8a.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

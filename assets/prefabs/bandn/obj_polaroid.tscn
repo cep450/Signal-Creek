@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/ink/bandn/obj_polaroid_real.ink" type="Resource" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_BN_real.png" type="Texture" id=5]
-[ext_resource path="res://assets/ink/bandn/obj_polaroid_dream.ink" type="Resource" id=6]
 [ext_resource path="res://assets/sprites/objects/sheet_BN_dream.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
@@ -50,8 +48,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_description_": ""
 }
-inkFileDream = ExtResource( 6 )
-inkFileReal = ExtResource( 1 )
 interactiveByNour = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
