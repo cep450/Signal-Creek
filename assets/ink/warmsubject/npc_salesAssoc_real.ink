@@ -1,23 +1,23 @@
-VAR currentPartyChar = "THE PARTY"
 
-{currentPartyChar == "NOUR":
+
+//{currentPartyChar == "NOUR":
 The clerk looks Nour up and down, seemingly bored, as if her presence neither surprises nor interests him. 
 
 CLERK: "Can I help you?" 
         -> SARealWorldConvStart
-}
+//}
 
-{currentPartyChar == "NICK":
+//{currentPartyChar == "NICK":
 When Nick approaches, he visibly tries to hide a cringe, but does an awful job at it. Still, he addresses him politely, if in a slightly strained tone.
     
 CLERK: "Can I help you?"
         -> SARealWorldConvStart
--else:
+//-else:
 When he glances up at Ms. Suwan, after a brief moment of almost practiced boredom, he does a double take, suddenly far more interested in the conversation.
     
 CLERK: "C...Can I help you, Ma'am? Are you sure you're in the right store?"
     -> SARealWorldConvStart
-}
+//}
 
 ===SARealWorldConvStart===
 :THE PARTY:

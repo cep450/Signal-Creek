@@ -1,5 +1,5 @@
 // Rina doesn't exist in the real world, but this should always play right after the dream shift occurs. The first interaction should also include the characters realizing they all look different, as this is the first plane shift, but then call ===subsequentshifts=== after each new shift.
-VAR currentPartyChar = "PARTY"
+
 Ms.Suwan, Nick and Nour stand before the place that Rina just was. Nour is visibly shaking, fists clenched, as they all stare at the empty space.
 
 Slowly, they turn to look at each other, and after a moment Ms.Suwan is the first to speak.

@@ -1,6 +1,6 @@
 // Dream: Bright and glitzy stand with way too many colors and a characterized pretzel for the logo. There’s a pretzel-person behind the counter.
 // Real:  A traditional, Annies-style pretzel stand.
-VAR currentPartyChar = "PARTY"
+
 
 
 //REAL NOT VISITED

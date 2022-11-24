@@ -1,7 +1,5 @@
 //the real book stack file... boring ones Nick has to read for class
 
-VAR currentPartyChar = "PARTY"
-
 //DREAM NOT VISITED
 //Checking if dream has been visited, and skip to dreamvisited if so.
 NICK: Oh, that book... Didn't I have to read that for class once?

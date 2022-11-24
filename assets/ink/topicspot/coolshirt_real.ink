@@ -1,6 +1,6 @@
 //cool shirt file
 
-VAR currentPlayerChar = "PARTY"
+
 
 //dream not visited
 //here we check if dream has been visited first, if yes then go to dreamvisited

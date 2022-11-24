@@ -12,6 +12,3 @@ NICK: "I like it better this way... I don't like seeing the tables so run down. 
 
 -> END
 //dream cafe tables file
-
-VAR currentPartyChar = "PARTY"
-

@@ -9,15 +9,15 @@ onready var vertical_layout_node = $Panel/MarginContainer/ScrollContainer/VBoxCo
 onready var player = $InkPlayer
 
 #load resources to make new prefabs
-var TextEntry = preload("res://assets/ui/prefabs/dialoguebox_entrynormal.tscn")
-var DialogueEntry = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
-var ChoiceEntry = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
-var Choice = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
+var pre_entrynormal = preload("res://assets/ui/prefabs/dialoguebox_entrynormal.tscn")
+var pre_entrydialogue = preload("res://assets/ui/prefabs/dialoguebox_entrydialogue.tscn")
+var pre_entrychoices = preload("res://assets/ui/prefabs/dialoguebox_entrychoices.tscn")
+var pre_choice = preload("res://assets/ui/prefabs/dialoguebox_entrychoices_choice.tscn")
 
-export var startTalking : bool #for isolated testing purposes; default to false for full game
+export var _startTalking : bool #for isolated testing purposes; default to false for full game
 
 #DIALOGUE ENTRY VARS
-var currentName = "THE PARTY" #stores the current name to put into entry nametags
+var currentSpeaker = "THE PARTY" #stores the current name to put into entry nametags
 
 #CHOICE ENTRY VARS
 var currentChoiceStrings
@@ -26,32 +26,25 @@ var currentlyHighlightedChoice = 0
 var currentlyHighlightedChoiceEntry
 var currentChoiceEntryChoices
 
-#InkLinker links ink with C# and gdscript functions 
-var inkLinker = preload("res://assets/scripts/ink/InkLinker.cs")
-
 #Story state save file location 
-var saveFilePath = "res://saves/StorySave"
+var saveFilePath = "res://saves"
 
 
 func _ready():
 	
+	#Hide dialoguebox and delete placeholders
 	Globals.delete_children(vertical_layout_node)
 	background_panel_node.set_visible(false)
-	player.SaveStateOnDisk("res://vars.txt")
-	Globals.inkvars = player.LoadStateFromDisk("res://vars.txt")
-	player.LoadStory()
-
-	#load variable values from external storage
-	#start listening to variable changes 
-	#bind custom external functions between ink and C#
-	inkLinker.LinkLoadedStory(player)
+	
+	save_ink_state() #for now, we're going to NOT have persistent save state; this makes a clean save file
 	bind_external_functions()
 
-	if startTalking:
+	#for testing purposes; it starts opened if this is set to true
+	if _startTalking:
 		Globals.mode = Enums.Mode.TALK
 		
 
-
+#this is where we'll listen to the player's button presses and tell the UI & ink player to do stuff. 
 func _process(_delta):
 	
 	if Globals.mode == Enums.Mode.TALK:
@@ -96,11 +89,11 @@ func _process(_delta):
 			_proceed()
 
 
-
+#proceeding to the next string that ink should return
 func _proceed():
 	
 	if !player.get_CanContinue() && !player.get_HasChoices():
-		clear_and_reset()
+		clear_and_reset_ui()
 		
 	elif !player.get_HasChoices(): #create normal text entry
 		player.Continue()
@@ -130,10 +123,9 @@ func _proceed():
 	yield(get_tree(), "idle_frame")
 	scroll_node.set_v_scroll(scroll_node.get_v_scrollbar().max_value)
 
-
+#initialize the choice-selection of a new choice entry prefab
 func displayChoices():
 	
-	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
 	currentChoiceStrings = player.get_CurrentChoices()
 	
 	create_entry_choices(currentChoiceStrings)
@@ -142,10 +134,10 @@ func displayChoices():
 	currentlyHighlightedChoice = 0
 	currentChoiceEntryChoices[currentlyHighlightedChoice].set_highlighted(true)
 
-
+#make a prefab for a normal entry with just text
 func create_entry(text):
 	
-	var newEntry = TextEntry.instance()
+	var newEntry = pre_entrynormal.instance()
 	vertical_layout_node.add_child(newEntry)
 	
 	newEntry.text = text
@@ -153,38 +145,38 @@ func create_entry(text):
 	
 	Globals.soundManager.play_sound(Globals.soundManager.new_entry_sound)
 
-
+#make a prefab for an entry that contains character dialogue
 func create_entry_dialogue(newtext):
 	
-	var newDialogueEntry = DialogueEntry.instance()
-	vertical_layout_node.add_child(newDialogueEntry)
+	var newpre_entrydialogue = pre_entrydialogue.instance()
+	vertical_layout_node.add_child(newpre_entrydialogue)
 	
 
 
-	newDialogueEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
-	newDialogueEntry.remove_placeholders()
+	newpre_entrydialogue.set_nametag(currentSpeaker, Globals.colorManager.get_current_color())
+	newpre_entrydialogue.remove_placeholders()
 	
-	var newParagraph = TextEntry.instance()
+	var newParagraph = pre_entrynormal.instance()
 	newParagraph.text = newtext
-	newDialogueEntry.set_dialogue(newParagraph)
+	newpre_entrydialogue.set_dialogue(newParagraph)
 	
 	isDisplayingChoices = false
 	
 	Globals.soundManager.play_sound(Globals.soundManager.new_entry_sound)
 
-
+#make prefab for entry that contains new prefabs for all the choices
 func create_entry_choices(choices):
 	
-	var newChoiceEntry = ChoiceEntry.instance()
+	var newChoiceEntry = pre_entrychoices.instance()
 	vertical_layout_node.add_child(newChoiceEntry)
 	
 	newChoiceEntry.remove_placeholders()
 	
 	
-	newChoiceEntry.set_nametag(currentName, Globals.colorManager.get_current_color())
+	newChoiceEntry.set_nametag(currentSpeaker, Globals.colorManager.get_current_color())
 	
 	for option in choices: #iterate through choices, add nodes as children
-		var newDivert = Choice.instance()
+		var newDivert = pre_choice.instance()
 		
 		var newText
 		
@@ -208,44 +200,45 @@ func create_entry_choices(choices):
 	Globals.soundManager.play_sound(Globals.soundManager.new_choice_entry_sound)
 
 
-#Called when opening the story. 
-func load_story(inkFile):
-	
-	
+#Opening the story for the first time
+func load_story(inkFile):	
+	#player.LoadStoryAndSetState(inkFile, Globals.inkvars)
 
-	#load variable state from disk 
-	print("loading ink save from disk")
-	Globals.inkvars = player.LoadStateFromDisk(saveFilePath)
-	print("finished loading save")
-	
-	player.LoadStoryAndSetState(inkFile, Globals.inkvars)
-
-	#tell ink the current party leader 
-	print("Current Party Leader: " + Globals.party.get_leader_inkname())
-	print("Ink Player is Running")
+	player.LoadStory(inkFile)
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
+	
 
+#Opening the player as-is
+func open()	:
+	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
+	player.SetVariable("currentPlane", Globals.get_world_inkname())
+	player.ChoosePathString("default")
+	print(player.GetState())
+	
 
-#Called when can't continue, to close the story. 
-func clear_and_reset():
+#Saving story state to disk
+func save_ink_state():
 
-	#save variable state to disk 
 	print("saving ink state to disk")
-	player.SaveStateOnDisk(saveFilePath)
+
+	Globals.inkvars = player.GetState()
+	player.SaveStateOnDisk(player.GetState())
+	
 	print("finished saving state")
 
-	#unsure if these two apply universally; they refer to the ink player itself
-	#player.Reset()
-	player.LoadStory()
+#Clear and reset the UI panel prefab
+func clear_and_reset_ui():
+	
+	save_ink_state()
 	
 	background_panel_node.set_visible(false)
 	Globals.delete_children(vertical_layout_node)
 	Globals.mode = Enums.Mode.WALK
 
-
+#for the color manager; set the name that it should return
 func set_current_name(source):
 	
-	currentName = source
+	currentSpeaker = source
 	Globals.colorManager.set_current_color(source)
 
 
@@ -255,56 +248,10 @@ func set_current_name(source):
 var f_world_inkname = funcref(Globals, "world_inkname")
 var f_shift_planes = funcref(Globals, "planemanager.shift_planes")
 var f_get_leader_inkname = funcref(Globals, "party.get_leader_inkname")
-var f_leader_nick = funcref(Globals, "party.leader_nick")
-var f_leader_nour = funcref(Globals, "party.leader_nour")
-var f_leader_suwan = funcref(Globals, "party.leader_suwan")
-var f_get_morale_nick = funcref(Globals, "nick.get_morale")
-var f_get_morale_nour = funcref(Globals, "nour.get_morale")
-var f_get_morale_suwan = funcref(Globals, "suwan.get_morale")
-var f_gain_morale_nick = funcref(Globals, "nick.gain_morale")
-var f_gain_morale_nour = funcref(Globals, "nour.gain_morale")
-var f_gain_morale_suwan = funcref(Globals, "suwan.gain_morale")
-var f_lose_morale_nick = funcref(Globals, "nick.lose_morale")
-var f_lose_morale_nour = funcref(Globals, "nour.lose_morale")
-var f_lose_morale_suwan = funcref(Globals, "suwan.lose_morale")
-#TODO: make sure Globals.nick ect actually calls functions on those objects-
-#	nick, nour, suwan get assigned at runtime, so hopefully these functions
-#	point to those objects and not to null their initial value. 
-# also, make sure "party.leader_nick" ect where the "party" is in the string works
+
+
 func bind_external_functions():
-
-	#TODO: if can't bind funcs not in the file, check if they exist first with contains 
-	#TODO: godot--C# is slow, ideally call these in InkLinker? check back later. 
-	#	basically, where is the marshalling? in the player.Bind or the passing in a godot func 
-
-
-	#godot functions 
-	#the boolean at the end is if it's lookahead safe- 
-	#	if the func can be called before it actually reaches that line
-
-
-	player.BindExternalFunction("getWorld", f_world_inkname, false)
-	player.BindExternalFunction("shiftWorld", f_shift_planes, false)
-
-	player.BindExternalFunction("getPartyLeader", f_get_leader_inkname, true)
-	player.BindExternalFunction("leaderIsNick", f_leader_nick, true)
-	player.BindExternalFunction("leaderIsNour", f_leader_nour, true)
-	player.BindExternalFunction("leaderIsSuwan", f_leader_suwan, true)
-
-	player.BindExternalFunction("getMoraleNick", f_get_morale_nick, false)
-	player.BindExternalFunction("getMoraleNour", f_get_morale_nour, false)
-	player.BindExternalFunction("getMoraleSuwan", f_get_morale_suwan, false)
-
-	player.BindExternalFunction("gainMoraleNick", f_gain_morale_nick, false)
-	player.BindExternalFunction("gainMoraleNour", f_gain_morale_nour, false)
-	player.BindExternalFunction("gainMoraleSuwan", f_gain_morale_suwan, false)
-
-	player.BindExternalFunction("loseMoraleNick", f_lose_morale_nick, false)
-	player.BindExternalFunction("loseMoraleNour", f_lose_morale_nour, false)
-	player.BindExternalFunction("loseMoraleSuwan", f_lose_morale_suwan, false)
-
-
-	#C# functions happen in the C# file 
-	#inkLinker.BindExternalFunctions()
-	#TODO: InkLinker.cs seems to no longer be recognised in the project. 
-	#	fix that and this will work again 
+	pass
+	#player.BindExternalFunction("getWorld", f_world_inkname, false)
+	#player.BindExternalFunction("shiftWorld", f_shift_planes, false)
+	#player.BindExternalFunction("getName", self, f_get_leader_inkname)

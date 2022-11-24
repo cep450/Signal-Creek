@@ -1,7 +1,7 @@
 //the dream pen file
 //Nick allows himself to want the pens, likely taking some of his favorites with him. Nick’s favorite animal, the frog, smiles and winks at him. (Maybe it talks to him?)
 
-VAR currentPartyChar = "PARTY"
+
 //REAL NOT VISITED
 //Here we check if real has been visited, if so go to realvisited
 

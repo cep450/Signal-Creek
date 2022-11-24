@@ -1,7 +1,7 @@
 // Popular 90s womens clothing storefront
 // Dream: Flooded with shoppers, posters of models in windows
 // Real: “Everything must go” signs torn, everything else messy and abandoned
-VAR currentPartyChar = "PARTY"
+
 
 //REAL NOT VISITED
 //here, we check if real has been visited, and skip to realvisited if so.

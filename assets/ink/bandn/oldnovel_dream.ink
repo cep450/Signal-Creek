@@ -1,5 +1,5 @@
 //the dream old novel file
-VAR currentPartyChar = "PARTY"
+
 //after plane switching is called
 -> MsSuwanDreamNovel
 -> partyDreamNovel

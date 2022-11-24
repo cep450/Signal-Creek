@@ -1,6 +1,6 @@
 //REAL NOT VISITED
 // here, we check if real world console has been visited, and skip to realvisited if so.
-VAR currentPartyChar = "PARTY"
+
 It's a game console demoing a cute animal collecting type game. The game characters are coming out and they're lil cute chibi animal guys.
 
 Nick seems extremely excited.

@@ -23,7 +23,7 @@ default_bus_layout=""
 
 Globals="*res://assets/scripts/globalvars.gd"
 Enums="*res://assets/scripts/enums.gd"
-InkLinker="*res://assets/scripts/ink/InkLinker.cs"
+InkLinker="res://assets/scripts/ink/InkLinker.cs"
 
 [display]
 
@@ -80,7 +80,6 @@ ink={
 [ink]
 
 inklecate_path="res://inklecate_win.exe"
-marshall_state_variables=true
 
 [input]
 

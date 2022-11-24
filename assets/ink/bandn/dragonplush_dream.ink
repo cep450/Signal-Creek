@@ -2,8 +2,6 @@
 //there's a massive Puff the Magic Dragon plush, twice as tall as the party. 
 //Nour's father used to read her the story in a sing-song voice; it was something she requested almost every night until she was in middle school.
 
-VAR currentPartyChar = "PARTY"
-
 NOUR: *Singing* Puff the magic dragon, lived by the sea...
 
 NOUR: Baba used to sing that to me almost every night. I'd never stop asking for it...

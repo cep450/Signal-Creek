@@ -50,8 +50,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-inkFileDream = ExtResource( 6 )
-inkFileReal = ExtResource( 7 )
+inkFileDream = ExtResource( 7 )
+inkFileReal = ExtResource( 6 )
 interactiveBySuwan = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]

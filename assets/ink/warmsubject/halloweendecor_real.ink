@@ -1,4 +1,4 @@
-VAR currentPartyChar = "THE PARTY"
+
 
 On the shelf is an ordinary-looking Halloween decoration - a plastic pumpkin with a funny face carved in it. The only notable part is the amount of jagged teeth it has.
 

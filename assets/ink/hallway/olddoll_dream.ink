@@ -1,5 +1,5 @@
 //dream doll
-VAR currentPartyChar = "PARTY"
+
 //after plane switching
 ->MsSuwanDreamOldDoll
 ->PartyDreamOldDoll

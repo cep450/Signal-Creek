@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/shirts_dream.ink-8417fefc8dc1c3ccd0424a44ddce4eb3.res"
+
+[deps]
+
+source_file="res://assets/ink/warmsubject/shirts_dream.ink"
+dest_files=[ "res://.import/shirts_dream.ink-8417fefc8dc1c3ccd0424a44ddce4eb3.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

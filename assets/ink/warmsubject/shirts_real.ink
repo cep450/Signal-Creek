@@ -1,13 +1,12 @@
-VAR currentPartyChar = "THE PARTY"
-VAR currentPlane = "REAL"
+
 VAR hasShirt = false
 
 //TODO: make hasshirt work
 
 It's a clothing rack, full of bright, colorful t-shirts all pertaining to today's warmest trends.
-{currentPartyChar == "NICK":
+//{currentPartyChar == "NICK":
     -> NickTShirtRack
-}
+//}
     -> END
 
 === NickTShirtRack ===

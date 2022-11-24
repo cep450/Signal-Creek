@@ -1,13 +1,9 @@
 //This placeholder ink is for designing the Ink interpreter script in godot. :EXAMPLE: will be used for parsing choice labels
 
-INCLUDE FUNCTIONS.ink
-
-#VAR currentPartyChar = "PARTY"
-
 {TestExternal()}
 KID AMOGUS: Hey. Getting the vaccine made me realize how I want another shot with you. Choosing between Pfizer and Moderna was easy but I don’t think I could pick anyone over you.
 
-:{currentPartyChar}:
+:{getPartyLeader()}:
 * [Rolls eyes.]Nour rolls her eyes, sexily.
 	-> antibodies
 * [Growls.]Nour growls, sexily.

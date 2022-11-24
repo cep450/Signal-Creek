@@ -1,7 +1,7 @@
 //dream victorias secret
 //Nour filled the classic young-closeted-gay child who got very flustered whenever she went near or in a victoria's secret
 
-VAR currentPartyChar = "PARTY"
+
 
 NOUR: Ah. Yes. The store that caused me endless embarrassment as a child.
 

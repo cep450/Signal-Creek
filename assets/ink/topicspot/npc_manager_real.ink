@@ -1,6 +1,6 @@
 // DREAM NOT VISITED
 // here, we check if dream world manager has been visisted, and skip to dreamvisited if so.
-VAR currentPartyChar = "PARTY"
+
 The manager is a tired dude. He looks up when the party approaches from where he was playing on his phone.
 
 MANAGER: "Oh. Didn't expect anyone to be here. How can I help you?"

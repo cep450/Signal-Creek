@@ -2,8 +2,6 @@
 //there's a normal-sized Puff the Magic Dragon plush sitting on a shelf.
 //Nour's father used to read her the story in a sing-song voice; it was something she requested almost every night until she was in middle school.
 
-VAR currentPartyChar = "PARTY"
-
 //dream not visited
 
 NOUR: NOUR: *Singing* Puff the magic dragon, lived by the sea...

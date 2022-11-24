@@ -1,6 +1,6 @@
 
 //Chad Brody and and Kristy only exist in the dream world
-VAR currentPartyChar = "PARTY"
+
 Ms Suwan notices a familar face, but not a pleasant one. For the first time in a while she begins to feel nervous. Her palms start to sweat. Her body covers in goosebumps. In this moment and this moment alone she wishes she could be invisible.
 
 CHAD: Kan is that you? 

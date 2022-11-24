@@ -1,6 +1,6 @@
 //real tamagotchi
 
-VAR currentPartyChar = "PARTY"
+
 -> MsSuwanOldDoll
 -> PartyOldDoll
 

@@ -1,7 +1,7 @@
 //dream makeup file
 //On her first trip to the mall alone after getting her driver's license, Nour bought a palette of black eyeshadow from the TopicStop.
 
-VAR currentPartyChar = "PARTY"
+
 
 NOUR: Funny, all of the ones here are the exact same one I used. It was discontinued years ago.
 

@@ -1,10 +1,10 @@
-VAR currentPartyChar = "THE PARTY"
+
 
 It's one of those chattering teeth that kids used to play with back in the day.
-{currentPartyChar == "MS SUWAN":
+//{currentPartyChar == "MS SUWAN":
 Ms. Suwan gazes on them longingly, struck by their dated appearance.
     -> suwanTeeth
-}
+//}
     -> END
 
 == suwanTeeth == 

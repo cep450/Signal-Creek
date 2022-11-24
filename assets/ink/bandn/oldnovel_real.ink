@@ -1,6 +1,6 @@
 //the real old novel file
 
-VAR currentPartyChar = "PARTY"
+
 //in the real world the old novel has an effect on Ms Suwan and 
 ->MsSuwanOldNovel
 ->PartyOldNovel

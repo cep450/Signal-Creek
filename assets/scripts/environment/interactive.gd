@@ -25,11 +25,7 @@ func _process(_delta):
 				
 				Globals.mode = Enums.Mode.TALK
 				
-				if Globals.world == Enums.Pln.DREAM && inkFileDream:
-					Globals.dialogueBox.load_story(inkFileDream)
-					
-				elif Globals.world == Enums.Pln.REAL && inkFileReal:
-					Globals.dialogueBox.load_story(inkFileReal)
+				Globals.dialogueBox.open()
 					
 				Globals.dialogueBox.background_panel_node.set_visible(true)
 

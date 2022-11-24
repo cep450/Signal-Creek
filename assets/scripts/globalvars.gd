@@ -22,7 +22,8 @@ onready var suwan = null
 onready var inkvars = ""
 
 #variable getters and setters 
-func world_inkname() -> String:
+#this should really say get_world_inkname, will do later
+func get_world_inkname() -> String:
 	if(world == Enums.Pln.DREAM):
 		return "DREAM"
 	elif(world == Enums.Pln.REAL):

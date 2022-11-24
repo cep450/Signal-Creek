@@ -1,7 +1,7 @@
 //real victorias secret
 //Nour filled the classic young-closeted-gay child who got very flustered whenever she went near or in a victoria's secret
 
-VAR currentPartyChar = "PARTY"
+
 
 NOUR: Don't look don't look don't look don't look don--
 

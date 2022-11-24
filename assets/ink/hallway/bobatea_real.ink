@@ -1,6 +1,6 @@
 //DREAM NOT VISITED
 // here, we check if the dream boba machine has been visited, and skip to dreamvisited if so.
-VAR currentPartyChar = "PARTY"
+
 The vending machine is full of coffee, sparkling water, and diet sodas. Nick's nose scrunches up.
 
 "I swear they used to have better stuff in here before. I'm not buying any of this crap, it's not worth it."

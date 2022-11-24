@@ -1,6 +1,6 @@
 //cool shirt file
 
-VAR currentPlayerChar = "PARTY"
+
 
 //REAL NOT VISITED
 //here we check if real has been visited, and skip to realvisited if something

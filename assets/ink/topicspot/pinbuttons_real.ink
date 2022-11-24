@@ -1,6 +1,5 @@
 // Pins with political messaging
 // Real: pride pins, anarchy, anything that would actually be in a gamer/goth mall store.
-VAR currentPartyChar = "PARTY"
 
 
 //DREAM NOT VISITED

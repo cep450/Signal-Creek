@@ -1,5 +1,5 @@
 //the real hot wheels file
-VAR currentPartyChar = "PARTY"
+
 -> MsSuwanHotWheels
 -> PartyHotWheels
 ==MsSuwanHotWheels==

@@ -2,12 +2,12 @@
 
 importer="ink"
 type="Resource"
-path="res://.import/npc_salesAssoc_real.ink-1cbf259c6819efa61bda706e4a73b013.res"
+path="res://.import/npc_salesassoc_real.ink-99e1728de27acc282c22fdcbfe1cab7d.res"
 
 [deps]
 
-source_file="res://assets/ink/warmsubject/npc_salesAssoc_real.ink"
-dest_files=[ "res://.import/npc_salesAssoc_real.ink-1cbf259c6819efa61bda706e4a73b013.res" ]
+source_file="res://assets/ink/warmsubject/npc_salesassoc_real.ink"
+dest_files=[ "res://.import/npc_salesassoc_real.ink-99e1728de27acc282c22fdcbfe1cab7d.res" ]
 
 [params]
 

@@ -1,5 +1,4 @@
 // rina will be divided up differently than most other objects, into 'interactions' instead of dreamvisited/realvisited (irst interaction, second, third, etc.)
-VAR currentPartyChar = "PARTY"
 
 Before the party stands a lady in her early 20s, a brunette with blonde highlights and an almost girly look to her despite her age. Before anyone in the party can speak, Nour steps forward. 
 

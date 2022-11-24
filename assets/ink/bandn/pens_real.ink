@@ -1,7 +1,7 @@
 //the real pen file
 //Nick wants these pens but feels held back, as they are childish, and he shouldn’t want them because he’s not allowed to be childish
 
-VAR currentPartychar = "PARTY"
+
 
 //DREAM NOT VISITED 
 //here, we check if dream has been visited, and go to dreamvisited if should

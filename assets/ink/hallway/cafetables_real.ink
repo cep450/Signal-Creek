@@ -18,4 +18,3 @@ NICK: "Nevermind... there's no free sauces here anyways, and that's the best par
 ->END
 //real cafe tables
 
-VAR currentPartyChar = "PARTY"

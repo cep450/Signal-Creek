@@ -1,4 +1,4 @@
-VAR currentPartyChar = "THE PARTY"
+
 He seems to waver in and out of reality, but still notices the party arrive and offers them a friendly wave.
 
 CLERK: "Hey there ya'll, can I help you?"

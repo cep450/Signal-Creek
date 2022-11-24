@@ -1,8 +1,6 @@
 //the dream book stack file
 // Stack of Epic Manga Comics, NIck likes these because theyre more interesting
 
-VAR currentPartyChar = "PARTY"
-
 //REAL NOT VISITED
 //Here, we check to see if the player has visited the real version first. If they have, skip to realvisited
 

@@ -1,6 +1,5 @@
 //the dream hot wheels file
 
-VAR currentPartyChar = "PARTY"
 ->MsSuwanDreamHotWheels
 ->PartyDreamHotWheels
 

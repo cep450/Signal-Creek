@@ -1,6 +1,6 @@
 // REAL NOT VISITED
 // here, we check if real world version of the manager has been visited, and skip to realvisited if so.
-VAR currentPartyChar = "PARTY"
+
 The store manager is next to one of the shirt racks, and as the party approaches, Nick visibly gets nervous. 
 
 He glances away from the manager quickly when he looks over.
