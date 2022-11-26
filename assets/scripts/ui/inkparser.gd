@@ -209,11 +209,11 @@ func load_story(inkFile):
 	
 
 #Opening the player as-is
-func open(objectname):
+func open(objectName, visitedinworldStatus):
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
 	player.SetVariable("currentWorld", Globals.get_world_inkname())
 	
-	var pathstring = objectname + "_" + Globals.get_world_inkname()
+	var pathstring = objectName + visitedinworldStatus
 	print(pathstring)
 	
 	player.ChoosePathString(pathstring)

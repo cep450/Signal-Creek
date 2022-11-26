@@ -6,6 +6,8 @@ extends Area2D
 #export var inkFileReal : Resource
 
 var canInteract = false
+var dreamvisited = false
+var realvisited = false
 
 export var interactiveByNick = false
 export var interactiveByNour = false 
@@ -25,7 +27,9 @@ func _process(_delta):
 				
 				Globals.mode = Globals.GameModes.TALK
 				
-				Globals.dialogueBox.open(get_object_name()) #tell inkparser to go to a knot based on this object's name
+				#tell inkparser to go to a knot based on this object's name
+				#also tell the parser if this object has already been visited in the other world
+				Globals.dialogueBox.open(get_object_name(), get_visitedinworld_status())
 					
 				Globals.dialogueBox.background_panel_node.set_visible(true)
 
@@ -67,3 +71,20 @@ func get_object_name():
 	print(rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_"))
 	return rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_")
 	
+
+#gets the world we're currently in, then gets whether we've visited this object in the other world
+func get_visitedinworld_status():
+	
+	if Globals.world == Globals.Worlds.DREAM:
+		if realvisited:
+			return "_realvisited"
+		else:
+			dreamvisited = true
+			return "_dream"
+	else:
+		if dreamvisited:
+			return "_dreamvisited"
+		else:
+			realvisited = true
+			return "_real"
+			
