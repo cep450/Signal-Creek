@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/graphictees_dream.ink-ff9026bbd6c137f16108390dc657b5e3.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/graphictees_dream.ink"
+dest_files=[ "res://.import/graphictees_dream.ink-ff9026bbd6c137f16108390dc657b5e3.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

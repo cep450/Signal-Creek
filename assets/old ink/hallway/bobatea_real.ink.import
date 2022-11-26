@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/bobatea_real.ink-edf1e2e0f3015fe2fb42da7f8439fc6c.res"
+
+[deps]
+
+source_file="res://assets/old ink/hallway/bobatea_real.ink"
+dest_files=[ "res://.import/bobatea_real.ink-edf1e2e0f3015fe2fb42da7f8439fc6c.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

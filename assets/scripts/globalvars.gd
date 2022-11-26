@@ -1,5 +1,15 @@
 extends Node
 
+
+
+#global enums, to be used anywhere
+
+enum Character { NICK, NOUR, SUWAN }
+enum GameModes { WALK, TALK }
+enum Worlds { REAL, DREAM }          #can't be named 'plane' b/c Plane is an existing type 
+enum WalkDir { LEFT, RIGHT, UP, DOWN }
+enum Animation { WALK, IDLE }   #todo. do we want each combo ex walk_left idle_right or use with WalkDir
+
 #declare global game variables
 
 onready var camera = null
@@ -10,8 +20,8 @@ onready var portrait = null
 onready var colorManager = null
 
 onready var planeManager = null
-onready var mode = Enums.Mode.WALK
-onready var world = Enums.Pln.DREAM
+onready var mode = GameModes.WALK
+onready var world = Worlds.DREAM
 
 onready var player = null
 onready var party = null
@@ -24,9 +34,9 @@ onready var inkvars = ""
 #variable getters and setters 
 #this should really say get_world_inkname, will do later
 func get_world_inkname() -> String:
-	if(world == Enums.Pln.DREAM):
+	if(world == Worlds.DREAM):
 		return "dream"
-	elif(world == Enums.Pln.REAL):
+	elif(world == Worlds.REAL):
 		return "real"
 	print("ERR: tried to get world ink name, but wasn't DREAM or REAL!")
 	return "ERR"

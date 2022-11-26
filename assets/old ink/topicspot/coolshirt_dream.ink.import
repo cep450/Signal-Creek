@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/coolshirt_dream.ink-09178819634e4f5f401b16140bf60a7b.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/coolshirt_dream.ink"
+dest_files=[ "res://.import/coolshirt_dream.ink-09178819634e4f5f401b16140bf60a7b.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

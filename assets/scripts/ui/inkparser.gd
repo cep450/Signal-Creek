@@ -41,13 +41,13 @@ func _ready():
 
 	#for testing purposes; it starts opened if this is set to true
 	if _startTalking:
-		Globals.mode = Enums.Mode.TALK
+		Globals.mode = Globals.GameModes.TALK
 		
 
 #this is where we'll listen to the player's button presses and tell the UI & ink player to do stuff. 
 func _process(_delta):
 	
-	if Globals.mode == Enums.Mode.TALK:
+	if Globals.mode == Globals.GameModes.TALK:
 		if isDisplayingChoices:
 			if Input.is_action_just_released("ui_down"):
 				
@@ -234,7 +234,7 @@ func clear_and_reset_ui():
 	
 	background_panel_node.set_visible(false)
 	Globals.delete_children(vertical_layout_node)
-	Globals.mode = Enums.Mode.WALK
+	Globals.mode = Globals.GameModes.WALK
 
 #for the color manager; set the name that it should return
 func set_current_name(source):

@@ -1,0 +1,13 @@
+[remap]
+
+importer="ink"
+type="Resource"
+valid=false
+
+[deps]
+
+source_file="res://assets/old ink/FUNCTIONS.ink"
+[params]
+
+is_master_file=true
+compress=false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/npc_chadbrodykristy_real.ink-b6e9f09f2a536769440da2b0a82f9f53.res"
+
+[deps]
+
+source_file="res://assets/old ink/hallway/npc_chadbrodykristy_real.ink"
+dest_files=[ "res://.import/npc_chadbrodykristy_real.ink-b6e9f09f2a536769440da2b0a82f9f53.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

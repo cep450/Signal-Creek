@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/halloweendecor_real.ink-6d2a412d11e610b0c1f67c9f33b6d2b1.res"
+
+[deps]
+
+source_file="res://assets/old ink/warmsubject/halloweendecor_real.ink"
+dest_files=[ "res://.import/halloweendecor_real.ink-6d2a412d11e610b0c1f67c9f33b6d2b1.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

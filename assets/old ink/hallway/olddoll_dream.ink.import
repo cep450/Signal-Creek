@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/olddoll_dream.ink-cc1a59d9f874c6ecdc51f876d0dcc70b.res"
+
+[deps]
+
+source_file="res://assets/old ink/hallway/olddoll_dream.ink"
+dest_files=[ "res://.import/olddoll_dream.ink-cc1a59d9f874c6ecdc51f876d0dcc70b.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
