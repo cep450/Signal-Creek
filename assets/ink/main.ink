@@ -1,5 +1,5 @@
 VAR currentPartyChar = "NICK"
-VAR currentPlane = "DREAM"
+VAR currentWorld = "DREAM"
 
 INCLUDE bandn/bookstack.ink
 INCLUDE bandn/dragonplush.ink

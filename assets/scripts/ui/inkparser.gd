@@ -211,8 +211,9 @@ func load_story(inkFile):
 #Opening the player as-is
 func open(inkpath):
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
-	player.SetVariable("currentPlane", Globals.get_world_inkname())
+	player.SetVariable("currentWorld", Globals.get_world_inkname())
 	var newstring = inkpath.trim_prefix("bandn/")
+	
 	player.ChoosePathString(newstring)
 	print(player.GetState())
 	

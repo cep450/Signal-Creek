@@ -63,15 +63,7 @@ func _on_InteractArea_body_exited(body):
 #ex. when we switch to nour, show a nour can interact outline 
 
 func get_filename():
-	var newstring = self.get_parent().filename.trim_prefix("res://assets/prefabs/").replace(".tscn", "_" + Globals.get_world_inkname())
-	newstring = newstring.replace("obj_", "")
-	#return "PLSWORK"
-	return newstring #+ "\\" + newstring.replace("bandn\\", "")
-
-#not useful unless we all decide we'd rather not have separate dream and real world stuff
-
-func get_filename_noplane():
 	var newstring = self.get_parent().filename.trim_prefix("res://assets/prefabs/").trim_suffix(".tscn")
-	newstring.replace("obj_", "")
+	newstring = newstring.replace("obj_", "")
+
 	return newstring
-	
