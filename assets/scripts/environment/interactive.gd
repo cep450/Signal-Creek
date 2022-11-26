@@ -2,8 +2,8 @@ extends Area2D
 
 #for the INTERACT area collider of an interactive object
 
-export var inkFileDream : Resource
-export var inkFileReal : Resource
+#export var inkFileDream : Resource
+#export var inkFileReal : Resource
 
 var canInteract = false
 
@@ -21,12 +21,11 @@ func _process(_delta):
 		
 		if Input.is_action_just_pressed("interact"):
 			
-			if Globals.mode == Enums.Mode.WALK:
+			if Globals.mode == Globals.GameModes.WALK:
 				
-				Globals.mode = Enums.Mode.TALK
+				Globals.mode = Globals.GameModes.TALK
 				
-				Globals.dialogueBox.open(get_filename())
-				print(get_filename())
+				Globals.dialogueBox.open(get_object_name()) #tell inkparser to go to a knot based on this object's name
 					
 				Globals.dialogueBox.background_panel_node.set_visible(true)
 
@@ -62,8 +61,9 @@ func _on_InteractArea_body_exited(body):
 #recieves signals on character switch 
 #ex. when we switch to nour, show a nour can interact outline 
 
-func get_filename():
-	var newstring = self.get_parent().filename.trim_prefix("res://assets/prefabs/").trim_suffix(".tscn")
-	newstring = newstring.replace("obj_", "")
-
-	return newstring
+#return name of this object as it is stated in the prefab file name, excluding obj_ prefix
+func get_object_name():
+	var rawfilename = self.get_parent().filename
+	print(rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_"))
+	return rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_")
+	

@@ -4,7 +4,7 @@ extends Node
 
 #global enums, to be used anywhere
 
-enum Character { NICK, NOUR, SUWAN }
+enum Characters { NICK, NOUR, SUWAN }
 enum GameModes { WALK, TALK }
 enum Worlds { REAL, DREAM }          #can't be named 'plane' b/c Plane is an existing type 
 enum WalkDir { LEFT, RIGHT, UP, DOWN }

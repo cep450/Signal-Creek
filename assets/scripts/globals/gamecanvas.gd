@@ -61,7 +61,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("room_toggle"):
 		cycle_rooms()
 		
-	if Input.is_action_just_pressed("reset") && Globals.mode == Enums.Mode.WALK:
+	if Input.is_action_just_pressed("reset") && Globals.mode == Globals.GameModes.WALK:
 		reset_game()
 	
 #	var aberrationOverlay = lerp(aberration_overlay_material.get_shader_param("r_displacement"), aberration_position, aberration_speed)	

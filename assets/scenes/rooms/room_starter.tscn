@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/scripts/cameramanager.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/globals/cameramanager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_dream.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=4]

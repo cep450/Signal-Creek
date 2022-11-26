@@ -5,8 +5,8 @@
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=3]
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=5]
-[ext_resource path="res://assets/ink/hallway/olddoll_dream.ink" type="Resource" id=6]
-[ext_resource path="res://assets/ink/hallway/olddoll_real.ink" type="Resource" id=7]
+[ext_resource path="res://assets/old ink/hallway/olddoll_dream.ink" type="Resource" id=6]
+[ext_resource path="res://assets/old ink/hallway/olddoll_real.ink" type="Resource" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 12.5, 8.5 )

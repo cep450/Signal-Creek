@@ -2,11 +2,13 @@
 
 importer="ink"
 type="Resource"
-valid=false
+path="res://.import/FUNCTIONS.ink-6b2f34a6d23a7e5e247e51375d392d40.res"
 
 [deps]
 
 source_file="res://assets/old ink/FUNCTIONS.ink"
+dest_files=[ "res://.import/FUNCTIONS.ink-6b2f34a6d23a7e5e247e51375d392d40.res" ]
+
 [params]
 
 is_master_file=true
