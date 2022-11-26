@@ -11,7 +11,7 @@ onready var colorManager = null
 
 onready var planeManager = null
 onready var mode = Enums.Mode.WALK
-onready var world = Enums.Pln.DREAM #use a bool instead? only 2 states. 
+onready var world = Enums.Pln.DREAM
 
 onready var player = null
 onready var party = null
@@ -25,9 +25,9 @@ onready var inkvars = ""
 #this should really say get_world_inkname, will do later
 func get_world_inkname() -> String:
 	if(world == Enums.Pln.DREAM):
-		return "DREAM"
+		return "dream"
 	elif(world == Enums.Pln.REAL):
-		return "REAL"
+		return "real"
 	print("ERR: tried to get world ink name, but wasn't DREAM or REAL!")
 	return "ERR"
 

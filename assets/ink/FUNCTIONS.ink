@@ -6,6 +6,9 @@ VAR currentPartyChar = "PARTY"
 VAR currentPlane = "DREAM"
 VAR timesVisited = 0
 
+INCLUDE bandn\priceofsalt_dream.ink
+INCLUDE bandn\priceofsalt_real.ink
+
 == default ==
 
     thing
@@ -25,66 +28,66 @@ VAR timesVisited = 0
 // 	~ return "hello from inkside"
 
 
-INCLUDE bandn\bookstack_dream.ink
-INCLUDE bandn\bookstack_real.ink
-INCLUDE bandn\dragonplush_dream.ink
-INCLUDE bandn\dragonplush_real.ink
-INCLUDE bandn\hotwheels_dream.ink
-INCLUDE bandn\hotwheels_real.ink
-INCLUDE bandn\npc_rina_dream.ink
-INCLUDE bandn\npc_rina_real.ink
-INCLUDE bandn\oldnovel_dream.ink
-INCLUDE bandn\oldnovel_real.ink
-INCLUDE bandn\pens_dream.ink
-INCLUDE bandn\pens_real.ink
-INCLUDE bandn\polaroid_dream.ink
-INCLUDE bandn\polaroid_real.ink
-INCLUDE bandn\priceofsalt_dream.ink
-INCLUDE bandn\priceofsalt_real.ink
+// INCLUDE bandn\bookstack_dream.ink
+// INCLUDE bandn\bookstack_real.ink
+// INCLUDE bandn\dragonplush_dream.ink
+// INCLUDE bandn\dragonplush_real.ink
+// INCLUDE bandn\hotwheels_dream.ink
+// INCLUDE bandn\hotwheels_real.ink
+// INCLUDE bandn\npc_rina_dream.ink
+// INCLUDE bandn\npc_rina_real.ink
+// INCLUDE bandn\oldnovel_dream.ink
+// INCLUDE bandn\oldnovel_real.ink
+// INCLUDE bandn\pens_dream.ink
+// INCLUDE bandn\pens_real.ink
+// INCLUDE bandn\polaroid_dream.ink
+// INCLUDE bandn\polaroid_real.ink
+// INCLUDE bandn\priceofsalt_dream.ink
+// INCLUDE bandn\priceofsalt_real.ink
 
-INCLUDE topicspot\consoles_dream.ink
-INCLUDE topicspot\consoles_real.ink
-INCLUDE topicspot\coolshirt_dream.ink
-INCLUDE topicspot\coolshirt_real.ink
-INCLUDE topicspot\graphictees_dream.ink
-INCLUDE topicspot\graphictees_real.ink
-INCLUDE topicspot\makeup_dream.ink
-INCLUDE topicspot\makeup_real.ink
-INCLUDE topicspot\npc_manager_dream.ink
-INCLUDE topicspot\npc_manager_real.ink
-INCLUDE topicspot\phonecases_dream.ink
-INCLUDE topicspot\phonecases_real.ink
-INCLUDE topicspot\pinbuttons_dream.ink
-INCLUDE topicspot\pinbuttons_real.ink
-INCLUDE topicspot\sailormoonposters_dream.ink
-INCLUDE topicspot\sailormoonposters_real.ink
+// INCLUDE topicspot\consoles_dream.ink
+// INCLUDE topicspot\consoles_real.ink
+// INCLUDE topicspot\coolshirt_dream.ink
+// INCLUDE topicspot\coolshirt_real.ink
+// INCLUDE topicspot\graphictees_dream.ink
+// INCLUDE topicspot\graphictees_real.ink
+// INCLUDE topicspot\makeup_dream.ink
+// INCLUDE topicspot\makeup_real.ink
+// INCLUDE topicspot\npc_manager_dream.ink
+// INCLUDE topicspot\npc_manager_real.ink
+// INCLUDE topicspot\phonecases_dream.ink
+// INCLUDE topicspot\phonecases_real.ink
+// INCLUDE topicspot\pinbuttons_dream.ink
+// INCLUDE topicspot\pinbuttons_real.ink
+// INCLUDE topicspot\sailormoonposters_dream.ink
+// INCLUDE topicspot\sailormoonposters_real.ink
 
-INCLUDE hallway\bobatea_dream.ink
-INCLUDE hallway\bobatea_real.ink
-INCLUDE hallway\cafetables_dream.ink
-INCLUDE hallway\cafetables_real.ink
-INCLUDE hallway\litter_dream.ink
-INCLUDE hallway\litter_real.ink
-INCLUDE hallway\npc_chadbrodykristy_dream.ink
-INCLUDE hallway\npc_chadbrodykristy_real.ink
-INCLUDE hallway\olddoll_dream.ink
-INCLUDE hallway\olddoll_real.ink
-INCLUDE hallway\partyposter_dream.ink
-INCLUDE hallway\partyposter_real.ink
-INCLUDE hallway\pretzelstand_dream.ink
-INCLUDE hallway\pretzelstand_real.ink
-INCLUDE hallway\victorias_dream.ink
-INCLUDE hallway\victorias_real.ink
-INCLUDE hallway\womensclothing_dream.ink
-INCLUDE hallway\womensclothing_real.ink
+// INCLUDE hallway\bobatea_dream.ink
+// INCLUDE hallway\bobatea_real.ink
+// INCLUDE hallway\cafetables_dream.ink
+// INCLUDE hallway\cafetables_real.ink
+// INCLUDE hallway\litter_dream.ink
+// INCLUDE hallway\litter_real.ink
+// INCLUDE hallway\npc_chadbrodykristy_dream.ink
+// INCLUDE hallway\npc_chadbrodykristy_real.ink
+// INCLUDE hallway\olddoll_dream.ink
+// INCLUDE hallway\olddoll_real.ink
+// INCLUDE hallway\partyposter_dream.ink
+// INCLUDE hallway\partyposter_real.ink
+// INCLUDE hallway\pretzelstand_dream.ink
+// INCLUDE hallway\pretzelstand_real.ink
+// INCLUDE hallway\victorias_dream.ink
+// INCLUDE hallway\victorias_real.ink
+// INCLUDE hallway\womensclothing_dream.ink
+// INCLUDE hallway\womensclothing_real.ink
 
-INCLUDE warmsubject\halloweendecor_dream.ink
-INCLUDE warmsubject\halloweendecor_real.ink
-INCLUDE warmsubject\npc_salesassoc_dream.ink
-INCLUDE warmsubject\npc_salesassoc_real.ink
-INCLUDE warmsubject\shelf_both.ink
-INCLUDE warmsubject\shirts_dream.ink
-INCLUDE warmsubject\shirts_real.ink
-INCLUDE warmsubject\teeth_both.ink
+// INCLUDE warmsubject\halloweendecor_dream.ink
+// INCLUDE warmsubject\halloweendecor_real.ink
+// INCLUDE warmsubject\npc_salesassoc_dream.ink
+// INCLUDE warmsubject\npc_salesassoc_real.ink
+// INCLUDE warmsubject\shelf_both.ink
+// INCLUDE warmsubject\shirts_dream.ink
+// INCLUDE warmsubject\shirts_real.ink
+// INCLUDE warmsubject\teeth_both.ink
 
-INCLUDE placeholder_antibodies.ink
+// INCLUDE placeholder_antibodies.ink

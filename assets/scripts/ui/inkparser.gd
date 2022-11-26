@@ -209,22 +209,23 @@ func load_story(inkFile):
 	
 
 #Opening the player as-is
-func open()	:
+func open(inkpath):
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
 	player.SetVariable("currentPlane", Globals.get_world_inkname())
-	player.ChoosePathString("default")
+	var newstring = inkpath.trim_prefix("bandn/")
+	player.ChoosePathString(newstring)
 	print(player.GetState())
 	
 
 #Saving story state to disk
 func save_ink_state():
 
-	print("saving ink state to disk")
+	#print("saving ink state to disk")
 
 	Globals.inkvars = player.GetState()
 	player.SaveStateOnDisk(player.GetState())
 	
-	print("finished saving state")
+	#print("finished saving state")
 
 #Clear and reset the UI panel prefab
 func clear_and_reset_ui():
