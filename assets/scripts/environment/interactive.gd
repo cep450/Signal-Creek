@@ -6,6 +6,10 @@ extends Area2D
 #export var inkFileReal : Resource
 
 var canInteract = false
+
+#NOTES ABOUT THIS APPROACH: IT WON'T BE KEPT IN SAVE FILES; DON'T WORRY ABOUT IT FOR DEMO
+#IT'S NOT A LONG-TERM SOLUTION, BUT IT'S NOT SOMETHING TO CARE ABOUT IMMEDIATELY.
+#Idea: check for signals of all interactive objects, when they're emitted, add to a variable list. swag?
 var dreamvisited = false
 var realvisited = false
 
@@ -54,7 +58,6 @@ func _on_InteractArea_body_entered(body):
 			
 
 
-
 func _on_InteractArea_body_exited(body):
 	
 	if body.is_in_group("Player"):
@@ -68,9 +71,12 @@ func _on_InteractArea_body_exited(body):
 #return name of this object as it is stated in the prefab file name, excluding obj_ prefix
 func get_object_name():
 	var rawfilename = self.get_parent().filename
-	print(rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_"))
+	
+	#print(rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_"))
+	
 	return rawfilename.right(rawfilename.find_last("/") + 1).trim_suffix(".tscn").trim_prefix("obj_")
 	
+
 
 #gets the world we're currently in, then gets whether we've visited this object in the other world
 func get_visitedinworld_status():

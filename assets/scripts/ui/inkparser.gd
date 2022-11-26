@@ -152,7 +152,6 @@ func create_entry_dialogue(newtext):
 	vertical_layout_node.add_child(newpre_entrydialogue)
 	
 
-
 	newpre_entrydialogue.set_nametag(currentSpeaker, Globals.colorManager.get_current_color())
 	newpre_entrydialogue.remove_placeholders()
 	
@@ -217,6 +216,7 @@ func open(objectName, visitedinworldStatus):
 	print(pathstring)
 	
 	player.ChoosePathString(pathstring)
+	
 	print(player.GetState())
 	
 
@@ -248,14 +248,17 @@ func set_current_name(source):
 
 #references to GODOT functions called by external ink functions.
 #(C# functions can be linked in InkLinker.cs.)
-#saving these here saves time on bind external functions 
-var f_world_inkname = funcref(Globals, "world_inkname")
-var f_shift_planes = funcref(Globals, "planemanager.shift_planes")
-var f_get_leader_inkname = funcref(Globals, "party.get_leader_inkname")
+#saving these here saves time on bind external functions
+
+#var f_world_inkname = funcref(Globals, "world_inkname")
+#var f_shift_planes = funcref(Globals, "planemanager.shift_planes")
+#var f_get_leader_inkname = funcref(Globals, "party.get_leader_inkname")
 
 
 func bind_external_functions():
-	pass
+	
 	#player.BindExternalFunction("getWorld", f_world_inkname, false)
 	#player.BindExternalFunction("shiftWorld", f_shift_planes, false)
 	#player.BindExternalFunction("getName", self, f_get_leader_inkname)
+	
+	pass
