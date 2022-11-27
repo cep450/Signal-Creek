@@ -208,12 +208,10 @@ func load_story(inkFile):
 	
 
 #Opening the player as-is
-func open(objectName, visitedinworldStatus):
+#string pathstring: name of the knot we're opening
+func open(pathstring):
 	player.SetVariable("currentPartyChar", Globals.party.get_leader_inkname())
 	player.SetVariable("currentWorld", Globals.get_world_inkname())
-	
-	var pathstring = objectName + visitedinworldStatus
-	print(pathstring)
 	
 	player.ChoosePathString(pathstring)
 	

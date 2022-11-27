@@ -33,7 +33,7 @@ func _process(_delta):
 				
 				#tell inkparser to go to a knot based on this object's name
 				#also tell the parser if this object has already been visited in the other world
-				Globals.dialogueBox.open(get_object_name(), get_visitedinworld_status())
+				Globals.dialogueBox.open(get_object_name() + get_visitedinworld_status())
 					
 				Globals.dialogueBox.background_panel_node.set_visible(true)
 
