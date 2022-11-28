@@ -2,13 +2,19 @@
 
 == partyposter_dream ==
 
-DREAM WORLD, TEXT HERE
+//dream party poster file
+
+
+//REAL NOT VISITED
+//here we check if real has been visited and skip to realvisited if sodas
+
+NICK: Wow, a party...? Looks like fun! You guys should come with me!
 
 -> END
 
 == partyposter_realvisited ==
 
-DREAM WORLD AFTER VISITING REAL, TEXT HERE
+NICK: Back to the party again... you still think we can go?
 
 -> END
 
@@ -19,13 +25,18 @@ DREAM WORLD AFTER VISITING REAL, TEXT HERE
 
 == partyposter_real ==
 
-REAL WORLD, TEXT HERE
+//real party poster file
+
+
+//dream not visited
+//here we check if dream has been visited and skip to dreamvisited if something
+NICK: What is this for? I can hardly even read it... lame.
+
 
 -> END
 
 == partyposter_dreamvisited ==
-
-REAL WORLD AFTER VISITING DREAM, TEXT HERE
+NICK: Oh, it's weird and unreadable again. Does this mean the party's cancelled...?
 
 -> END
 

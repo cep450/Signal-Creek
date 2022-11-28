@@ -2,13 +2,23 @@
 
 == consoles_dream ==
 
-DREAM WORLD, TEXT HERE
+//REAL NOT VISITED
+// here, we check if real world console has been visited, and skip to realvisited if so.
+
+It's a game console demoing a cute animal collecting type game. The game characters are coming out and they're lil cute chibi animal guys.
+
+Nick seems extremely excited.
+
+NICK: "Oh! I've seen games like this before... I didn't think TopicSpot would have them, that's so cool!"
+
 
 -> END
 
 == consoles_realvisited ==
 
-DREAM WORLD AFTER VISITING REAL, TEXT HERE
+The animals seem to be even cuter this time, if only because of the juxtaposition of the shooting game. Nick looks at them fondly, but there is a bittersweetness to his longing.
+
+NICK: "I guess... I guess this has to stay here, in this world, huh? I guess it makes sense I mean, we're in TopicSpot after all, I don't think they'd have this in the real world."
 
 -> END
 
@@ -19,13 +29,24 @@ DREAM WORLD AFTER VISITING REAL, TEXT HERE
 
 == consoles_real ==
 
-REAL WORLD, TEXT HERE
+//DREAM NOT VISITED
+// here, we check if the dream console has been visited, and skip to dreamvisited if so.
+
+It's a game console demoing a game. Some Call of Duty-like war game is being demoed. 
+
+NICK: "Ah... my friends would love this!"
+
+He seems hesitant.
 
 -> END
 
 == consoles_dreamvisited ==
 
-REAL WORLD AFTER VISITING DREAM, TEXT HERE
+The shooting game is still being shown. Nick looks at it and frowns.
+
+NICK: "Well... it's cool, I'm sure my friends would love it but... man, I kind of miss the colors of the other one, you know?" 
+
+He laughs awkwardly, looking towards the others for validation. 
 
 -> END
 

@@ -2,13 +2,13 @@
 
 == litter_dream ==
 
-DREAM WORLD, TEXT HERE
+Some food wrappers are scattered on the ground 
 
 -> END
 
 == litter_realvisited ==
 
-DREAM WORLD AFTER VISITING REAL, TEXT HERE
+Some food wrappers are scattered on the ground 
 
 -> END
 
@@ -19,13 +19,12 @@ DREAM WORLD AFTER VISITING REAL, TEXT HERE
 
 == litter_real ==
 
-REAL WORLD, TEXT HERE
+Scattered on the ground are wrappers from candy bars and crumpled flyers promoting outdated cover bands. 
 
 -> END
 
 == litter_dreamvisited ==
-
-REAL WORLD AFTER VISITING DREAM, TEXT HERE
+Scattered on the ground are wrappers from candy bars and crumpled flyers promoting outdated cover bands. 
 
 -> END
 
