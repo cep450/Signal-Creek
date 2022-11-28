@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/consoles_real.ink-76235707a0d505fe0f86fd748c73cf79.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/consoles_real.ink"
+dest_files=[ "res://.import/consoles_real.ink-76235707a0d505fe0f86fd748c73cf79.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

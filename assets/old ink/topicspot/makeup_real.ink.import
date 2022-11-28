@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/makeup_real.ink-a977713940260707646537bfcb88ee49.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/makeup_real.ink"
+dest_files=[ "res://.import/makeup_real.ink-a977713940260707646537bfcb88ee49.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

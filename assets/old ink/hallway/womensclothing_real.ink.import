@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/womensclothing_real.ink-139b356918d92b49e2e909bffa25fa36.res"
+
+[deps]
+
+source_file="res://assets/old ink/hallway/womensclothing_real.ink"
+dest_files=[ "res://.import/womensclothing_real.ink-139b356918d92b49e2e909bffa25fa36.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

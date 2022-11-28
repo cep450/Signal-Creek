@@ -4,18 +4,19 @@
 [ext_resource path="res://assets/scripts/environment/roomvars.gd" type="Script" id=2]
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/tilesets/set_hallway_real.tres" type="TileSet" id=4]
-[ext_resource path="res://assets/prefabs/hallway/obj_oldDoll.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/prefabs/hallway/obj_olddoll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/prefabs/hallway/obj_litter.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/prefabs/hallway/obj_cafeChairsFront.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/prefabs/hallway/obj_cafeChairs.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefabs/hallway/obj_cafechairsfront.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/hallway/obj_cafechairs.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/prefabs/hallway/obj_victorias.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
-[ext_resource path="res://assets/prefabs/hallway/obj_womensClothing.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/prefabs/hallway/obj_trashCan.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/prefabs/hallway/obj_cafeTables.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/prefabs/hallway/obj_partyPoster.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/prefabs/hallway/obj_pretzelStand.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/prefabs/hallway/obj_bobaTea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/prefabs/hallway/obj_womensclothing.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/prefabs/hallway/obj_trashcan.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/prefabs/hallway/obj_cafetables.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/prefabs/hallway/obj_partyposter.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/prefabs/hallway/obj_pretzelstand.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/prefabs/hallway/obj_bobatea.tscn" type="PackedScene" id=16]
+
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 2 )
@@ -23,8 +24,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-room_bounds_min = Vector2( 0, -16 )
-room_bounds_max = Vector2( 736, 320 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.956863, 0.701961, 0.92549, 1 )
@@ -123,46 +122,43 @@ z_index = 1
 [node name="WomensClothing" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
 position = Vector2( 265, 77 )
 
-[node name="CafeChairs" type="YSort" parent="PlaneManager/Overworld"]
-position = Vector2( 265, 77 )
+[node name="CafeChairs3" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 544, 152 )
 
-[node name="CafeChairs3" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 279, 75 )
+[node name="CafeChairs2" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 447, 200 )
 
-[node name="CafeChairs2" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 182, 123 )
+[node name="CafeChairs4" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 544, 200 )
 
-[node name="CafeChairs4" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 279, 123 )
-
-[node name="CafeChairs5" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 248, 75 )
+[node name="CafeChairs5" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 513, 152 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="CafeChairs6" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 345, 75 )
+[node name="CafeChairs6" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 610, 152 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="CafeChairs7" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 248, 123 )
+[node name="CafeChairs7" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 513, 200 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="CafeChairs8" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 345, 123 )
+[node name="CafeChairs8" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 610, 200 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="CafeChairsFront" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 7 )]
-position = Vector2( 215, 49 )
+[node name="CafeChairsFront" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 480, 126 )
 
-[node name="CafeChairsFront2" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 7 )]
-position = Vector2( 312, 49 )
+[node name="CafeChairsFront2" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 577, 126 )
 
-[node name="CafeChairs" parent="PlaneManager/Overworld/CafeChairs" instance=ExtResource( 8 )]
-position = Vector2( 182, 75 )
+[node name="CafeChairs9" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 447, 152 )
 
 [node name="TrashCan" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
 position = Vector2( 417, 136 )

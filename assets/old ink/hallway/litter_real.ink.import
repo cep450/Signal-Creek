@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/litter_real.ink-3b3e50633ef5fc032f802ded272beefd.res"
+
+[deps]
+
+source_file="res://assets/old ink/hallway/litter_real.ink"
+dest_files=[ "res://.import/litter_real.ink-3b3e50633ef5fc032f802ded272beefd.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

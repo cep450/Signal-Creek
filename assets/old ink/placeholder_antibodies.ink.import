@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/placeholder_antibodies.ink-4381f81fc23d50d29c0b43155728edb9.res"
+
+[deps]
+
+source_file="res://assets/old ink/placeholder_antibodies.ink"
+dest_files=[ "res://.import/placeholder_antibodies.ink-4381f81fc23d50d29c0b43155728edb9.res" ]
+
+[params]
+
+is_master_file=false
+compress=false

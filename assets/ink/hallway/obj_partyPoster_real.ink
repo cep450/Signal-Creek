@@ -1,1 +1,0 @@
-//real party poster file

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/polaroid_dream.ink-5f250efa3c93e905f833341f5230aaea.res"
+
+[deps]
+
+source_file="res://assets/old ink/bandn/polaroid_dream.ink"
+dest_files=[ "res://.import/polaroid_dream.ink-5f250efa3c93e905f833341f5230aaea.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

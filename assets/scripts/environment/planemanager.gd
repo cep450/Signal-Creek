@@ -25,13 +25,11 @@ func _physics_process(_delta):
 
 func shift_planes():
 	
-	
-	
-	if Globals.world == Enums.Pln.DREAM:
-		Globals.world = Enums.Pln.REAL
+	if Globals.world == Globals.Worlds.DREAM:
+		Globals.world = Globals.Worlds.REAL
 		set_tilesets(realset)
 	else:
-		Globals.world = Enums.Pln.DREAM
+		Globals.world = Globals.Worlds.DREAM
 		set_tilesets(dreamset)
 		
 	Globals.party.update_leader_to(Globals.party.leaderIndex)
@@ -47,7 +45,7 @@ func set_tilesets(setId):
 
 func set_objects_sprites():
 	
-	if Globals.world == Enums.Pln.DREAM:
+	if Globals.world == Globals.Worlds.DREAM:
 		for object in objects:
 			object.set_sheet(object.dreamsheet)
 			
@@ -58,7 +56,7 @@ func set_objects_sprites():
 
 func move_objects():
 	
-	if Globals.world == Enums.Pln.DREAM:
+	if Globals.world == Globals.Worlds.REAL:
 		for object in objects:
 			object.set_position(object.dream_world_position)
 			

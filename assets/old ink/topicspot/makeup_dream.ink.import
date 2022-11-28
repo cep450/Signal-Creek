@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/makeup_dream.ink-d7b872fdae6eed1b3913cc4f93b72bf8.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/makeup_dream.ink"
+dest_files=[ "res://.import/makeup_dream.ink-d7b872fdae6eed1b3913cc4f93b72bf8.res" ]
+
+[params]
+
+is_master_file=true
+compress=false
