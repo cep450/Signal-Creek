@@ -1,6 +1,6 @@
 extends YSort
 
-var partyMembers = [Enums.Char.NICK, Enums.Char.NOUR, Enums.Char.SUWAN]
+var partyMembers = [Globals.Characters.NICK, Globals.Characters.NOUR, Globals.Characters.SUWAN]
 onready var characterObjects = [self.get_child(0), self.get_child(1), self.get_child(2)]
 
 export(Array, Texture) var dream_portraits = []
@@ -15,11 +15,11 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if Globals.mode == Enums.Mode.WALK:
+	if Globals.mode == Globals.GameModes.WALK:
 		check_input()
 
 func _physics_process(_delta):
-	if Globals.mode == Enums.Mode.WALK:
+	if Globals.mode == Globals.GameModes.WALK:
 		check_input_physics()
 
 func check_input_physics():
@@ -64,7 +64,7 @@ func rotate_leader_right():
 func update_leader_to(newIndex):
 	leaderIndex = newIndex
 	
-	if Globals.world == Enums.Pln.DREAM:
+	if Globals.world == Globals.Worlds.DREAM:
 		Globals.portrait.set_character(dream_portraits[leaderIndex], get_leader_inkname())
 	else:
 		Globals.portrait.set_character(real_portraits[leaderIndex], get_leader_inkname())

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/halloweendecor_dream.ink-380e8430c979512a48efd95994a19fa1.res"
+
+[deps]
+
+source_file="res://assets/old ink/warmsubject/halloweendecor_dream.ink"
+dest_files=[ "res://.import/halloweendecor_dream.ink-380e8430c979512a48efd95994a19fa1.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

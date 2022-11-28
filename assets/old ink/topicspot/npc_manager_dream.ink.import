@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/npc_manager_dream.ink-e39840c75e47010f4e9c3a6d8a05ed29.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/npc_manager_dream.ink"
+dest_files=[ "res://.import/npc_manager_dream.ink-e39840c75e47010f4e9c3a6d8a05ed29.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

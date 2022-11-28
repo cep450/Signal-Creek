@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/dragonplush_real.ink-5049c3d1f6a70e6a6042c60c645dedb3.res"
+
+[deps]
+
+source_file="res://assets/old ink/bandn/dragonplush_real.ink"
+dest_files=[ "res://.import/dragonplush_real.ink-5049c3d1f6a70e6a6042c60c645dedb3.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

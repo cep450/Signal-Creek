@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/shelf_both.ink-4c53cb128c25c1dca66a6ffa02e50097.res"
+
+[deps]
+
+source_file="res://assets/old ink/warmsubject/shelf_both.ink"
+dest_files=[ "res://.import/shelf_both.ink-4c53cb128c25c1dca66a6ffa02e50097.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

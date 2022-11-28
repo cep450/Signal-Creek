@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/ink/bandn/obj_hotWheels_real.ink" type="Resource" id=1]
+[ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=1]
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=2]
-[ext_resource path="res://assets/scripts/environment/interactive.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/objects/sheet_BN_dream.png" type="Texture" id=3]
 [ext_resource path="res://assets/shaders/material_outline.tres" type="Material" id=4]
 [ext_resource path="res://assets/sprites/objects/sheet_BN_real.png" type="Texture" id=5]
-[ext_resource path="res://assets/ink/bandn/obj_hotWheels_dream.ink" type="Resource" id=6]
-[ext_resource path="res://assets/sprites/objects/sheet_BN_dream.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 6.5, 4 )
@@ -21,14 +19,14 @@ script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-dreamsheet = ExtResource( 7 )
+dreamsheet = ExtResource( 3 )
 realsheet = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 material = ExtResource( 4 )
 position = Vector2( 0, -4 )
-texture = ExtResource( 7 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 33, 22, 13, 8 )
 
@@ -46,12 +44,10 @@ position = Vector2( -0.5, -4 )
 shape = SubResource( 23 )
 
 [node name="ActiveArea" type="Area2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-inkFileDream = ExtResource( 6 )
-inkFileReal = ExtResource( 1 )
 interactiveBySuwan = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]

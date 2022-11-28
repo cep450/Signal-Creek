@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/hotwheels_dream.ink-25c2a2063750ae42e4f61c536dd5aee2.res"
+
+[deps]
+
+source_file="res://assets/old ink/bandn/hotwheels_dream.ink"
+dest_files=[ "res://.import/hotwheels_dream.ink-25c2a2063750ae42e4f61c536dd5aee2.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

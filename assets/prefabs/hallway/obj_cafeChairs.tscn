@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/objects/sheet_hallway_real.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 6, 5.5 )
@@ -13,13 +13,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-dreamsheet = ExtResource( 6 )
-realsheet = ExtResource( 7 )
+dreamsheet = ExtResource( 3 )
+realsheet = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 position = Vector2( 0, -8 )
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 58, 65, 12, 16 )
 
@@ -27,7 +27,7 @@ region_rect = Rect2( 58, 65, 12, 16 )
 modulate = Color( 1, 1, 1, 0.313726 )
 show_behind_parent = true
 light_mask = 4
-texture = ExtResource( 7 )
+texture = ExtResource( 2 )
 offset = Vector2( 0, -8 )
 region_enabled = true
 region_rect = Rect2( 58, 65, 12, 16 )

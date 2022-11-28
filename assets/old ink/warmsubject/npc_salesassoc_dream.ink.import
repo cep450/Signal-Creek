@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/npc_salesassoc_dream.ink-70cba9ed331ef0a73295bbe355a9d4a0.res"
+
+[deps]
+
+source_file="res://assets/old ink/warmsubject/npc_salesassoc_dream.ink"
+dest_files=[ "res://.import/npc_salesassoc_dream.ink-70cba9ed331ef0a73295bbe355a9d4a0.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

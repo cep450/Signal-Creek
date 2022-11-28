@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/polaroid_real.ink-1cc726b24a39c0d961a468fde9508fba.res"
+
+[deps]
+
+source_file="res://assets/old ink/bandn/polaroid_real.ink"
+dest_files=[ "res://.import/polaroid_real.ink-1cc726b24a39c0d961a468fde9508fba.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

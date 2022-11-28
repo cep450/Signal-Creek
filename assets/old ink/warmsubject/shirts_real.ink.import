@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/shirts_real.ink-dca059e9bf04153f619dc849b7b8112e.res"
+
+[deps]
+
+source_file="res://assets/old ink/warmsubject/shirts_real.ink"
+dest_files=[ "res://.import/shirts_real.ink-dca059e9bf04153f619dc849b7b8112e.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

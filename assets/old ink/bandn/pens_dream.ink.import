@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/pens_dream.ink-11d7e3208be4c3d4fcd91805664374ed.res"
+
+[deps]
+
+source_file="res://assets/old ink/bandn/pens_dream.ink"
+dest_files=[ "res://.import/pens_dream.ink-11d7e3208be4c3d4fcd91805664374ed.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

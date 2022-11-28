@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/teeth_both.ink-26c0f42119a621b1f80c02e79d044b45.res"
+
+[deps]
+
+source_file="res://assets/old ink/warmsubject/teeth_both.ink"
+dest_files=[ "res://.import/teeth_both.ink-26c0f42119a621b1f80c02e79d044b45.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

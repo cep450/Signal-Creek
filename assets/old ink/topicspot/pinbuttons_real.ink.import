@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/pinbuttons_real.ink-8fb43d3f10bb96e4bf321f4f62ebb33b.res"
+
+[deps]
+
+source_file="res://assets/old ink/topicspot/pinbuttons_real.ink"
+dest_files=[ "res://.import/pinbuttons_real.ink-8fb43d3f10bb96e4bf321f4f62ebb33b.res" ]
+
+[params]
+
+is_master_file=true
+compress=false

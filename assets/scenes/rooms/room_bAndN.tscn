@@ -5,16 +5,17 @@
 [ext_resource path="res://assets/scripts/environment/planemanager.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/tilesets/set_BN_real.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/sprites/tilesets/set_proposal_real.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/prefabs/bandn/obj_dragonPlush.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/prefabs/bandn/obj_hotWheels.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/prefabs/bandn/obj_bookStack.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/prefabs/bandn/obj_oldNovel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/prefabs/bandn/obj_dragonplush.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefabs/bandn/obj_hotwheels.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefabs/bandn/obj_bookstack.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefabs/bandn/obj_oldnovel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/lights/glow_128.png" type="Texture" id=10]
 [ext_resource path="res://assets/prefabs/bandn/obj_pens.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/prefabs/bandn/obj_polaroid.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/prefabs/bandn/obj_priceOfSalt.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/prefabs/bandn/obj_priceofsalt.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/shaders/shader_outline.gdshader" type="Shader" id=14]
 [ext_resource path="res://assets/sprites/sheet_BN_real.png" type="Texture" id=16]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
