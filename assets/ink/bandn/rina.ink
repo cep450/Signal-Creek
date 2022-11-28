@@ -1,8 +1,10 @@
 //---------------- DREAM WORLD ----------------
 
 == rina_dream ==
+// rina will be divided up differently than most other objects, into 'interactions' instead of dreamvisited/realvisited (irst interaction, second, third, etc.)
 
-DREAM WORLD, TEXT HERE
+// and then we add as many ===interaction=== parts as we need for the future based on other objects that the player interacts with! 
+
 
 -> END
 

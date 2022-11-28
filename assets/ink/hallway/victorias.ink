@@ -1,14 +1,43 @@
 //---------------- DREAM WORLD ----------------
 
 == victorias_dream ==
+//dream victorias secret
+//Nour filled the classic young-closeted-gay child who got very flustered whenever she went near or in a victoria's secret
 
-DREAM WORLD, TEXT HERE
+
+
+NOUR: Ah. Yes. The store that caused me endless embarrassment as a child.
+
+NOUR: Looking back, I'm not sure how I and everyone around me missed the clear signs that I was gay.
+
+NICK: Maybe they *didn't.*
+
+NOUR: ...What.
+
+NICK: Maybe they *did* know but didn't tell you!! Haha, especially with how red you're getting.
+
+NOUR: Shut up, kid!
 
 -> END
 
 == victorias_realvisited ==
 
-DREAM WORLD AFTER VISITING REAL, TEXT HERE
+//dream victorias secret
+//Nour filled the classic young-closeted-gay child who got very flustered whenever she went near or in a victoria's secret
+
+
+
+NOUR: Ah. Yes. The store that caused me endless embarrassment as a child.
+
+NOUR: Looking back, I'm not sure how I and everyone around me missed the clear signs that I was gay.
+
+NICK: Maybe they *didn't.*
+
+NOUR: ...What.
+
+NICK: Maybe they *did* know but didn't tell you!! Haha, especially with how red you're getting.
+
+NOUR: Shut up, kid!
 
 -> END
 
@@ -19,13 +48,24 @@ DREAM WORLD AFTER VISITING REAL, TEXT HERE
 
 == victorias_real ==
 
-REAL WORLD, TEXT HERE
+//real victorias secret
+//Nour filled the classic young-closeted-gay child who got very flustered whenever she went near or in a victoria's secret
+
+
+
+NOUR: Don't look don't look don't look don't look don--
 
 -> END
 
 == victorias_dreamvisited ==
 
-REAL WORLD AFTER VISITING DREAM, TEXT HERE
+NOUR: Jeez, can't seem to escape this store.
+
+NOUR: Their clothes aren't even comfortable! Purely sex appeal.
+
+NICK: Is it workiiiiiing~?
+
+NOUR: ...I plead the fifth.
 
 -> END
 

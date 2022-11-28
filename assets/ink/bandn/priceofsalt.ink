@@ -2,13 +2,33 @@
 
 == priceofsalt_dream ==
 
-DREAM WORLD, TEXT HERE
+//the dream price of salt file
+//there's an overflowing shelf of books, all with the same title and author: The Price of Salt by Patricia Highsmith.
+//Nour used to read bits and pieces of the book whenever she'd come to the mall with her family; they never let her buy it, so she'd read as many chapters as she could whenever they'd leave her be in the store.
+
+
+
+NOUR: Whoa, never seen so many copies of this here. 
+
+NOUR: I used to hide one with a bookmark on one of the shelves so I'd always know where it was and where I left off when I'd come back to read it... 
+
+NOUR: Good times.
 
 -> END
 
 == priceofsalt_realvisited ==
 
-DREAM WORLD AFTER VISITING REAL, TEXT HERE
+//the dream price of salt file
+//there's an overflowing shelf of books, all with the same title and author: The Price of Salt by Patricia Highsmith.
+//Nour used to read bits and pieces of the book whenever she'd come to the mall with her family; they never let her buy it, so she'd read as many chapters as she could whenever they'd leave her be in the store.
+
+
+
+NOUR: Whoa, never seen so many copies of this here. 
+
+NOUR: I used to hide one with a bookmark on one of the shelves so I'd always know where it was and where I left off when I'd come back to read it... 
+
+NOUR: Good times.
 
 -> END
 
@@ -19,13 +39,22 @@ DREAM WORLD AFTER VISITING REAL, TEXT HERE
 
 == priceofsalt_real ==
 
-REAL WORLD, TEXT HERE
+//the real price of salt file
+//there's a single copy of The Price of Salt by Patricia Highsmith hidden amongst a bunch of other books, none belonging to any one genre.
+
+
+
+NOUR: Aw, this brings back memories. 
+
+NOUR: My first foray into queer literature. 
 
 -> END
 
 == priceofsalt_dreamvisited ==
 
-REAL WORLD AFTER VISITING DREAM, TEXT HERE
+NOUR: Oh, there's a copy here, too. 
+
+NOUR: I almost want to take it for old time's sake.
 
 -> END
 
