@@ -83,12 +83,14 @@ func get_visitedinworld_status():
 	
 	if Globals.world == Globals.Worlds.DREAM:
 		if realvisited:
+			dreamvisited = true
 			return "_realvisited"
 		else:
 			dreamvisited = true
 			return "_dream"
 	else:
 		if dreamvisited:
+			realvisited = true
 			return "_dreamvisited"
 		else:
 			realvisited = true

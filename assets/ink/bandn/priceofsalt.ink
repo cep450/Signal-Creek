@@ -1,3 +1,4 @@
+VAR war = "shit"
 //---------------- DREAM WORLD ----------------
 
 == priceofsalt_dream ==
@@ -25,7 +26,7 @@ NOUR: Good times.
 
 
 NOUR: Whoa, never seen so many copies of this here. 
-
+~war = "piss"
 NOUR: I used to hide one with a bookmark on one of the shelves so I'd always know where it was and where I left off when I'd come back to read it... 
 
 NOUR: Good times.

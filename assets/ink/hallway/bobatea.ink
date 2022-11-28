@@ -7,6 +7,7 @@
 
 The vending machine is full of cool Japanese drinks, like Ramune and Boba Tea and other things that Nick can't understand.
 
+
 The cool, colorful bold letters and cute mascots make him smile, and he runs over.
 
 NICK: "Look! These look so tasty! Maybe we can take a break to have some?"
