@@ -79,6 +79,7 @@ ink={
 [ink]
 
 inklecate_path="res://inklecate_win.exe"
+marshall_state_variables=true
 
 [input]
 
