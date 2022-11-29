@@ -20,7 +20,7 @@ extents = Vector2( 89, 33 )
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 94.5, 40.5 )
 
-[node name="BandN" type="RigidBody2D" groups=["shiftable"]]
+[node name="TopicSpot" type="RigidBody2D" groups=["shiftable"]]
 position = Vector2( 200, 76 )
 mode = 1
 script = ExtResource( 5 )
@@ -36,7 +36,7 @@ material = SubResource( 24 )
 position = Vector2( 0, -44 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 246, 80, 178, 66 )
+region_rect = Rect2( 239, 175, 178, 66 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
@@ -45,7 +45,7 @@ light_mask = 4
 texture = ExtResource( 3 )
 offset = Vector2( 0, -33 )
 region_enabled = true
-region_rect = Rect2( 246, 80, 178, 66 )
+region_rect = Rect2( 239, 175, 178, 66 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -33 )
