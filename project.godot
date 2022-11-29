@@ -209,10 +209,6 @@ room_toggle={
  ]
 }
 
-[node]
-
-name_casing=2
-
 [physics]
 
 3d/active_soft_world=false

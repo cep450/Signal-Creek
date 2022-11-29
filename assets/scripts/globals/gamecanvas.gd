@@ -94,7 +94,7 @@ func set_current_room(roomPrefab):
 
 	viewport.remove_child(previousRoom)
 
-
+#for debugging purposes; when you press tab, switch rooms
 func cycle_rooms():
 	
 	currentRoomIndex += 1

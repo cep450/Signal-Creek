@@ -1,7 +1,5 @@
 extends Node
 
-
-
 #global enums, to be used anywhere
 
 enum Characters { NICK, NOUR, SUWAN }
@@ -14,6 +12,7 @@ enum Animation { WALK, IDLE }   #todo. do we want each combo ex walk_left idle_r
 
 onready var camera = null
 onready var soundManager = null
+onready var currentRoom = null
 
 onready var dialogueBox = null
 onready var portrait = null
@@ -22,6 +21,7 @@ onready var colorManager = null
 onready var planeManager = null
 onready var mode = GameModes.WALK
 onready var world = Worlds.DREAM
+onready var rooms = null
 
 onready var player = null
 onready var party = null
