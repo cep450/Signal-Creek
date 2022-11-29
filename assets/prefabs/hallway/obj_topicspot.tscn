@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/scripts/environment/shiftable.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 89, 33 )
+extents = Vector2( 88, 36 )
 
 [node name="TopicSpot" type="RigidBody2D" groups=["shiftable"]]
 position = Vector2( 200, 76 )
@@ -34,5 +34,5 @@ region_enabled = true
 region_rect = Rect2( 239, 175, 178, 66 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -33 )
+position = Vector2( 0, -40 )
 shape = SubResource( 23 )

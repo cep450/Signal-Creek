@@ -51,27 +51,27 @@ __meta__ = {
 }
 
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 130.5, 160 )
+position = Vector2( 241.5, 159 )
 scale = Vector2( 2.03906, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
-energy = 0.9
+energy = 0.72
 range_item_cull_mask = 7
 
 [node name="BigLight2" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 362, 162 )
+position = Vector2( 473, 161 )
 scale = Vector2( 2.03906, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
-energy = 0.9
+energy = 0.72
 range_item_cull_mask = 7
 
 [node name="BigLight3" type="Light2D" parent="PlaneManager/Lights"]
-position = Vector2( 577, 162 )
+position = Vector2( 688, 161 )
 scale = Vector2( 2.03906, 2.5 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
-energy = 0.9
+energy = 0.72
 range_item_cull_mask = 7
 
 [node name="Overworld" type="YSort" parent="PlaneManager"]
@@ -88,7 +88,7 @@ format = 1
 tile_data = PoolIntArray( -65534, 0, 0, -65533, 0, 1, -65532, 0, 131076, -65531, 0, 131076, -65530, 0, 2, -65517, 0, 0, -65516, 0, 1, -65515, 0, 131076, -65514, 0, 131076, -65513, 0, 2, -65499, 0, 0, -65498, 0, 131076, -65497, 0, 1, -65496, 0, 1, -65495, 0, 2, -65481, 0, 262146, 2, 0, 65536, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65539, 19, 0, 65541, 20, 0, 65537, 21, 0, 65537, 22, 0, 65537, 23, 0, 65538, 37, 0, 65536, 38, 0, 65537, 39, 0, 65537, 40, 0, 65537, 41, 0, 65539, 46, 7, 0, 47, 7, 0, 48, 7, 0, 51, 7, 0, 52, 7, 0, 55, 0, 262149, 65538, 0, 65541, 65539, 0, 3, 65540, 0, 4, 65541, 0, 4, 65542, 0, 131074, 65555, 0, 131072, 65556, 0, 4, 65557, 0, 4, 65558, 0, 131073, 65559, 0, 131074, 65573, 0, 131072, 65574, 0, 131073, 65575, 0, 4, 65576, 0, 131073, 65577, 0, 131074, 65581, 7, 0, 65591, 0, 458753, 131074, 0, 65541, 131075, 0, 65538, 196610, 0, 65536, 196611, 0, 65538, 262146, 0, 131072, 262147, 0, 131074, 262148, 2, 0, 262149, 1, 0, 262150, 3, 0, 262163, 2, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262181, 1, 0, 262182, 1, 0, 262183, 1, 0, 262184, 1, 0, 262185, 1, 0, 262199, 4, 0, 458754, 2, 0, 458755, 3, 0, 655362, 0, 327680, 655363, 0, 393219, 851970, 2, 0, 851971, 3, 0 )
 
 [node name="BobaTea" parent="PlaneManager/Overworld" instance=ExtResource( 16 )]
-position = Vector2( 464, 216 )
+position = Vector2( 356, 99 )
 
 [node name="CafeTables" parent="PlaneManager/Overworld" instance=ExtResource( 13 )]
 position = Vector2( 703, 207 )
@@ -103,21 +103,22 @@ position = Vector2( 703, 159 )
 position = Vector2( 800, 207 )
 
 [node name="Litter" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
-position = Vector2( 406, 235 )
+position = Vector2( 593, 210 )
 
 [node name="BandNSign" parent="PlaneManager/Overworld" instance=ExtResource( 18 )]
 position = Vector2( 79, 109 )
 z_index = 1
 
 [node name="PartyPoster" parent="PlaneManager/Overworld" instance=ExtResource( 14 )]
-position = Vector2( 632, 89 )
+position = Vector2( 632, 65 )
+z_index = 1
+z_as_relative = false
 
 [node name="PretzelStand" parent="PlaneManager/Overworld" instance=ExtResource( 15 )]
-position = Vector2( 556, 209 )
+position = Vector2( 439, 212 )
 
 [node name="Victorias" parent="PlaneManager/Overworld" instance=ExtResource( 9 )]
 position = Vector2( 775, 74 )
-z_index = 1
 
 [node name="WomensClothing" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
 position = Vector2( 488, 76 )
@@ -163,7 +164,7 @@ position = Vector2( 800, 125 )
 position = Vector2( 670, 151 )
 
 [node name="TrashCan" parent="PlaneManager/Overworld" instance=ExtResource( 12 )]
-position = Vector2( 640, 135 )
+position = Vector2( 619, 159 )
 
 [node name="OldDoll" parent="PlaneManager/Overworld" instance=ExtResource( 5 )]
-position = Vector2( 362, 201 )
+position = Vector2( 261, 203 )
