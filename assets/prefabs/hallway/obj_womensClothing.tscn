@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/sprites/objects/sheet_hallway_dream.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 88, 38 )
+extents = Vector2( 90.5, 33 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 88, 34.75 )
@@ -24,10 +24,10 @@ realsheet = ExtResource( 4 )
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 material = ExtResource( 3 )
-position = Vector2( 0, -44 )
+position = Vector2( 0, -33 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 239, 95, 178, 66 )
+region_rect = Rect2( 240, 95, 176, 66 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
@@ -36,10 +36,10 @@ light_mask = 4
 texture = ExtResource( 4 )
 offset = Vector2( 0, -33 )
 region_enabled = true
-region_rect = Rect2( 239, 95, 178, 66 )
+region_rect = Rect2( 240, 95, 176, 66 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -38 )
+position = Vector2( -0.5, -33 )
 shape = SubResource( 23 )
 
 [node name="ActiveArea" type="Area2D" parent="."]
@@ -50,7 +50,7 @@ __meta__ = {
 interactiveBySuwan = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
-position = Vector2( 0, -26.75 )
+position = Vector2( 0.5, -26.75 )
 shape = SubResource( 22 )
 
 [connection signal="body_entered" from="ActiveArea" to="ActiveArea" method="_on_InteractArea_body_entered"]
